@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>test</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <filter>
+  <filter-name>dofilter</filter-name>
+  <filter-class>com.filter.CheckFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  <filter-name>dofilter</filter-name>
+  <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+   <servlet><!--建立servlet协议  -->
+  <servlet-name>login</servlet-name>
+  <servlet-class>com.bs.action.Action</servlet-class><!-- 导入一个名为com.ysh的包中的Action类，用来连接后台 -->
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>login</servlet-name>
+  <url-pattern>/userslogin</url-pattern><!-- 此处的/是通过index.jsp中所有的请求，如果仅仅通过提交的请求则写成/aa 有图片时写上aa 要不然不显示图片-->
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>newtask</servlet-name>
+  <servlet-class>com.bs.action.CreateNewTask</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>newtask</servlet-name>
+  <url-pattern>/createNewTask</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>myBusinessRecord</servlet-name>
+  <servlet-class>com.bs.action.myBusinessRecord</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>myBusinessRecord</servlet-name>
+  <url-pattern>/myBusinessRecord</url-pattern>
+  </servlet-mapping>
+    
+</web-app>
