@@ -1,0 +1,144 @@
+{
+	"main.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"businessInformation.html",
+			"js/app.js",
+			"js/mui.enterfocus.js",
+			"css/app.css"
+		],
+		"refer": [
+			"guiding.html",
+			"informationGathering.html",
+			"businessInformation.html",
+			"selfInformation.html",
+			"informationGuiding.html"
+		]
+	},
+	"login.html": {
+		"resources": [
+			"js/app.js",
+			"img/bg_2.png",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/mui.enterfocus.js",
+			"fonts/mui.ttf",
+			"css/app.css"
+		],
+		"refer": [
+			"main.html",
+			"forget_password.html",
+			"reg.html"
+		]
+	},
+	"forget_password.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/style.css"
+		]
+	},
+	"reg.html": {
+		"resources": [
+			"js/app.js",
+			"css/style.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"login.html"
+		]
+	},
+	"selfInformation.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"createNewTask.html",
+			"myBusinessRecord.html"
+		],
+		"refer": [
+			"createNewTask.html",
+			"myBusinessRecord.html",
+			"myBusinessRecord.jsp",
+			"new_file.jsp"
+		]
+	},
+	"createNewTask.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/mui.enterfocus.js",
+			"fonts/mui.ttf",
+			"selfInformation.html",
+			"css/app.css",
+			"js/mui.picker.js",
+			"js/mui.poppicker.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css"
+		],
+		"refer": [
+			"selfInformation.html",
+			"businessInformation.html"
+		]
+	},
+	"myBusinessRecord.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"fonts/mui.ttf",
+			"js/jquery-1.8.3.min.js",
+			"js/jquery.mobile-1.3.2.min.js"
+		]
+	},
+	"businessInformation.html": {
+		"resources": [
+			"css/mui.min.css",
+			"fonts/mui.ttf"
+		]
+	},
+	"informationGathering.html": {
+		"resources": [
+			"css/mui.min.css",
+			"fonts/mui.ttf",
+			"img/northeast.jpg",
+			"img/bg_2.png",
+			"img/BS_4.png",
+			"img/bs_5.png",
+			"img/bs_6.png",
+			"img/BS_2.png",
+			"img/dongbei.png",
+			"img/xinan.png",
+			"img/huabei.png",
+			"img/xibei.png",
+			"img/xinjiang.png",
+			"img/baostell.png",
+			"img/donghai.png",
+			"img/huazhong.png",
+			"img/huadong.png"
+		]
+	},
+	"informationGuiding.html": {
+		"resources": [
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"myBusinessRecord.jsp": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	}
+}
