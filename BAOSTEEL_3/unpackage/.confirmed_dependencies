@@ -7,14 +7,20 @@
 			"businessInformation.html",
 			"js/app.js",
 			"js/mui.enterfocus.js",
-			"css/app.css"
+			"css/app.css",
+			"informationGathering.html",
+			"examples/businessInformation.html"
 		],
 		"refer": [
 			"guiding.html",
 			"informationGathering.html",
 			"businessInformation.html",
 			"selfInformation.html",
-			"informationGuiding.html"
+			"informationGuiding.html",
+			"examples/businessInformation.html",
+			"examples/informationGathering.html",
+			"examples/selfInformation.html",
+			"examples/informationGuiding.html"
 		]
 	},
 	"login.html": {
@@ -68,7 +74,9 @@
 			"createNewTask.html",
 			"myBusinessRecord.html",
 			"myBusinessRecord.jsp",
-			"new_file.jsp"
+			"new_file.jsp",
+			"examples/createNewTask.html",
+			"examples/myBusinessRecord.html"
 		]
 	},
 	"createNewTask.html": {
@@ -103,7 +111,9 @@
 	"businessInformation.html": {
 		"resources": [
 			"css/mui.min.css",
-			"fonts/mui.ttf"
+			"fonts/mui.ttf",
+			"js/app.js",
+			"js/mui.min.js"
 		]
 	},
 	"informationGathering.html": {
@@ -139,6 +149,96 @@
 			"js/mui.min.js",
 			"fonts/mui.ttf",
 			"css/mui.min.css"
+		]
+	},
+	"examples/myBusinessRecord.html": {
+		"resources": [
+			"css/app.css",
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"examples/buss_edit.html"
+		]
+	},
+	"examples/createNewTask.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"js/mui.poppicker.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css"
+		]
+	},
+	"examples/informationGathering.html": {
+		"resources": [
+			"img/BS_2.png",
+			"img/xinan.png",
+			"img/huabei.png",
+			"img/xibei.png",
+			"img/xinjiang.png",
+			"img/donghai.png",
+			"img/bs_5.png",
+			"img/huadong.png",
+			"img/huazhong.png",
+			"img/dongbei.png",
+			"css/mui.min.css"
+		]
+	},
+	"examples/selfInformation.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"examples/createNewTask.html",
+			"examples/myBusinessRecord.html",
+			"login.html"
+		]
+	},
+	"examples/informationGuiding.html": {
+		"resources": [
+			"css/mui.min.css",
+			"fonts/mui.ttf"
+		]
+	},
+	"examples/businessInformation.html": {
+		"resources": [
+			"js/app.js",
+			"fonts/mui.ttf",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"examples/buss_search.html"
+		]
+	},
+	"examples/buss_search.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"fonts/mui.ttf"
+		]
+	},
+	"examples/buss_edit.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"js/mui.poppicker.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css"
 		]
 	}
 }
