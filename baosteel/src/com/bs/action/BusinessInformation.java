@@ -15,10 +15,10 @@ import javax.servlet.http.HttpSession;
 
 import net.sf.json.JSONArray;
 
-import com.bs.dao.myBusinessRecordDao;
-import com.bs.dao.UserDao;
+import com.bs.dao.*;
 import com.bs.system.Constant;
-public class myBusinessRecord extends HttpServlet {
+
+public class BusinessInformation extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
@@ -30,14 +30,12 @@ public class myBusinessRecord extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		    HttpSession session = req.getSession();
-		//System.out.println(session.getAttribute(Constant.IS_LOGIN));
-			req.setCharacterEncoding("utf-8");// 先将请求的名字用utf-8进行编码
-			resp.setCharacterEncoding("utf-8");//设置发送到前端的数据格式是utf-8格式
+			req.setCharacterEncoding("utf-8");
+			resp.setCharacterEncoding("utf-8");
 			String id = (String) session.getAttribute("id");
-//			System.out.println(id);
-			myBusinessRecordDao userDao = new myBusinessRecordDao(id);
-		    List<Map<String,Object>> infos = userDao.myBusinessRecord();
-
+			BusinessInformationDao userDao = new BusinessInformationDao(id);
+		    List<Map<String,Object>> infos = userDao.BusinessInformationRecord();
+      
 		    JSONArray infoslist = JSONArray.fromObject(infos);
             
 		    

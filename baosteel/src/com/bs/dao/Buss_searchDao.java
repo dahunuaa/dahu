@@ -11,14 +11,14 @@ import java.util.Map;
 
 import com.bs.system.DBUtils;
 
-public class myBusinessRecordDao {
-	private String buss_editor;
+public class Buss_searchDao {
+	private String buss_search;
 	
-	 public myBusinessRecordDao(String buss_editor){
-		this.buss_editor = buss_editor;
+	 public Buss_searchDao(String buss_search){
+		this.buss_search = buss_search;
 		
 	}
-	 public List myBusinessRecord(){
+	 public List Buss_searchRecord(){
          Connection conn =null;
          PreparedStatement pstmt =null;
          List infos = null;
@@ -27,13 +27,13 @@ public class myBusinessRecordDao {
 			 conn=DBUtils.getConnection();
 			 if(conn==null) return null;
 			 StringBuffer sb = new StringBuffer();
-			 sb.append("SELECT bussinessrecords.`buss_id`, bussinessrecords.`editor`,`editor_name`,`bussmen_name`,`accounts`,`buss_place`,`buss_reason`,`buss_begintime`,`buss_endtime`");
+			 sb.append("SELECT bussinessrecords.`buss_id`,bussinessrecords.`editor`,`editor_name`,`bussmen_name`,`accounts`,`buss_place`,`buss_reason`,`buss_begintime`,`buss_endtime`");
 			 sb.append(" FROM bussinessrecords");
-			 sb.append(" WHERE bussinessrecords.`editor`=?");
-			 sb.append(" ORDER BY buss_id DESC");
+			 sb.append(" WHERE CONCAT(bussmen_name,accounts,buss_id,editor,buss_place,buss_reason,buss_begintime,buss_endtime) LIKE ?");
+//			 sb.append(" WHERE bussinessrecords.`editor`=?");
 			 pstmt = conn.prepareStatement(sb.toString());
-			 pstmt.setObject(1, this.buss_editor);
-//			 System.out.println(this.buss_editor);
+			 pstmt.setObject(1, "%"+this.buss_search+"%");
+//			 System.out.println(this.buss_search);
 			 ResultSet rs = pstmt.executeQuery();
 	         //int sc =Integer.parseInt(rs.getString(7));
 			 infos = new ArrayList<Map<String,Object>>();
@@ -46,7 +46,7 @@ public class myBusinessRecordDao {
 				 }
 				 		 
 				 infos.add(item);
-				
+//				System.out.println(infos);
 			 }
 	         
 		} catch (Exception e) {

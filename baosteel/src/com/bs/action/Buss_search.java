@@ -17,8 +17,9 @@ import net.sf.json.JSONArray;
 
 import com.bs.dao.myBusinessRecordDao;
 import com.bs.dao.UserDao;
+import com.bs.dao.Buss_searchDao;
 import com.bs.system.Constant;
-public class myBusinessRecord extends HttpServlet {
+public class Buss_search extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
@@ -33,19 +34,18 @@ public class myBusinessRecord extends HttpServlet {
 		//System.out.println(session.getAttribute(Constant.IS_LOGIN));
 			req.setCharacterEncoding("utf-8");// 先将请求的名字用utf-8进行编码
 			resp.setCharacterEncoding("utf-8");//设置发送到前端的数据格式是utf-8格式
-			String id = (String) session.getAttribute("id");
-//			System.out.println(id);
-			myBusinessRecordDao userDao = new myBusinessRecordDao(id);
-		    List<Map<String,Object>> infos = userDao.myBusinessRecord();
+			String buss_search = req.getParameter("buss_search");
+			
+//			System.out.println(buss_search);
+            Buss_searchDao searchDao = new Buss_searchDao(buss_search);
+            List<Map<String,Object>> infos = searchDao.Buss_searchRecord();
 
-		    JSONArray infoslist = JSONArray.fromObject(infos);
-            
-		    
-
+		    JSONArray busslist = JSONArray.fromObject(infos);
+//            System.out.println(busslist);
 			PrintWriter pw = null;
 			try {
 				pw = resp.getWriter(); 
-				 pw.print(infoslist);//不能写成println
+				 pw.print(busslist);//不能写成println
 				 pw.flush();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

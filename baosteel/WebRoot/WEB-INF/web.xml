@@ -45,5 +45,41 @@
   <servlet-name>myBusinessRecord</servlet-name>
   <url-pattern>/myBusinessRecord</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>BusinessInformation</servlet-name>
+  <servlet-class>com.bs.action.BusinessInformation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>BusinessInformation</servlet-name>
+  <url-pattern>/BusinessInformation</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>Buss_search</servlet-name>
+  <servlet-class>com.bs.action.Buss_search</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Buss_search</servlet-name>
+  <url-pattern>/Buss_search</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>Buss_edit</servlet-name>
+  <servlet-class>com.bs.action.Buss_edit</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Buss_edit</servlet-name>
+  <url-pattern>/Buss_edit</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>Buss_delete</servlet-name>
+  <servlet-class>com.bs.action.Buss_delete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Buss_delete</servlet-name>
+  <url-pattern>/Buss_delete</url-pattern>
+  </servlet-mapping>
     
 </web-app>
