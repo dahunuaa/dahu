@@ -195,12 +195,15 @@
 		"resources": [
 			"js/mui.min.js",
 			"fonts/mui.ttf",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"css/app.css"
 		],
 		"refer": [
 			"examples/createNewTask.html",
 			"examples/myBusinessRecord.html",
-			"login.html"
+			"login.html",
+			"examples/newinformationguide.html",
+			"examples/myInformationGuiding.html"
 		]
 	},
 	"examples/informationGuiding.html": {
@@ -229,6 +232,44 @@
 		]
 	},
 	"examples/buss_edit.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"js/mui.poppicker.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css"
+		]
+	},
+	"examples/newinformationguide.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/app.js",
+			"js/mui.poppicker.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"examples/myInformationGuiding.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"examples/informationguiding_edit.html"
+		]
+	},
+	"examples/informationguiding_edit.html": {
 		"resources": [
 			"js/mui.picker.js",
 			"js/app.js",
