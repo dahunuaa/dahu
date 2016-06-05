@@ -81,5 +81,32 @@
   <servlet-name>Buss_delete</servlet-name>
   <url-pattern>/Buss_delete</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>NewInformationGuide</servlet-name>
+  <servlet-class>com.bs.action.NewInformationGuide</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>NewInformationGuide</servlet-name>
+  <url-pattern>/NewInformationGuide</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>myInformationGuiding</servlet-name>
+  <servlet-class>com.bs.action.myInformationGuiding</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>myInformationGuiding</servlet-name>
+  <url-pattern>/myInformationGuiding</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>Inforguide_edit</servlet-name>
+  <servlet-class>com.bs.action.Inforguide_edit</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Inforguide_edit</servlet-name>
+  <url-pattern>/Inforguide_edit</url-pattern>
+  </servlet-mapping>
     
 </web-app>
