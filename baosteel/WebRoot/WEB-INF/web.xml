@@ -108,5 +108,67 @@
   <servlet-name>Inforguide_edit</servlet-name>
   <url-pattern>/Inforguide_edit</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>Inforguide_delete</servlet-name>
+  <servlet-class>com.bs.action.Inforguide_delete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Inforguide_delete</servlet-name>
+  <url-pattern>/Inforguide_delete</url-pattern>
+  </servlet-mapping>
+   
+  <servlet>
+  <servlet-name>InformationGuiding</servlet-name>
+  <servlet-class>com.bs.action.InformationGuiding</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>InformationGuiding</servlet-name>
+  <url-pattern>/InformationGuiding</url-pattern>
+  </servlet-mapping>
     
+  <servlet>
+  <servlet-name>Inforguide_search</servlet-name>
+  <servlet-class>com.bs.action.Inforguide_search</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Inforguide_search</servlet-name>
+  <url-pattern>/Inforguide_search</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>Newinformationgathering</servlet-name>
+  <servlet-class>com.bs.action.Newinformationgathering</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Newinformationgathering</servlet-name>
+  <url-pattern>/Newinformationgathering</url-pattern>
+  </servlet-mapping>
+
+   <servlet>
+  <servlet-name>MyInformationgathering</servlet-name>
+  <servlet-class>com.bs.action.MyInformationgathering</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>MyInformationgathering</servlet-name>
+  <url-pattern>/MyInformationgathering</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>Inforgathering_edit</servlet-name>
+  <servlet-class>com.bs.action.Inforgathering_edit</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Inforgathering_edit</servlet-name>
+  <url-pattern>/Inforgathering_edit</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>Inforgathering_delete</servlet-name>
+  <servlet-class>com.bs.action.Inforgathering_delete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Inforgathering_delete</servlet-name>
+  <url-pattern>/Inforgathering_delete</url-pattern>
+  </servlet-mapping>
 </web-app>
