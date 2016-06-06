@@ -171,4 +171,13 @@
   <servlet-name>Inforgathering_delete</servlet-name>
   <url-pattern>/Inforgathering_delete</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>InforGathering_search</servlet-name>
+  <servlet-class>com.bs.action.InforGathering_search</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>InforGathering_search</servlet-name>
+  <url-pattern>/InforGathering_search</url-pattern>
+  </servlet-mapping>
 </web-app>
