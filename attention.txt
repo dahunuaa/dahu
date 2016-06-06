@@ -1,0 +1,5 @@
+1、先解决信息指南的编辑和删除问题
+2、建数据库名为informationgatheringrecord,字段依次为：gather_id/gather_editor/gather_editor_name/gather_title/gather_category/gather_text/area
+3、将情报搜集的选择分类看需不需要，加上选择区域，看看还有什么其他的要求
+4、在情报搜集页面放入搜索部分，重新安排布局
+ 
