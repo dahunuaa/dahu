@@ -137,6 +137,34 @@
 	     })
 		});
 		
+		//新建情报搜集
+		document.getElementById("newinformationgathering").addEventListener('tap',function () {
+			//获得主页面的webview
+			
+			mui.openWindow({
+		    url:"newinformationgathering.html",//url是字符串啊！！！！！！！！
+		    id:"newinformationgathering",
+            styles:{
+	        top:'0px',//mui标题栏默认高度为45px；
+	        bottom:'0px'//默认为0px，可不定义；
+	      }
+		})
+		})
+		
+		//我的情报搜集
+		document.getElementById("myinformationgathering").addEventListener('tap',function () {
+		//获得主页面的webview
+		
+		mui.openWindow({
+	    url:"myinformationgathering.html",//url是字符串啊！！！！大哥！！！！！！
+	    id:"myinformationgathering",
+        styles:{
+        top:'0px',//mui标题栏默认高度为45px；
+        bottom:'0px'//默认为0px，可不定义；
+          }
+	     })
+		});
+		
 		document.getElementById("logoff").addEventListener('tap',function(){
 			mui.openWindow({
 				url:"../login.html",//不在同一个目录下，需要在前面加上../，为主目录下的文件

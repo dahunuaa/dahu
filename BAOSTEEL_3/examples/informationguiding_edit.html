@@ -51,7 +51,7 @@
 			    </li>
 			    </form>
 				<br>
-				<label>&nbsp;&nbsp;&nbsp;内容</label>
+				<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内&nbsp;&nbsp;容</label>
 				<div class="mui-input-row" style="margin: 10px 5px;">
 					<textarea id="textarea" rows="5" placeholder="请填写正文"></textarea>
 				</div>
@@ -60,7 +60,7 @@
         
 				<div class="mui-button-row">
 					<button id="inforguide_alter" class="mui-btn mui-btn-primary" type="button" onclick="return true;">修改</button>&nbsp;&nbsp;
-					<button id="inforguide_cancel" class="mui-btn mui-btn-danger" type="button" onclick="return false;">删除</button>
+					<button id="inforguide_delete" class="mui-btn mui-btn-danger" type="button" onclick="return false;">删除</button>
 				</div>
 		
 			
@@ -109,7 +109,7 @@
 					var categoryBox = doc.getElementById('category');
 					var textareaBox = doc.getElementById('textarea');
 					var inforguide_alterButton = doc.getElementById("inforguide_alter");
-					var inforguide_cancelButton = doc.getElementById('inforguide_cancel');
+					var inforguide_deleteButton = doc.getElementById('inforguide_delete');
 					
 					//获取前一个页面传过来的值
 					var self = plus.webview.currentWebview();//必须用plusReady 来获取前面传过来的值
@@ -172,6 +172,37 @@
 					});
 			
 						}
+						});
+						
+			   	inforguide_deleteButton.addEventListener('tap', function(event) {
+							
+						$.ajax({
+						type: "post",
+						url: "http://192.168.191.1:8080/baosteel/Inforguide_delete",
+						data: {
+							"guide_id":id,//后面必须加上逗号
+							
+							
+						},
+						async: true,
+						dataType:"text",
+						success: function(data) {
+//							alert("服务器传回来的消息为:" +data);
+							if (data=="ok")
+							{
+								alert("删除信息指南成功");
+								mui.back();
+								
+							}else{
+								alert("删除信息指南失败");
+							}
+						},
+						error: function() {
+							alert("请求服务器出现失败!");
+						}
+					});
+			
+						
 						});
 			   
 //			   newguide_cancelButton.addEventListener('tap',function(event){
