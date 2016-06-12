@@ -7,10 +7,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import com.bs.system.DateDemo;
 import com.bs.dao.NewInformationGuideDao;
 
 public class NewInformationGuide extends HttpServlet{
+
+	private static final DateDemo New = null;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -31,7 +33,9 @@ public class NewInformationGuide extends HttpServlet{
 		
 		NewInformationGuideDao dao = new NewInformationGuideDao(editor,editor_name,title,category,text);
 		dao.NewInformationGuide();
-
+		
+		DateDemo time = new DateDemo();
+		System.out.println(time);
 		 String str = "ok";
 		 PrintWriter pw = null;
 		
@@ -49,6 +53,9 @@ public class NewInformationGuide extends HttpServlet{
 		}
 		
 		
+	}
+
+	private void DateDemo() {
 	}
     
 }

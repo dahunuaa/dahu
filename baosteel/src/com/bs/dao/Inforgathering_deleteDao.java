@@ -24,7 +24,7 @@ public class Inforgathering_deleteDao {
 
 	     try {
 			pstmt = conn.prepareStatement(sb.toString());
-			pstmt.setObject(1,guide_id);
+			pstmt.setObject(1,gather_id);
 			i = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

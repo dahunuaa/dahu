@@ -11,14 +11,14 @@ import java.util.Map;
 
 import com.bs.system.DBUtils;
 
-public class MyInformationgatheringDao {
-	private String gather_editor;
+public class InforGather_dongbeiDao {
+	private String area;
 	
-	 public MyInformationgatheringDao(String gather_editor){
-		this.gather_editor = gather_editor;
-		
+	 public InforGather_dongbeiDao(String area){
+		this.area = area;
+//		System.out.println(area);
 	}
-	 public List MyInformationgathering(){
+	 public List InforGather_dongbeiRecord(){
          Connection conn =null;
          PreparedStatement pstmt =null;
          List infos = null;
@@ -29,13 +29,12 @@ public class MyInformationgatheringDao {
 			 StringBuffer sb = new StringBuffer();
 			 sb.append("SELECT informationgatheringrecord.`gather_id`, informationgatheringrecord.`gather_editor`,`gather_editor_name`,`gather_title`,`area`,`address`,`gathering_text`");
 			 sb.append(" FROM informationgatheringrecord");
-			 sb.append(" WHERE informationgatheringrecord.`gather_editor`=?");
+			 sb.append(" WHERE informationgatheringrecord.area=?");
 			 sb.append(" ORDER BY gather_id DESC");
 			 pstmt = conn.prepareStatement(sb.toString());
-			 pstmt.setObject(1, this.gather_editor);
-//			 System.out.println(this.buss_editor);
+			 pstmt.setObject(1, this.area);
 			 ResultSet rs = pstmt.executeQuery();
-	         //int sc =Integer.parseInt(rs.getString(7));
+	       
 			 infos = new ArrayList<Map<String,Object>>();
 			 ResultSetMetaData rsmd = rs.getMetaData();//锟矫碉拷锟斤拷慕峁癸拷锟较拷锟斤拷锟斤拷锟斤拷侄锟斤拷锟斤拷侄锟斤拷锟�
 			 while(rs.next()){//锟斤拷锟斤拷锟斤拷锟斤拷

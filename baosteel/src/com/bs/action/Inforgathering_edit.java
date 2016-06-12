@@ -27,11 +27,12 @@ public class Inforgathering_edit extends HttpServlet{
 		String gather_editor = req.getParameter("gather_editor");
 		String gather_editor_name = req.getParameter("gather_editor_name");
 		String gather_title = req.getParameter("gather_title");
-		String gather_category = req.getParameter("gather_category");
+		String gather_address = req.getParameter("gather_address");
+		String gather_area = req.getParameter("gather_area");
 		String gather_text = req.getParameter("gather_text");
-		
+//		System.out.println(gather_text);
         
-		Inforgathering_editDao dao = new Inforgathering_editDao(gather_id,gather_editor,gather_editor_name,gather_title,gather_category,gather_text);
+		Inforgathering_editDao dao = new Inforgathering_editDao(gather_id,gather_editor,gather_editor_name,gather_title,gather_address,gather_area,gather_text);
 		dao.Inforgathering_edit();
 
 		 String str = "ok";
