@@ -33,7 +33,7 @@
 		<div class="mui-content">
 			<form class="mui-input-group">
 				<div class="mui-input-row">
-					<label>编辑人工号</label>
+					<label>编辑者工号</label>
 					<input id="editor" type="text" class="mui-input-clear" placeholder="编辑人工号">
 				</div>
 				<div class="mui-input-row">
@@ -41,17 +41,21 @@
 					<input id="editor_name" type="text" class="mui-input-clear" placeholder="编辑人姓名">
 				</div>
 				<div class="mui-input-row">
-					<label>&nbsp;&nbsp;标&nbsp;&nbsp;题</label>
-					<input id="title" type="text" class="mui-input-clear" placeholder="请输入信息指南标题">
+					<label>标题</label>
+					<input id="title" type="text" class="mui-input-clear" placeholder="请输入情报搜集标题">
+				</div>
+				<div class="mui-input-row">
+					<label>地址</label>
+					<input id="address" type="text" class="mui-input-clear" placeholder="请输入情报地址">
 				</div>
 				<li class="mui-table-view-cell">
-				<a id="selectcategory" class="mui-navigate-right">
-					选择分类<span id="category"style="padding: 0px 0px 0px 45px;"></span>
+				<a id="selectarea" class="mui-navigate-right">
+					选择油田区块<span id="area"style="padding: 0px 0px 0px 45px;"></span>
 				</a>
 			    </li>
 			    </form>
 				<br>
-				<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内&nbsp;&nbsp;容</label>
+				<label>&nbsp;&nbsp;&nbsp;内容</label>
 				<div class="mui-input-row" style="margin: 10px 5px;">
 					<textarea id="textarea" rows="5" placeholder="请填写正文"></textarea>
 				</div>
@@ -73,29 +77,36 @@
 		(function($, doc) {
 				$.init();
 				$.plusReady(function() {
+//					alert(gather_id)
 					//选择地点
-					var selectcategory = new $.PopPicker();
-					selectcategory.setData([{
-						value: 'bijixiaojie',
-						text: '笔记小结'
+					var selectarea = new $.PopPicker();
+					selectarea.setData([{
+						value: 'dongbei',
+						text: '东北'
 					},{
-						value: 'yonghuxinxi',
-						text: '用户信息'
+						value: 'xinan',
+						text: '西南'
 					}, {
-						value: 'chanpinxinxi',
-						text: '产品信息'
+						value: 'zhonghaiyou',
+						text: '中海油'
 					}, {
-						value: 'hangyexinxi',
-						text: '行业信息'
+						value: 'huabei',
+						text: '华北'
 					}, {
-						value: 'gongsixinxi',
-						text: '公司新闻'
+						value: 'huazhong',
+						text: '华中'
+					}, {
+						value: 'huadong',
+						text: '华东'
+					}, {
+						value: 'xinjiang',
+						text: '新疆'
 					}]);
-					var showUserPickerButton = doc.getElementById('selectcategory');
-					var category = doc.getElementById('category');
+					var showUserPickerButton = doc.getElementById('selectarea');
+					var area = doc.getElementById('area');
 					showUserPickerButton.addEventListener('tap', function(event) {
-						selectcategory.show(function(items) {
-							category.innerText = items[0].text;
+						selectarea.show(function(items) {
+							area.innerText = items[0].text;
 							//返回 false 可以阻止选择框的关闭
 //							return false;
 						});
@@ -106,25 +117,29 @@
 			        var editorBox = doc.getElementById('editor');
 			        var editornameBox = doc.getElementById('editor_name');
 			        var titleBox = doc.getElementById('title');
-					var categoryBox = doc.getElementById('category');
+					var addressBox = doc.getElementById('address');
+					var areaBox = doc.getElementById('area');
 					var textareaBox = doc.getElementById('textarea');
 					var inforgather_alterButton = doc.getElementById("inforgather_alter");
 					var inforgather_deleteButton = doc.getElementById('inforgather_delete');
 					
 					//获取前一个页面传过来的值
 					var self = plus.webview.currentWebview();//必须用plusReady 来获取前面传过来的值
+			
 					var gather_id =self.gather_id
 					var gather_editor = self.gather_editor
 					var gather_editor_name = self.gather_editor_name
 					var gather_title = self.gather_title
-					var gather_category = self.gather_category
+					var gather_area = self.gather_area
+					var gather_address = self.gather_address
 					var gather_text = self.gather_text
 					
 					//填写的用.value,选择的用.innerText
 					editorBox.value=gather_editor
 					editornameBox.value=gather_editor_name
 					titleBox.value=gather_title
-					categoryBox.innerText=gather_category
+					areaBox.innerText=gather_area
+					addressBox.value=gather_address
 					textareaBox.value=gather_text
 					
 					
@@ -135,7 +150,7 @@
 							alert("请输入编辑人姓名")
 						}else if(titleBox.value==""){
 							alert("请输入标题")
-						}else if(categoryBox.innerText==""){
+						}else if(areaBox.innerText==""){
 							alert("请选择分类")
 						}else if(textareaBox.value==""){
 							alert("请填写正文")
@@ -149,7 +164,8 @@
 							"gather_editor":editorBox.value,
 							"gather_editor_name":editornameBox.value,
 							"gather_title":titleBox.value,
-							"gather_category":categoryBox.innerText,
+							"gather_address":addressBox.value,
+							"gather_area":areaBox.innerText,
 							"gather_text":textareaBox.value,
 							
 						},

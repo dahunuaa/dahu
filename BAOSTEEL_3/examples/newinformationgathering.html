@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>newinformationgathering.html</title>
+		<title>newinformationgathering</title>
 		<link href="../css/mui.min.css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="../css/app.css"/>
         <link href="../css/mui.picker.css" rel="stylesheet" />
@@ -33,7 +33,7 @@
 		<div class="mui-content">
 			<form class="mui-input-group">
 				<div class="mui-input-row">
-					<label>编辑人工号</label>
+					<label>编辑者工号</label>
 					<input id="editor" type="text" class="mui-input-clear" placeholder="编辑人工号">
 				</div>
 				<div class="mui-input-row">
@@ -42,11 +42,15 @@
 				</div>
 				<div class="mui-input-row">
 					<label>标题</label>
-					<input id="title" type="text" class="mui-input-clear" placeholder="请输入信息指南标题">
+					<input id="title" type="text" class="mui-input-clear" placeholder="请输入情报搜集标题">
+				</div>
+				<div class="mui-input-row">
+					<label>地址</label>
+					<input id="address" type="text" class="mui-input-clear" placeholder="请输入情报地址">
 				</div>
 				<li class="mui-table-view-cell">
-				<a id="selectcategory" class="mui-navigate-right">
-					选择分类<span id="category"style="padding: 0px 0px 0px 45px;"></span>
+				<a id="selectarea" class="mui-navigate-right">
+					选择油田区块<span id="area"style="padding: 0px 0px 0px 45px;"></span>
 				</a>
 			    </li>
 			    </form>
@@ -74,28 +78,34 @@
 				$.init();
 				$.ready(function() {
 					//选择地点
-					var selectcategory = new $.PopPicker();
-					selectcategory.setData([{
-						value: 'bijixiaojie',
-						text: '笔记小结'
+					var selectarea = new $.PopPicker();
+					selectarea.setData([{
+						value: 'dongbei',
+						text: '东北'
 					},{
-						value: 'yonghuxinxi',
-						text: '用户信息'
+						value: 'xinan',
+						text: '西南'
 					}, {
-						value: 'chanpinxinxi',
-						text: '产品信息'
+						value: 'zhonghaiyou',
+						text: '中海油'
 					}, {
-						value: 'hangyexinxi',
-						text: '行业信息'
+						value: 'huabei',
+						text: '华北'
 					}, {
-						value: 'gongsixinxi',
-						text: '公司新闻'
+						value: 'huazhong',
+						text: '华中'
+					}, {
+						value: 'huadong',
+						text: '华东'
+					}, {
+						value: 'xinjiang',
+						text: '新疆'
 					}]);
-					var showUserPickerButton = doc.getElementById('selectcategory');
-					var category = doc.getElementById('category');
+					var showUserPickerButton = doc.getElementById('selectarea');
+					var area = doc.getElementById('area');
 					showUserPickerButton.addEventListener('tap', function(event) {
-						selectcategory.show(function(items) {
-							category.innerText = items[0].text;
+						selectarea.show(function(items) {
+							area.innerText = items[0].text;
 							//返回 false 可以阻止选择框的关闭
 //							return false;
 						});
@@ -106,7 +116,8 @@
 			        var editorBox = doc.getElementById('editor');
 			        var editornameBox = doc.getElementById('editor_name');
 			        var titleBox = doc.getElementById('title');
-					var categoryBox = doc.getElementById('category');
+					var addressBox = doc.getElementById('address');
+					var areaBox = doc.getElementById('area');
 					var textareaBox = doc.getElementById('textarea');
 					var newgather_submitButton = doc.getElementById("newgather_submit");
 					var newgather_cancelButton = doc.getElementById('newgather_cancel');
@@ -117,26 +128,30 @@
 							alert("请输入编辑人姓名")
 						}else if(titleBox.value==""){
 							alert("请输入标题")
-						}else if(categoryBox.innerText==""){
+						}else if(addressBox.value==""){
+							alert("请选择分类")
+						}else if(areaBox.innerText==""){
 							alert("请选择分类")
 						}else if(textareaBox.value==""){
 							alert("请填写正文")
 						}else{
-						
 						$.ajax({
 						type: "post",
-						url: "http://192.168.191.1:8080/baosteel/Newinformationgathering",
+						url: "http://192.168.191.1:8080/baosteel/NewInformationgathering",
 						data: {
 							"gather_editor":editorBox.value,
 							"gather_editor_name":editornameBox.value,
 							"gather_title":titleBox.value,
-							"gather_category":categoryBox.innerText,
+							"gather_address":addressBox.value,
+							"gather_area":areaBox.innerText,
 							"gather_text":textareaBox.value,
+							
 							
 						},
 						async: true,
 						dataType:"text",
 						success: function(data) {
+							
 //							alert("服务器传回来的消息为:" +data);
 							if (data=="ok")
 							{

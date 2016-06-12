@@ -60,15 +60,16 @@
 							var li = document.createElement("li")
 							li.className="mui-table-view-cell"
 							li.setAttribute("gather_id",value.gather_id);
-							li.setAttribute("gather_editor",value.gather_editor)
-							li.setAttribute("gather_editor_name",value.gather_editor_name)
-							li.setAttribute("gather_title",value.gather_title)
-							li.setAttribute("gather_category",value.gather_category)
-							li.setAttribute("gather_text",value.gather_text)
+							li.setAttribute("gather_editor",value.gather_editor);
+							li.setAttribute("gather_editor_name",value.gather_editor_name);
+							li.setAttribute("gather_title",value.gather_title);
+							li.setAttribute("gather_area",value.area);
+							li.setAttribute("gather_address",value.address);
+							li.setAttribute("gathering_text",value.gathering_text);
 							
 //							alert(value.buss_id)
-                            li.innerHTML ='<a class="mui-navigate-right"'+ "情报搜集序号："+value.gather_id+"<br>"+value.gather_editor_name +"<br>" +value.gather_category 
-                                          +"<br>"+value.gather_title+'</a>';
+                            li.innerHTML ='<a class="mui-navigate-right"'+value.gather_id+"<br>"+value.gather_editor_name +"<br>" +value.gather_title 
+                                          +"<br>"+value.area+'</a>';
                                                         
                             project.appendChild(li)
 							})
@@ -78,8 +79,9 @@
 								var gather_editor = this.getAttribute("gather_editor")
 								var gather_editor_name = this.getAttribute("gather_editor_name")
 								var gather_title = this.getAttribute("gather_title")
-								var gather_category = this.getAttribute("gather_category")
-								var gather_text = this.getAttribute("gather_text")
+								var gather_area = this.getAttribute("gather_area")
+								var gather_address = this.getAttribute("gather_address")
+								var gather_text = this.getAttribute("gathering_text")
 								
 													
 								mui.openWindow({
@@ -91,7 +93,8 @@
 							    	gather_editor:gather_editor,
 							    	gather_editor_name:gather_editor_name,
 							    	gather_title:gather_title,
-							    	gather_category:gather_category,
+							    	gather_area:gather_area,
+							    	gather_address:gather_address,
 							    	gather_text:gather_text,
 							    }
 							     

@@ -113,13 +113,12 @@
 					
 					//获取前一个页面传过来的值
 					var self = plus.webview.currentWebview();//必须用plusReady 来获取前面传过来的值
-					var id =self.id
+					var guide_id =self.guide_id
 					var guide_editor = self.guide_editor
 					var guide_name = self.guide_name
 					var guide_title = self.guide_title
 					var guide_category = self.guide_category
 					var guide_text = self.guide_text
-					
 					//填写的用.value,选择的用.innerText
 					editorBox.value=guide_editor
 					editornameBox.value=guide_name
@@ -145,7 +144,7 @@
 						type: "post",
 						url: "http://192.168.191.1:8080/baosteel/Inforguide_edit",
 						data: {
-							"guide_id":id,
+							"guide_id":guide_id,
 							"guide_editor":editorBox.value,
 							"guide_editor_name":editornameBox.value,
 							"guide_title":titleBox.value,

@@ -188,7 +188,16 @@
 			"img/huadong.png",
 			"img/huazhong.png",
 			"img/dongbei.png",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf"
+		],
+		"refer": [
+			"examples/dongbei_list.html",
+			"examples/xinan_list.html",
+			"examples/newinformationgathering.html",
+			"examples/inforGathering_search.html"
 		]
 	},
 	"examples/selfInformation.html": {
@@ -203,13 +212,21 @@
 			"examples/myBusinessRecord.html",
 			"login.html",
 			"examples/newinformationguide.html",
-			"examples/myInformationGuiding.html"
+			"examples/myInformationGuiding.html",
+			"examples/myinformationgathering.html",
+			"examples/newinformationgathering.html"
 		]
 	},
 	"examples/informationGuiding.html": {
 		"resources": [
 			"css/mui.min.css",
-			"fonts/mui.ttf"
+			"fonts/mui.ttf",
+			"js/app.js",
+			"js/mui.min.js"
+		],
+		"refer": [
+			"examples/inforguide_search.html",
+			"examples/detail_inforguide.html"
 		]
 	},
 	"examples/businessInformation.html": {
@@ -280,6 +297,98 @@
 			"css/mui.min.css",
 			"css/mui.poppicker.css",
 			"css/mui.picker.css"
+		]
+	},
+	"examples/inforguide_search.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"examples/detail_inforguide.html",
+			"examples/search_detail_inforguide.html"
+		]
+	},
+	"examples/detail_inforguide.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"examples/myinformationgathering.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"examples/informationgathering_edit.html"
+		]
+	},
+	"examples/newinformationgathering.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"js/mui.poppicker.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css"
+		]
+	},
+	"examples/search_detail_inforguide.html": {
+		"resources": [
+			"css/app.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"examples/informationgathering_edit.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/mui.poppicker.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"examples/dongbei_list.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"examples/detail_inforguide.html",
+			"examples/detail_inforgather.html"
+		]
+	},
+	"examples/detail_inforgather.html": {
+		"resources": [
+			"css/app.css"
+		]
+	},
+	"examples/inforGathering_search.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		]
 	}
 }

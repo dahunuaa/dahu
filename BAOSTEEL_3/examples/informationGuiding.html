@@ -72,33 +72,33 @@
 						mui.each(data,function(key,value){
 						var li = document.createElement("li")
 						li.className="mui-table-view-cell"
-						li.setAttribute("id",value.guide_id);
+						li.setAttribute("guide_id",value.guide_id);
 						li.setAttribute("guide_editor",value.guide_editor)
 						li.setAttribute("guide_name",value.guide_name)
 						li.setAttribute("guide_title",value.guide_title)
 						li.setAttribute("guide_category",value.guide_category)
 						li.setAttribute("guide_text",value.guide_text)
-                        li.innerHTML ='<a class="mui-navigate-right"'+ "信息指南序号："+value.guide_id+"<br>"+value.guide_name +"<br>" +value.guide_category 
+                        li.innerHTML ='<a class="mui-navigate-right"'+"<br>"+value.guide_id+"<br>"+value.guide_name +"<br>" +value.guide_category 
                                           +"<br>"+value.guide_title+'</a>';
                                        
                         list.appendChild(li)
 						})
 						
 						mui("#list").on('tap','li',function(){
-								var id = this.getAttribute("id")
+								var guide_id = this.getAttribute("guide_id")
 								var guide_editor = this.getAttribute("guide_editor")
 								var guide_name = this.getAttribute("guide_name")
 								var guide_title = this.getAttribute("guide_title")
 								var guide_category = this.getAttribute("guide_category")
 								var guide_text = this.getAttribute("guide_text")
-								
+//								alert(guide_id)
 													
 								mui.openWindow({
 							    url:"detail_inforguide.html",
 							    id:"detail_inforguide",
 							    
 							    extras:{
-							    	id:id,
+							    	guide_id:guide_id,
 							    	guide_editor:guide_editor,
 							    	guide_name:guide_name,
 							    	guide_title:guide_title,
