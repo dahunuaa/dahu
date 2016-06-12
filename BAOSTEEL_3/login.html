@@ -185,6 +185,7 @@
 					$.enterfocus('#login-form input', function() {
 						$.trigger(loginButton, 'tap');
 					});
+//					自动登陆
 					autoLoginButton.classList[settings.autoLogin ? 'add' : 'remove']('mui-active')
 					autoLoginButton.addEventListener('toggle', function(event) {
 						setTimeout(function() {

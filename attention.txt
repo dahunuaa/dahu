@@ -1,9 +1,14 @@
-1、先解决信息指南的编辑和删除问题
+1、信息指南搜索模块显示详细信息，样式参考微信文章或者今日头条
 
-2、建数据库名为informationgatheringrecord,字段依次为：gather_id/gather_editor/gather_editor_name/gather_title/gather_category/gather_text/area
+2、放置图片的时候参考hellomui里面的imageviewer.html，不可将图片的尺寸写死，主要是写css
 
-3、将情报搜集的选择分类看需不需要，加上选择区域，看看还有什么其他的要求
+3、建数据库名为informationgatheringrecord,字段依次为：gather_id/gather_editor/gather_editor_name/gather_title/gather_category/gather_text/area
 
-5、放置图片的时候参考hellomui里面的imageviewer.html，不可将图片的尺寸写死，主要是写css
+4、将情报搜集的选择分类看需不需要，加上选择区域，看看还有什么其他的要求
 
-6、情报搜集搜索模块未显示详细信息
+5、情报搜集模块--》新建情报搜集
+
+6、我的情报搜集（list、alter、delete）
+
+7、主页情报搜集（搜索（list、detail）、每个模块（list、detail））
+

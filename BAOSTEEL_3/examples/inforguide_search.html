@@ -42,7 +42,7 @@
 			  	var inforguide_search = document.getElementById("inforguide_search")
 			  	var icon_search = document.getElementById("icon_search")
 			  
-		    icon_search.addEventListener("tap",function(event){
+		        icon_search.addEventListener("tap",function(event){
 			    if (inforguide_search.value==""){
 			    	alert("请输入搜索内容")
 			    }else{
@@ -65,12 +65,46 @@
 					mui.each(data,function(key,value){
 					var li = document.createElement("li")
 					li.className="mui-table-view-cell"
-                    li.innerHTML ='<a class="mui-navigate-right"'+ "信息指南序号："+value.guide_id+"<br>"+value.guide_name +"<br>" +value.guide_category 
-                                          +"<br>"+value.guide_title+'</a>';
-                                   
+					li.setAttribute("guide_id",value.guide_id);
+					li.setAttribute("guide_editor",value.guide_editor)
+					li.setAttribute("guide_name",value.guide_name)
+					li.setAttribute("guide_title",value.guide_title)
+					li.setAttribute("guide_category",value.guide_category)
+					li.setAttribute("guide_text",value.guide_text)
+                    li.innerHTML ='<a class="mui-navigate-right"'+ "<br>"+value.guide_id +"<br>" +value.guide_name+"&nbsp&nbsp"+value.guide_category 
+                                          +"<br>"+value.guide_title+'</a>';              
                     search_list.appendChild(li)
 					})
-															                                         			           		           
+					
+					mui("#search_list").on('tap','li',function(){
+					var guide_id = this.getAttribute("guide_id")
+					var guide_editor = this.getAttribute("guide_editor")
+					var guide_name = this.getAttribute("guide_name")
+					var guide_title = this.getAttribute("guide_title")
+					var guide_category = this.getAttribute("guide_category")
+					var guide_text = this.getAttribute("guide_text")
+//								alert(guide_id)
+										
+					mui.openWindow({
+				    url:"detail_inforguide.html",
+				    id:"detail_inforguide",
+				    
+				    extras:{
+				    	guide_id:guide_id,
+				    	guide_editor:guide_editor,
+				    	guide_name:guide_name,
+				    	guide_title:guide_title,
+				    	guide_category:guide_category,
+				    	guide_text:guide_text,
+				    }
+				     
+//						        styles:{
+//						        top:'0px',//mui标题栏默认高度为45px；
+//						        bottom:'0px'//默认为0px，可不定义；
+//						      }
+				            })
+		                  });											                                         			           		           
+		   		        										                                         			           		           
 	   		                         },
 			  
 			           });	

@@ -38,7 +38,7 @@
 		
 		
 		<script src="../js/mui.min.js"></script>
-		<script src="../js/app.js"></script>
+		<!--<script src="../js/app.js"></script>-->
 		<script>
 		(function($,doc){
 			$.init();
@@ -46,7 +46,7 @@
 				  
 					mui.ajax({
 						type: "post",//后面必须加逗号！！！！！！！！
-						url: "http://192.168.191.1:8080/baosteel/myInformationGuiding",
+						url: "http://192.168.191.1:8080/baosteel/MyInformationGuiding",
 						data:{
 							
 						},
@@ -58,23 +58,24 @@
 				            
 							mui.each(date,function(key,value){
 							var li = document.createElement("li")
+							
 							li.className="mui-table-view-cell"
-							li.setAttribute("id",value.guide_id);
+							li.setAttribute("guide_id",value.guide_id);
 							li.setAttribute("guide_editor",value.guide_editor)
 							li.setAttribute("guide_name",value.guide_name)
 							li.setAttribute("guide_title",value.guide_title)
 							li.setAttribute("guide_category",value.guide_category)
 							li.setAttribute("guide_text",value.guide_text)
 							
-//							alert(value.buss_id)
-                            li.innerHTML ='<a class="mui-navigate-right"'+ "出差序号："+value.guide_id+"<br>"+value.guide_name +"<br>" +value.guide_category 
+//							alert(value.guide_id)
+                            li.innerHTML ='<a class="mui-navigate-right"'+ "<br>"+value.guide_id +"<br>" +value.guide_name+"&nbsp&nbsp"+value.guide_category 
                                           +"<br>"+value.guide_title+'</a>';
                                                         
                             project.appendChild(li)
 							})
 							
 							mui("#project").on('tap','li',function(){
-								var id = this.getAttribute("id")
+								var guide_id = this.getAttribute("guide_id")
 								var guide_editor = this.getAttribute("guide_editor")
 								var guide_name = this.getAttribute("guide_name")
 								var guide_title = this.getAttribute("guide_title")
@@ -87,7 +88,7 @@
 							    id:"informationguiding_edit",
 							    
 							    extras:{
-							    	id:id,
+							    	guide_id:guide_id,
 							    	guide_editor:guide_editor,
 							    	guide_name:guide_name,
 							    	guide_title:guide_title,
