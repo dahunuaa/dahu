@@ -11,14 +11,14 @@ import java.util.Map;
 
 import com.bs.system.DBUtils;
 
-public class myInformationGuidingDao {
+public class MyInformationGuidingDao {
 	private String guide_editor;
 	
-	 public myInformationGuidingDao(String guide_editor){
+	 public MyInformationGuidingDao(String guide_editor){
 		this.guide_editor = guide_editor;
 		
 	}
-	 public List myInformationGuiding(){
+	 public List MyInformationGuiding(){
          Connection conn =null;
          PreparedStatement pstmt =null;
          List infos = null;

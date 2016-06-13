@@ -23,7 +23,7 @@ public class Inforguide_edit extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
-		String guide_id = req.getParameter("id");
+		String guide_id = req.getParameter("guide_id");
 		String guide_editor = req.getParameter("guide_editor");
 		String guide_editor_name = req.getParameter("guide_editor_name");
 		String guide_title = req.getParameter("guide_title");

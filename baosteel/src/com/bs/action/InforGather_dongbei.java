@@ -15,10 +15,10 @@ import javax.servlet.http.HttpSession;
 
 import net.sf.json.JSONArray;
 
-import com.bs.dao.MyInformationGuidingDao;
-import com.bs.dao.UserDao;
+import com.bs.dao.*;
 import com.bs.system.Constant;
-public class MyInformationGuiding extends HttpServlet {
+
+public class InforGather_dongbei extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
@@ -30,14 +30,12 @@ public class MyInformationGuiding extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		    HttpSession session = req.getSession();
-		//System.out.println(session.getAttribute(Constant.IS_LOGIN));
-			req.setCharacterEncoding("utf-8");// 先将请求的名字用utf-8进行编码
-			resp.setCharacterEncoding("utf-8");//设置发送到前端的数据格式是utf-8格式
-			String id = (String) session.getAttribute("id");
-//			System.out.println(id);
-			MyInformationGuidingDao Dao = new MyInformationGuidingDao(id);
-		    List<Map<String,Object>> infos = Dao.MyInformationGuiding();
-
+			req.setCharacterEncoding("utf-8");
+			resp.setCharacterEncoding("utf-8");
+			String area = req.getParameter("area");
+			InforGather_dongbeiDao Dao = new InforGather_dongbeiDao(area);
+		    List<Map<String,Object>> infos = Dao.InforGather_dongbeiRecord();
+      
 		    JSONArray infoslist = JSONArray.fromObject(infos);
             
 		    
@@ -45,7 +43,7 @@ public class MyInformationGuiding extends HttpServlet {
 			PrintWriter pw = null;
 			try {
 				pw = resp.getWriter(); 
-				 pw.print(infoslist);//不能写成println
+				 pw.print(infoslist);//锟斤拷锟斤拷写锟斤拷println
 				 pw.flush();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

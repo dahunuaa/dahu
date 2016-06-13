@@ -92,12 +92,12 @@
   </servlet-mapping>
   
   <servlet>
-  <servlet-name>myInformationGuiding</servlet-name>
-  <servlet-class>com.bs.action.myInformationGuiding</servlet-class>
+  <servlet-name>MyInformationGuiding</servlet-name>
+  <servlet-class>com.bs.action.MyInformationGuiding</servlet-class>
   </servlet>
   <servlet-mapping>
-  <servlet-name>myInformationGuiding</servlet-name>
-  <url-pattern>/myInformationGuiding</url-pattern>
+  <servlet-name>MyInformationGuiding</servlet-name>
+  <url-pattern>/MyInformationGuiding</url-pattern>
   </servlet-mapping>
   
   <servlet>
@@ -137,15 +137,15 @@
   </servlet-mapping>
   
   <servlet>
-  <servlet-name>Newinformationgathering</servlet-name>
-  <servlet-class>com.bs.action.Newinformationgathering</servlet-class>
+  <servlet-name>NewInformationgathering</servlet-name>
+  <servlet-class>com.bs.action.NewInformationgathering</servlet-class>
   </servlet>
   <servlet-mapping>
-  <servlet-name>Newinformationgathering</servlet-name>
-  <url-pattern>/Newinformationgathering</url-pattern>
+  <servlet-name>NewInformationgathering</servlet-name>
+  <url-pattern>/NewInformationgathering</url-pattern>
   </servlet-mapping>
 
-   <servlet>
+  <servlet>
   <servlet-name>MyInformationgathering</servlet-name>
   <servlet-class>com.bs.action.MyInformationgathering</servlet-class>
   </servlet>
@@ -180,4 +180,14 @@
   <servlet-name>InforGathering_search</servlet-name>
   <url-pattern>/InforGathering_search</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>InforGather_dongbei</servlet-name>
+  <servlet-class>com.bs.action.InforGather_dongbei</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>InforGather_dongbei</servlet-name>
+  <url-pattern>/InforGather_dongbei</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
