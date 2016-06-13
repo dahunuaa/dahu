@@ -52,7 +52,7 @@
 		        </ul> 
 		</div>
 	-->
-	<!--<img src="../img/bs_5.png" />-->
+	<img src="../img/bs_5.png" style="width: 359px;height: 75px;"/>
 		<div class="mui-content" style=" margin-top: -23px;">
 		        <ul class="mui-table-view mui-grid-view mui-grid-9">
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
@@ -96,66 +96,101 @@
 				//情报搜集搜索
 				var inforgather_search=document.getElementById("inforgather_search")
 				inforgather_search.addEventListener("tap",function(event){
+//					var guide_id = this.getAttribute("guide_id")
 					mui.openWindow({
 						url:"inforGathering_search.html",
 						id:"inforGathering_search",
+						
 					})
+					
 				})
 				//情报搜集东北 西南等情报列表
 				var dongbei_list=document.getElementById("dongbei")
 				dongbei_list.addEventListener("tap",function(event){
 					mui.openWindow({
-						url:"dongbei_list.html",
-						id:"dongbei_list",
+						url:"area_list.html",
+						id:"area_list",
+						
+					extras:{
+							  area:"东北"
+							    }
 					})
 				})
 				var xinan_list=document.getElementById("xinan")
 				xinan_list.addEventListener("tap",function(event){
 					mui.openWindow({
-						url:"xinan_list.html",
-						id:"xinan_list",
+						url:"area_list.html",
+						id:"area_list",
+						
+					extras:{
+							  area:"西南"
+							    }
 					})
 				})
 				var zhonghaiyou_list=document.getElementById("zhonghaiyou")
 				zhonghaiyou_list.addEventListener("tap",function(event){
 					mui.openWindow({
-						url:"zhonghaiyou_list.html",
-						id:"zhonghaiyou_list",
+						url:"area_list.html",
+						id:"area_list",
+						
+					extras:{
+							  area:"中海油"
+							    }
 					})
 				})
 				var huabei_list=document.getElementById("huabei")
 				huabei_list.addEventListener("tap",function(event){
 					mui.openWindow({
-						url:"huabei_list.html",
-						id:"huabei_list",
+						url:"area_list.html",
+						id:"area_list",
+						
+					extras:{
+							  area:"华北"
+							    }
 					})
 				})
 				var huazhong_list=document.getElementById("huazhong")
 				huazhong_list.addEventListener("tap",function(event){
 					mui.openWindow({
-						url:"huazhong_list.html",
-						id:"huazhong_list",
+						url:"area_list.html",
+						id:"area_list",
+						
+					extras:{
+							  area:"华中"
+							    }
 					})
 				})
 				var huadong_list=document.getElementById("huadong")
 				huadong_list.addEventListener("tap",function(event){
 					mui.openWindow({
-						url:"huadong_list.html",
-						id:"huadong_list",
+						url:"area_list.html",
+						id:"area_list",
+						
+					extras:{
+							  area:"华东"
+							    }
 					})
 				})
 				var xinjiang_list=document.getElementById("xinjiang")
 				xinjiang_list.addEventListener("tap",function(event){
 					mui.openWindow({
-						url:"xinjiang_list.html",
-						id:"xinjiang_list",
+						url:"area_list.html",
+						id:"area_list",
+						
+					extras:{
+							  area:"新疆"
+							    }
 					})
 				})
 				var xibei_list=document.getElementById("xibei")
 				xibei_list.addEventListener("tap",function(event){
 					mui.openWindow({
-						url:"xibei_list.html",
-						id:"xibei_list",
+						url:"area_list.html",
+						id:"area_list",
+						
+					extras:{
+							  area:"西北"
+							    }
 					})
 				})
 				

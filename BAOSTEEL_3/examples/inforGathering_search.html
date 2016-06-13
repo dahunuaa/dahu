@@ -65,11 +65,50 @@
 					mui.each(data,function(key,value){
 					var li = document.createElement("li")
 					li.className="mui-table-view-cell"
+					li.className="mui-table-view-cell"
+					li.setAttribute("gather_id",value.gather_id);
+					li.setAttribute("gather_editor",value.gather_editor);
+					li.setAttribute("gather_editor_name",value.gather_editor_name);
+					li.setAttribute("gather_title",value.gather_title);
+					li.setAttribute("gather_area",value.area);
+					li.setAttribute("gather_address",value.address);
+					li.setAttribute("gathering_text",value.gathering_text);
+					
                     li.innerHTML ='<a class="mui-navigate-right"'+value.gather_id+"<br>"+value.gather_editor_name +"<br>" +value.address
                                           +"<br>"+value.gather_title+'</a>';
                                    
                     search_list.appendChild(li)
 					})
+					
+					mui("#search_list").on('tap','li',function(){
+					var gather_id = this.getAttribute("gather_id")
+					var gather_editor = this.getAttribute("gather_editor")
+					var gather_editor_name = this.getAttribute("gather_editor_name")
+					var gather_title = this.getAttribute("gather_title")
+					var gather_area = this.getAttribute("gather_area")
+					var gather_address = this.getAttribute("gather_address")
+					var gather_text = this.getAttribute("gathering_text")
+										
+					mui.openWindow({
+				    url:"detail_inforgather.html",
+				    id:"detail_inforgather",
+				    
+				    extras:{
+				    	gather_id:gather_id,
+				    	gather_editor:gather_editor,
+				    	gather_editor_name:gather_editor_name,
+				    	gather_title:gather_title,
+				    	gather_area:gather_area,
+				    	gather_address:gather_address,
+				    	gather_text:gather_text,
+				    }
+				     
+//						        styles:{
+//						        top:'0px',//mui标题栏默认高度为45px；
+//						        bottom:'0px'//默认为0px，可不定义；
+//						      }
+				})
+              });
 															                                         			           		           
 	   		                         },
 			  

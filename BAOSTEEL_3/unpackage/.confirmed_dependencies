@@ -197,7 +197,9 @@
 			"examples/dongbei_list.html",
 			"examples/xinan_list.html",
 			"examples/newinformationgathering.html",
-			"examples/inforGathering_search.html"
+			"examples/inforGathering_search.html",
+			"examples/xibei_list.html",
+			"examples/area_list.html"
 		]
 	},
 	"examples/selfInformation.html": {
@@ -380,7 +382,11 @@
 	},
 	"examples/detail_inforgather.html": {
 		"resources": [
-			"css/app.css"
+			"css/app.css",
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		]
 	},
 	"examples/inforGathering_search.html": {
@@ -389,6 +395,22 @@
 			"js/mui.min.js",
 			"fonts/mui.ttf",
 			"css/mui.min.css"
+		],
+		"refer": [
+			"examples/informationgathering_edit.html",
+			"examples/detail_inforguide.html",
+			"examples/detail_inforgather.html"
+		]
+	},
+	"examples/area_list.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"examples/detail_inforgather.html"
 		]
 	}
 }
