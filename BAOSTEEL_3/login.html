@@ -186,14 +186,14 @@
 						$.trigger(loginButton, 'tap');
 					});
 //					自动登陆
-					autoLoginButton.classList[settings.autoLogin ? 'add' : 'remove']('mui-active')
-					autoLoginButton.addEventListener('toggle', function(event) {
-						setTimeout(function() {
-							var isActive = event.detail.isActive;
-							settings.autoLogin = isActive;
-							app.setSettings(settings);
-						}, 50);
-					}, false);
+//					autoLoginButton.classList[settings.autoLogin ? 'add' : 'remove']('mui-active')
+//					autoLoginButton.addEventListener('toggle', function(event) {
+//						setTimeout(function() {
+//							var isActive = event.detail.isActive;
+//							settings.autoLogin = isActive;
+//							app.setSettings(settings);
+//						}, 50);
+//					}, false);
 					
 					forgetButton.addEventListener('tap', function(event) {
 						$.openWindow({
