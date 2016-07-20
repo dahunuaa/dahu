@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>mynotice</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="../css/app.css"/>
+		<style>
+			body {
+				background-color:#efeff4;
+			}
+		    div{
+		    	background-color: #EEEEEE;
+		    }
+		   
+		   
+		</style>
+
+	</head>
+	 
+	
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			 
+			 <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			 <!--<a class="mui-icon mui-icon-reload mui-pull-right" id="refresh"><div style="margin:-18px 10px 10px 30px; font: '楷体';font-size: 18px;">刷新</div></a>-->
+			<h1 class="mui-title">我的公告记录</h1>
+			
+		</header>
+		
+		<div class="mui-content" >
+        <ul class="mui-table-view" style="margin-top:0px;"id="project">
+  				
+		</ul>		
+		</div>
+		
+		
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/app.js"></script>
+		<script>
+		(function($,doc){
+			$.init();
+			$.ready(function(){
+				  
+					mui.ajax({
+						type: "post",//后面必须加逗号！！！！！！！！
+						url: "http://192.168.191.1:8080/baosteel/Mynotice",
+						data:{
+							
+						},
+						async:true,
+						dataType:"json",
+						success:function(date){
+//							alert(date)
+							var project = document.getElementById("project")				
+				            
+							mui.each(date,function(key,value){
+							var li = document.createElement("li")
+							li.className="mui-table-view-cell";
+							li.setAttribute("notice_id",value.notice_id);
+							li.setAttribute("publisher",value.publisher);
+							li.setAttribute("notice",value.notice);
+							li.setAttribute("notice_title",value.notice_title);
+							
+							
+//							alert(value.buss_id)
+                            li.innerHTML ='<a class="mui-navigate-right"'+"<br>"+ "公告序号："+value.notice_id+"<br>"+"发布者："+value.publisher +"<br>"+"标题："+value.notice_title +'</a>';
+                                                        
+                            project.appendChild(li)
+							})
+							
+							mui("#project").on('tap','li',function(){
+								var notice_id = this.getAttribute("notice_id")
+								var publisher = this.getAttribute("publisher")
+								var notice = this.getAttribute("notice")
+								var notice_title = this.getAttribute("notice_title")
+								
+								mui.openWindow({
+							    url:"notice_edit.html",
+							    id:"notice_edit",
+							
+							    
+							    extras:{
+							    	notice_id:notice_id,
+							    	publisher:publisher,
+							    	notice:notice,
+							    	notice_title:notice_title,
+							    	
+							    }
+							    
+							})
+		                  });										                                         			         			           
+			   		},
+				  
+				  });
+				});
+		}(mui,document))
+		</script>
+	</body>
+</html>
