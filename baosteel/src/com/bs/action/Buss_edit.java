@@ -7,9 +7,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.bs.dao.Buss_editDao;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 public class Buss_edit extends HttpServlet{
 
 	@Override
@@ -23,8 +26,6 @@ public class Buss_edit extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
-		String editor = req.getParameter("buss_editor");
-		String editor_name = req.getParameter("buss_editor_name");
 		String bussmen = req.getParameter("bussmen_name");
 		String accounts = req.getParameter("buss_accounts");
 		String place = req.getParameter("buss_place");
@@ -32,8 +33,11 @@ public class Buss_edit extends HttpServlet{
 		String begintime = req.getParameter("buss_begintime");
 		String endtime = req.getParameter("buss_endtime");
 		String buss_id = req.getParameter("buss_id");
+		SimpleDateFormat sm=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String time = sm.format(new Date());
+		
         
-		Buss_editDao dao = new Buss_editDao(buss_id,editor,editor_name,bussmen,accounts,place,reason,begintime,endtime);
+		Buss_editDao dao = new Buss_editDao(buss_id,bussmen,accounts,place,reason,begintime,endtime,time);
 		dao.buss_edit();
 		 String str = "ok";
 		 PrintWriter pw = null;

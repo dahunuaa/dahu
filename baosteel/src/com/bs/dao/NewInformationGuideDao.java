@@ -13,14 +13,16 @@ public class NewInformationGuideDao {
 	private String guide_title;
 	private String guide_category;
 	private String guide_text;
+	private String time;
 	
 
-	 public NewInformationGuideDao(String guide_editor,String guide_editor_name,String guide_title,String guide_category,String guide_text){
+	 public NewInformationGuideDao(String guide_editor,String guide_editor_name,String guide_title,String guide_category,String guide_text,String time){
 		this.guide_editor = guide_editor;
 		this.guide_editor_name = guide_editor_name;
 		this.guide_title = guide_title;
 		this.guide_category = guide_category;
 		this.guide_text = guide_text;
+		this.time = time;
 	}
 	 
 	 public void NewInformationGuide(){
@@ -28,8 +30,8 @@ public class NewInformationGuideDao {
 		 Connection conn = DBUtils.getConnection();
 		 if(conn == null)return;
 		 StringBuffer sb = new StringBuffer();
-         sb.append("INSERT INTO `baosteel_db`.`informationguiderecord`(`guide_editor`, `guide_name`,`guide_title`,`guide_category`,`guide_text`)");
-         sb.append(" VALUES (?,?,?,?,?)");
+         sb.append("INSERT INTO `baosteel_db`.`informationguiderecord`(`guide_editor`, `guide_name`,`guide_title`,`guide_category`,`guide_text`,`time`)");
+         sb.append(" VALUES (?,?,?,?,?,?)");
 	     PreparedStatement pstmt = null;
 	     try {
 			pstmt = conn.prepareStatement(sb.toString());
@@ -38,6 +40,7 @@ public class NewInformationGuideDao {
 			pstmt.setObject(3,guide_title);
 			pstmt.setObject(4,guide_category);
 			pstmt.setObject(5,guide_text);
+			pstmt.setObject(6,time);
 			i = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

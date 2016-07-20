@@ -27,7 +27,7 @@ public class InforGather_dongbeiDao {
 			 conn=DBUtils.getConnection();
 			 if(conn==null) return null;
 			 StringBuffer sb = new StringBuffer();
-			 sb.append("SELECT informationgatheringrecord.`gather_id`, informationgatheringrecord.`gather_editor`,`gather_editor_name`,`gather_title`,`area`,`address`,`gathering_text`");
+			 sb.append("SELECT informationgatheringrecord.`gather_id`, informationgatheringrecord.`gather_editor`,`gather_editor_name`,`gather_title`,`area`,`address`,`gathering_text`,`gather_oil_field`,`time`");
 			 sb.append(" FROM informationgatheringrecord");
 			 sb.append(" WHERE informationgatheringrecord.area=?");
 			 sb.append(" ORDER BY gather_id DESC");
@@ -36,7 +36,7 @@ public class InforGather_dongbeiDao {
 			 ResultSet rs = pstmt.executeQuery();
 	       
 			 infos = new ArrayList<Map<String,Object>>();
-			 ResultSetMetaData rsmd = rs.getMetaData();//锟矫碉拷锟斤拷慕峁癸拷锟较拷锟斤拷锟斤拷锟斤拷侄锟斤拷锟斤拷侄锟斤拷锟�
+			 ResultSetMetaData rsmd = rs.getMetaData();
 			 while(rs.next()){//锟斤拷锟斤拷锟斤拷锟斤拷
 				 Map<String,Object> item = new HashMap<String, Object>();
 				 int nCount = rsmd.getColumnCount();//锟矫碉拷锟叫碉拷锟斤拷锟斤拷  getrowcount锟角伙拷取锟叫碉拷锟斤拷锟斤拷

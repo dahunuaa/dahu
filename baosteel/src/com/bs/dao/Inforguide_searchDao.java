@@ -27,29 +27,24 @@ public class Inforguide_searchDao {
 			 conn=DBUtils.getConnection();
 			 if(conn==null) return null;
 			 StringBuffer sb = new StringBuffer();
-			 sb.append("SELECT informationguiderecord.`guide_id`, informationguiderecord.`guide_editor`,`guide_name`,`guide_title`,`guide_category`,`guide_text`");
+			 sb.append("SELECT informationguiderecord.`guide_id`, informationguiderecord.`guide_editor`,`guide_name`,`guide_title`,`guide_category`,`guide_text`,`time`");
 			 sb.append(" FROM informationguiderecord");
-			 sb.append(" WHERE CONCAT(guide_id,guide_editor,guide_name,guide_title,guide_category,guide_text) LIKE ?");
-//			 sb.append(" WHERE bussinessrecords.`editor`=?");
+			 sb.append(" WHERE CONCAT(guide_id,guide_editor,guide_name,guide_title,guide_category,guide_text,time) LIKE ?");
 			 pstmt = conn.prepareStatement(sb.toString());
 			 pstmt.setObject(1, "%"+this.inforguide_search+"%");
-//			 System.out.println(this.inforguide_search);
 			 ResultSet rs = pstmt.executeQuery();
-	         //int sc =Integer.parseInt(rs.getString(7));
 			 infos = new ArrayList<Map<String,Object>>();
-			 ResultSetMetaData rsmd = rs.getMetaData();//�õ���Ľṹ��Ϣ�������ֶ����ֶ���
-			 while(rs.next()){//��������
+			 ResultSetMetaData rsmd = rs.getMetaData();	 
+			  while(rs.next()){
 				 Map<String,Object> item = new HashMap<String, Object>();
-				 int nCount = rsmd.getColumnCount();//�õ��е�����  getrowcount�ǻ�ȡ�е�����
+				 int nCount = rsmd.getColumnCount();
 				 for(int i = 0; i <nCount;++i){
-					 item.put(rsmd.getColumnLabel(i+1), rs.getString(i+1));//����ȡ����Ϣ���뵽map��
+					 item.put(rsmd.getColumnLabel(i+1), rs.getString(i+1));
 				 }
-				 		 
-				 infos.add(item);
-//				System.out.println(infos);
-			 }
-	         
-		} catch (Exception e) {
+			 		 
+				 infos.add(item);	         
+		        } 
+         }catch (Exception e) {
 			e.printStackTrace();
 		}finally{
 			DBUtils.close(conn);

@@ -16,8 +16,9 @@ public class CreatNewTaskDao {
 	private String buss_reason;
 	private String buss_begintime;
 	private String buss_endtime;
+	private String time;
 
-	 public CreatNewTaskDao(String buss_editor,String buss_editor_name,String bussmen_name,String buss_accounts,String buss_place,String buss_reason,String buss_begintime,String buss_endtime){
+	 public CreatNewTaskDao(String buss_editor,String buss_editor_name,String bussmen_name,String buss_accounts,String buss_place,String buss_reason,String buss_begintime,String buss_endtime,String time){
 		this.buss_editor = buss_editor;
 		this.buss_editor_name = buss_editor_name;
 		this.bussmen_name = bussmen_name;
@@ -26,6 +27,7 @@ public class CreatNewTaskDao {
 		this.buss_reason = buss_reason;
 		this.buss_begintime = buss_begintime;
 		this.buss_endtime = buss_endtime;
+		this.time = time;
 	}
 	 
 	 public void creatNewTask(){
@@ -33,8 +35,8 @@ public class CreatNewTaskDao {
 		 Connection conn = DBUtils.getConnection();
 		 if(conn == null)return;
 		 StringBuffer sb = new StringBuffer();
-         sb.append("INSERT INTO `baosteel_db`.`bussinessrecords`(`editor`, `editor_name`,`bussmen_name`,`accounts`,`buss_place`,`buss_reason`,`buss_begintime`,`buss_endtime`)");
-         sb.append(" VALUES (?,?,?,?,?,?,?,?)");
+         sb.append("INSERT INTO `baosteel_db`.`bussinessrecords`(`editor`, `editor_name`,`bussmen_name`,`accounts`,`buss_place`,`buss_reason`,`buss_begintime`,`buss_endtime`,`time`)");
+         sb.append(" VALUES (?,?,?,?,?,?,?,?,?)");
 	     PreparedStatement pstmt = null;
 	     try {
 			pstmt = conn.prepareStatement(sb.toString());
@@ -46,6 +48,7 @@ public class CreatNewTaskDao {
 			pstmt.setObject(6,buss_reason);
 			pstmt.setObject(7,buss_begintime);
 			pstmt.setObject(8,buss_endtime);
+			pstmt.setObject(9,time);
 			i = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

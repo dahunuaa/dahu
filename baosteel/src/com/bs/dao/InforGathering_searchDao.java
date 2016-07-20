@@ -27,7 +27,7 @@ public class InforGathering_searchDao {
 			 conn=DBUtils.getConnection();
 			 if(conn==null) return null;
 			 StringBuffer sb = new StringBuffer();
-			 sb.append("SELECT informationgatheringrecord.`gather_id`, informationgatheringrecord.`gather_editor`,`gather_editor_name`,`gather_title`,`area`,`address`,`gathering_text`");
+			 sb.append("SELECT informationgatheringrecord.`gather_id`, informationgatheringrecord.`gather_editor`,`gather_editor_name`,`gather_title`,`area`,`address`,`gathering_text`,`gather_oil_field`,`time`");
 			 sb.append(" FROM informationgatheringrecord");
 			 sb.append(" WHERE CONCAT(gather_id,gather_editor,gather_editor_name,gather_title,area,address,gathering_text) LIKE ?");
 
@@ -37,12 +37,12 @@ public class InforGathering_searchDao {
 			 ResultSet rs = pstmt.executeQuery();
 
 			 infos = new ArrayList<Map<String,Object>>();
-			 ResultSetMetaData rsmd = rs.getMetaData();//锟矫碉拷锟斤拷慕峁癸拷锟较拷锟斤拷锟斤拷锟斤拷侄锟斤拷锟斤拷侄锟斤拷锟�
-			 while(rs.next()){//锟斤拷锟斤拷锟斤拷锟斤拷
+			 ResultSetMetaData rsmd = rs.getMetaData();
+			 while(rs.next()){
 				 Map<String,Object> item = new HashMap<String, Object>();
-				 int nCount = rsmd.getColumnCount();//锟矫碉拷锟叫碉拷锟斤拷锟斤拷  getrowcount锟角伙拷取锟叫碉拷锟斤拷锟斤拷
+				 int nCount = rsmd.getColumnCount();
 				 for(int i = 0; i <nCount;++i){
-					 item.put(rsmd.getColumnLabel(i+1), rs.getString(i+1));//锟斤拷锟斤拷取锟斤拷锟斤拷息锟斤拷锟诫到map锟斤拷
+					 item.put(rsmd.getColumnLabel(i+1), rs.getString(i+1));
 				 }
 				 		 
 				 infos.add(item);

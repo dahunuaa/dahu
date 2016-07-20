@@ -7,8 +7,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.bs.dao.NewInformationgatheringDao;
+import com.bs.dao.UserNameDao;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class NewInformationgathering extends HttpServlet{
 
@@ -23,15 +28,20 @@ public class NewInformationgathering extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
-		String gather_editor = req.getParameter("gather_editor");
-		System.out.println("111");
-		String gather_editor_name = req.getParameter("gather_editor_name");
+		HttpSession session = req.getSession();
+		String gather_editor =(String) session.getAttribute("id");
 		String gather_title = req.getParameter("gather_title");
 		String gather_address = req.getParameter("gather_address");
 		String gather_area = req.getParameter("gather_area");
 		String gather_text = req.getParameter("gather_text");
+		String gather_oil_field = req.getParameter("gather_oil_field");
+		UserNameDao namedao = new UserNameDao(gather_editor);
+		String gather_editor_name = namedao.getName();
 //		System.out.println(gather_text);
-		NewInformationgatheringDao dao = new NewInformationgatheringDao(gather_editor,gather_editor_name,gather_title,gather_address,gather_area,gather_text);
+		SimpleDateFormat sm=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String time = sm.format(new Date());
+		
+		NewInformationgatheringDao dao = new NewInformationgatheringDao(gather_editor,gather_editor_name,gather_title,gather_address,gather_area,gather_text,gather_oil_field,time);
 		dao.Newinformationgathering();
 
 		 String str = "ok";

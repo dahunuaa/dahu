@@ -18,6 +18,7 @@ import net.sf.json.JSONArray;
 import com.bs.dao.MyInformationGuidingDao;
 import com.bs.dao.UserDao;
 import com.bs.system.Constant;
+
 public class MyInformationGuiding extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)

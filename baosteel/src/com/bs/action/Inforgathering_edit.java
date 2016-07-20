@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.bs.dao.Inforgathering_editDao;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Inforgathering_edit extends HttpServlet{
 
 	@Override
@@ -24,15 +27,16 @@ public class Inforgathering_edit extends HttpServlet{
 			throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
 		String gather_id = req.getParameter("gather_id");
-		String gather_editor = req.getParameter("gather_editor");
-		String gather_editor_name = req.getParameter("gather_editor_name");
 		String gather_title = req.getParameter("gather_title");
 		String gather_address = req.getParameter("gather_address");
 		String gather_area = req.getParameter("gather_area");
 		String gather_text = req.getParameter("gather_text");
+		String gather_oil_field = req.getParameter("gather_oil_field");
+		SimpleDateFormat sm=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String time = sm.format(new Date());
 //		System.out.println(gather_text);
         
-		Inforgathering_editDao dao = new Inforgathering_editDao(gather_id,gather_editor,gather_editor_name,gather_title,gather_address,gather_area,gather_text);
+		Inforgathering_editDao dao = new Inforgathering_editDao(gather_id,gather_title,gather_address,gather_area,gather_text,gather_oil_field,time);
 		dao.Inforgathering_edit();
 
 		 String str = "ok";

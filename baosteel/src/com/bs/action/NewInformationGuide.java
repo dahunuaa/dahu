@@ -7,9 +7,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import com.bs.system.DateDemo;
 import com.bs.dao.NewInformationGuideDao;
+import com.bs.dao.UserNameDao;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 public class NewInformationGuide extends HttpServlet{
 
 	private static final DateDemo New = null;
@@ -25,17 +30,19 @@ public class NewInformationGuide extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
-		String editor = req.getParameter("guide_editor");
-		String editor_name = req.getParameter("guide_editor_name");
+		HttpSession session = req.getSession();
+		String editor =(String) session.getAttribute("id");
 		String title = req.getParameter("guide_title");
 		String category = req.getParameter("guide_category");
 		String text = req.getParameter("guide_text");
+		UserNameDao namedao = new UserNameDao(editor);
+		String editor_name = namedao.getName();
+		SimpleDateFormat sm=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String time = sm.format(new Date());
 		
-		NewInformationGuideDao dao = new NewInformationGuideDao(editor,editor_name,title,category,text);
+		NewInformationGuideDao dao = new NewInformationGuideDao(editor,editor_name,title,category,text,time);
 		dao.NewInformationGuide();
 		
-		DateDemo time = new DateDemo();
-		System.out.println(time);
 		 String str = "ok";
 		 PrintWriter pw = null;
 		

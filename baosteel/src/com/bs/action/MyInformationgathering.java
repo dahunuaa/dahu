@@ -30,11 +30,10 @@ public class MyInformationgathering extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		    HttpSession session = req.getSession();
-		//System.out.println(session.getAttribute(Constant.IS_LOGIN));
-			req.setCharacterEncoding("utf-8");// �Ƚ������������utf-8���б���
-			resp.setCharacterEncoding("utf-8");//���÷��͵�ǰ�˵���ݸ�ʽ��utf-8��ʽ
+			req.setCharacterEncoding("utf-8");
+			resp.setCharacterEncoding("utf-8");
 			String id = (String) session.getAttribute("id");
-//			System.out.println(id);
+
 			MyInformationgatheringDao Dao = new MyInformationgatheringDao(id);
 		    List<Map<String,Object>> infos = Dao.MyInformationgathering();
 

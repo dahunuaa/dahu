@@ -27,7 +27,7 @@ public class MyInformationGuidingDao {
 			 conn=DBUtils.getConnection();
 			 if(conn==null) return null;
 			 StringBuffer sb = new StringBuffer();
-			 sb.append("SELECT informationguiderecord.`guide_id`, informationguiderecord.`guide_editor`,`guide_name`,`guide_title`,`guide_category`,`guide_text`");
+			 sb.append("SELECT informationguiderecord.`guide_id`, informationguiderecord.`guide_editor`,`guide_name`,`guide_title`,`guide_category`,`guide_text`,`time`");
 			 sb.append(" FROM informationguiderecord");
 			 sb.append(" WHERE informationguiderecord.`guide_editor`=?");
 			 sb.append(" ORDER BY guide_id DESC");

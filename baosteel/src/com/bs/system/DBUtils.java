@@ -20,6 +20,7 @@ public class DBUtils {
 	
 	public static void main(String[] args){
 		try {
+//			System.out.println(DriverManager.getConnection(url,"root","Rfvmg3EaSCZ2").toString());
 			System.out.println(DriverManager.getConnection(url,"root","19920920").toString());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -30,6 +31,7 @@ public class DBUtils {
 	//第二步  连接数据库
 	public static Connection getConnection(){	
 		try {
+//			return DriverManager.getConnection(url,"root","Rfvmg3EaSCZ2");
 			return DriverManager.getConnection(url,"root","19920920");
 		} catch (SQLException e) {
 			e.printStackTrace();

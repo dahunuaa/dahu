@@ -32,8 +32,8 @@ public class InforGathering_search extends HttpServlet {
 			throws ServletException, IOException {
 		    HttpSession session = req.getSession();
 		//System.out.println(session.getAttribute(Constant.IS_LOGIN));
-			req.setCharacterEncoding("utf-8");// �Ƚ������������utf-8���б���
-			resp.setCharacterEncoding("utf-8");//���÷��͵�ǰ�˵���ݸ�ʽ��utf-8��ʽ
+			req.setCharacterEncoding("utf-8");
+			resp.setCharacterEncoding("utf-8");
 			String inforgathering_search = req.getParameter("inforgathering_search");
 			
 //			System.out.println(inforgathering_search);
@@ -45,7 +45,7 @@ public class InforGathering_search extends HttpServlet {
 			PrintWriter pw = null;
 			try {
 				pw = resp.getWriter(); 
-				 pw.print(busslist);//����д��println
+				 pw.print(busslist);
 				 pw.flush();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

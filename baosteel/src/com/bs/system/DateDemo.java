@@ -3,6 +3,9 @@ package com.bs.system;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
+
+
 public class DateDemo {
 //   public String time;
    public static void main(String[] args) {	

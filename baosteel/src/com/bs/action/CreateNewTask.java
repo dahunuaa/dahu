@@ -7,8 +7,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.bs.dao.CreatNewTaskDao;
+import com.bs.dao.UserNameDao;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class CreateNewTask extends HttpServlet{
 
@@ -23,21 +28,24 @@ public class CreateNewTask extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
-		String editor = req.getParameter("buss_editor");
-		String editor_name = req.getParameter("buss_editor_name");
+		HttpSession session = req.getSession();
+		String editor =(String) session.getAttribute("id");
 		String bussmen = req.getParameter("bussmen_name");
 		String accounts = req.getParameter("buss_accounts");
 		String place = req.getParameter("buss_place");
 		String reason = req.getParameter("buss_reason");
 		String begintime = req.getParameter("buss_begintime");
 		String endtime = req.getParameter("buss_endtime");
+		UserNameDao namedao = new UserNameDao(editor);
+		String editor_name = namedao.getName();
+
+		SimpleDateFormat sm=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String time = sm.format(new Date());
+
         
-		CreatNewTaskDao dao = new CreatNewTaskDao(editor,editor_name,bussmen,accounts,place,reason,begintime,endtime);
+		CreatNewTaskDao dao = new CreatNewTaskDao(editor,editor_name,bussmen,accounts,place,reason,begintime,endtime,time);
 		dao.creatNewTask();
-//		System.out.println(editor);
-//		System.out.println(accounts);
-//		System.out.println(reason);
-//		System.out.println(endtime);
+
 		 String str = "ok";
 		 PrintWriter pw = null;
 		

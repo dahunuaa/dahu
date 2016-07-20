@@ -27,9 +27,9 @@ public class Buss_searchDao {
 			 conn=DBUtils.getConnection();
 			 if(conn==null) return null;
 			 StringBuffer sb = new StringBuffer();
-			 sb.append("SELECT bussinessrecords.`buss_id`,bussinessrecords.`editor`,`editor_name`,`bussmen_name`,`accounts`,`buss_place`,`buss_reason`,`buss_begintime`,`buss_endtime`");
+			 sb.append("SELECT bussinessrecords.`buss_id`,bussinessrecords.`editor`,`editor_name`,`bussmen_name`,`accounts`,`buss_place`,`buss_reason`,`buss_begintime`,`buss_endtime`,`time`");
 			 sb.append(" FROM bussinessrecords");
-			 sb.append(" WHERE CONCAT(bussmen_name,accounts,buss_id,editor,buss_place,buss_reason,buss_begintime,buss_endtime) LIKE ?");
+			 sb.append(" WHERE CONCAT(bussmen_name,accounts,buss_id,editor,editor_name,buss_place,buss_reason,buss_begintime,buss_endtime,time) LIKE ?");
 //			 sb.append(" WHERE bussinessrecords.`editor`=?");
 			 pstmt = conn.prepareStatement(sb.toString());
 			 pstmt.setObject(1, "%"+this.buss_search+"%");
