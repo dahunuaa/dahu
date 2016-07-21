@@ -45,9 +45,17 @@
 				<div class="mui-input-row">
 					<label>总人数</label>
 					<input id="accounts" type="text" class="mui-input-clear" placeholder=>
+				</div>		
+				<div class="mui-input-row">
+				    <label>出差地</label>
+				    <input id="place" type="text" class="mui-input-clear" placeholder="写入出差地">
+				</div>
+				<div class="mui-input-row">
+			    <label>出差缘由</label>
+			    <input id="job" type="text" class="mui-input-clear" placeholder="写入出差缘由">
 				</div>
 				
-				<li class="mui-table-view-cell">
+				<!--<li class="mui-table-view-cell">
 				<a id="selectplace" class="mui-navigate-right">
 					出差地<span id="place"style="padding: 0px 0px 0px 60px;"></span>
 				</a>
@@ -57,7 +65,7 @@
 				<a id="selectjob" class="mui-navigate-right">
 					出差缘由<span id="job"style="padding: 0px 0px 0px 45px;"></span>
 				</a>
-			    </li>
+			    </li>-->
 				
 				<li class="mui-table-view-cell">
 				<a id="begintime" class="mui-navigate-right">
@@ -87,75 +95,75 @@
 				$.init();
 				$.plusReady(function() {
 					
-					var selectplace = new $.PopPicker();
-					selectplace.setData([{
-						value: 'beijing',
-						text: '北京'
-					}, {
-						value: 'shanghai',
-						text: '上海'
-					}, {
-						value: 'guangzhou',
-						text: '广州'
-					}, {
-						value: 'shenzhen',
-						text: '深圳'
-					}, {
-						value: 'nanjing',
-						text: '南京'
-					}, {
-						value: 'tianjin',
-						text: '天津'
-					}, {
-						value: 'shenyang',
-						text: '沈阳'
-					}, {
-						value: 'anshan',
-						text: '鞍山'
-					}, {
-						value: 'baotou',
-						text: '包头'
-					}, {
-						value: 'wuhan', 
-						text: '武汉'
-					}]);
-					var showUserPickerButton = doc.getElementById('selectplace');
-					var place = doc.getElementById('place');
-					showUserPickerButton.addEventListener('tap', function(event) {
-						selectplace.show(function(items) {
-							place.innerText = items[0].text;
-							//返回 false 可以阻止选择框的关闭
-//							return false;
-						});
-					}, false);
-					
-				//选择出差事由
-					var selectjob = new $.PopPicker();
-					selectjob.setData([{
-						value: 'genjing',
-						text: '跟井'
-					}, {
-						value: 'yonghuzoufang',
-						text: '用户走访'
-					}, {
-						value: 'shangjian',
-						text: '商检'
-					}, {
-						value: 'jishuzhichi',
-						text: '技术支持'
-					}, {
-						value: 'qita',
-						text: '其他'
-					}]);
-					var showUserPickerButton = doc.getElementById('selectjob');
-					var job = doc.getElementById('job');
-					showUserPickerButton.addEventListener('tap', function(event) {
-						selectjob.show(function(items) {
-							job.innerText = items[0].text;
-							//返回 false 可以阻止选择框的关闭
-//							return false;
-						});
-					}, false);
+//					var selectplace = new $.PopPicker();
+//					selectplace.setData([{
+//						value: 'beijing',
+//						text: '北京'
+//					}, {
+//						value: 'shanghai',
+//						text: '上海'
+//					}, {
+//						value: 'guangzhou',
+//						text: '广州'
+//					}, {
+//						value: 'shenzhen',
+//						text: '深圳'
+//					}, {
+//						value: 'nanjing',
+//						text: '南京'
+//					}, {
+//						value: 'tianjin',
+//						text: '天津'
+//					}, {
+//						value: 'shenyang',
+//						text: '沈阳'
+//					}, {
+//						value: 'anshan',
+//						text: '鞍山'
+//					}, {
+//						value: 'baotou',
+//						text: '包头'
+//					}, {
+//						value: 'wuhan', 
+//						text: '武汉'
+//					}]);
+//					var showUserPickerButton = doc.getElementById('selectplace');
+//					var place = doc.getElementById('place');
+//					showUserPickerButton.addEventListener('tap', function(event) {
+//						selectplace.show(function(items) {
+//							place.innerText = items[0].text;
+//							//返回 false 可以阻止选择框的关闭
+////							return false;
+//						});
+//					}, false);
+//					
+//				//选择出差事由
+//					var selectjob = new $.PopPicker();
+//					selectjob.setData([{
+//						value: 'genjing',
+//						text: '跟井'
+//					}, {
+//						value: 'yonghuzoufang',
+//						text: '用户走访'
+//					}, {
+//						value: 'shangjian',
+//						text: '商检'
+//					}, {
+//						value: 'jishuzhichi',
+//						text: '技术支持'
+//					}, {
+//						value: 'qita',
+//						text: '其他'
+//					}]);
+//					var showUserPickerButton = doc.getElementById('selectjob');
+//					var job = doc.getElementById('job');
+//					showUserPickerButton.addEventListener('tap', function(event) {
+//						selectjob.show(function(items) {
+//							job.innerText = items[0].text;
+//							//返回 false 可以阻止选择框的关闭
+////							return false;
+//						});
+//					}, false);
 					
 					//选择出差开始时间
 					var timebegin = document.getElementById("timebegin");
@@ -231,8 +239,8 @@
 //					editornameBox.value=editorname
 					nameBox.value=bussmenname
 					accountsBox.value=accounts
-					placeBox.innerText=bussplace
-					jobBox.innerText=bussreason
+					placeBox.value=bussplace
+					jobBox.value=bussreason
 					timebeginBox.innerText=bussbegintime
 					timeend.innerText=bussendtime
 
@@ -241,10 +249,10 @@
 							alert("请输入所有出差人姓名")
 						}else if(accountsBox.value==""){
 							alert("请输入出差人数")
-						}else if (placeBox.innerText==""){
-							alert("请选择出差地")
-						}else if (jobBox.innerText==""){
-							alert("请选择出差任务")
+						}else if (placeBox.value==""){
+							alert("请填写出差地")
+						}else if (jobBox.value==""){
+							alert("请填写出差任务")
 						}else if(timebeginBox.innerText==""){
 							alert("请选择出差开始时间")
 						}else if(timebeginBox.innerText=="您没有选择日期"){
@@ -264,8 +272,8 @@
 							"buss_id":_id,//后面必须加上逗号
 							"bussmen_name":nameBox.value,
 							"buss_accounts":accountsBox.value,
-							"buss_place":placeBox.innerText,
-							"buss_reason":jobBox.innerText,
+							"buss_place":placeBox.value,
+							"buss_reason":jobBox.value,
 							"buss_begintime":timebeginBox.innerText,//可以获取到时间
 							"buss_endtime":timeend.innerText,
 							
@@ -294,10 +302,10 @@
 							alert("请输入所有出差人姓名")
 						}else if(accountsBox.value==""){
 							alert("请输入出差人数")
-						}else if (placeBox.innerText==""){
-							alert("请选择出差地")
-						}else if (jobBox.innerText==""){
-							alert("请选择出差任务")
+						}else if (placeBox.value==""){
+							alert("请填写出差地")
+						}else if (jobBox.value==""){
+							alert("请填写出差任务")
 						}else if(timebeginBox.innerText==""){
 							alert("请选择出差开始时间")
 						}else if(timebeginBox.innerText=="您没有选择日期"){

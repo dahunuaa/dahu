@@ -63,11 +63,12 @@
 							li.setAttribute("publisher",value.publisher);
 							li.setAttribute("notice",value.notice);
 							li.setAttribute("notice_title",value.notice_title);
+							li.setAttribute("notice_time",value.time);
 							
 							
 //							alert(value.buss_id)
-                            li.innerHTML ='<a class="mui-navigate-right"'+"<br>"+ "公告序号："+value.notice_id+"<br>"+"发布者："+value.publisher +"<br>"+"标题："+value.notice_title +'</a>';
-                                                        
+                            li.innerHTML ='<a class="mui-navigate-right"'+"<br>"+ "公告序号："+value.notice_id+ "&nbsp&nbsp&nbsp"+"发布者："+value.name +"<br>"+"编辑时间："+value.time+"<br>"+"标题："+value.notice_title +'</a>';
+                                                                  
                             project.appendChild(li)
 							})
 							
