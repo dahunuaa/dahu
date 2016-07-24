@@ -92,7 +92,7 @@
 		
 		<div class="mui-content-padded">
 			<button id="login" class="mui-btn mui-btn-block mui-btn-primary">登录</button>
-			<div class="link-area"><a id="forgetPassword">忘记密码</a>
+			<!--<div class="link-area"><a id="forgetPassword">忘记密码</a>-->
 			</div>
 		</div>
 		<div class="mui-content-padded oauth-area">
@@ -143,6 +143,7 @@
 						} else{
 						$.ajax({
 						type: "post",
+//						url: "http://121.42.186.54:8081/baosteel/userslogin",
 						url: "http://192.168.191.1:8080/baosteel/userslogin",
 						data: {
 							"name": accountBox.value,
@@ -195,40 +196,45 @@
 //						}, 50);
 //					}, false);
 					
-					forgetButton.addEventListener('tap', function(event) {
-						$.openWindow({
-							url: 'forget_password.html',
-							id: 'forget_password',
-							show: {
-								aniShow: 'pop-in'
-							},
-							styles: {
-								popGesture: 'hide'
-							},
-							waiting: {
-								autoShow: false
-							}
-						});
-					}, false);
-					//
-//					window.addEventListener('resize', function() {
-//						oauthArea.style.display = document.body.clientHeight > 400 ? 'block' : 'none';
+//					forgetButton.addEventListener('tap', function(event) {
+//						$.openWindow({
+//							url: 'forget_password.html',
+//							id: 'forget_password',
+//							show: {
+//								aniShow: 'pop-in'
+//							},
+//							styles: {
+//								popGesture: 'hide'
+//							},
+//							waiting: {
+//								autoShow: false
+//							}
+//						});
 //					}, false);
-					//
-					var backButtonPress = 0;
-					$.back = function(event) {
-						backButtonPress++;
-						if (backButtonPress > 1) {
-							plus.runtime.quit();
-						} else {
-							plus.nativeUI.toast('再按一次退出应用');
-						}
-						setTimeout(function() {
-							backButtonPress = 0;
-						}, 1000);
-						return false;
-					};
-				});
+
+//			按返回键直接返回到手机页面
+			$.back = function(event) {
+				plus.runtime.quit();
+			}
+
+
+
+//			var backButtonPress = 0;
+//					$.back = function(event) {
+//						backButtonPress++;
+//						if (backButtonPress > 1) {
+//							plus.runtime.quit();
+//						} else {
+//							plus.nativeUI.toast('再按一次退出应用');
+//						}
+//						setTimeout(function() {
+//							backButtonPress = 0;
+//						}, 1000);
+//						return false;
+//					};
+	
+				
+			});		
 		}(mui, document));
 	</script>
 	

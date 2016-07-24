@@ -27,25 +27,29 @@
 				<header class="mui-bar mui-bar-nav">
 					<a class=" mui-pull-left"><div style="margin:10px 0px 0px 0px; font: '楷体';font-size: 20px; font-style:oblique;color: #000000;">宝钢</div></a>
 					<!--<a class=" mui-btn mui-btn-link mui-pull-right"id="quit">关闭</a>-->
+					<a id="notice" class="mui-tab-item mui-active">
+						<span id="notices" class="mui-icon mui-icon-chat mui-pull-right"></span>
+						<!--<span id="amounts" class="mui-badge">0</span>-->
+					</a>
 					<h1  id="title" class="mui-title">出差信息</h1>
 					<!--在上面的h1中加入id=“title” 下main配置更换标题就可以了-->
 				</header>
 					<!--底部选项卡-->
 				<nav class="mui-bar mui-bar-tab">
-					<a id="defaultTab" class="mui-tab-item mui-active" href="examples/businessInformation.html">
+					<a id="defaultTab" class="mui-tab-item mui-active" href="bussinessinfo/businessInformation.html">
 						<span class="mui-icon mui-icon-contact"></span>
 						<span class="mui-tab-label"><div style="margin: 0px 0px 0px 0px;">出差信息</div></span>
 					</a>
-					<a class="mui-tab-item" href="examples/informationGathering.html">
+					<a class="mui-tab-item" href="inforgather/informationGathering.html">
 						<span class="mui-icon mui-icon-eye"></span>
 						<span class="mui-tab-label"><div style="margin: 0px 0px 0px 0px;">情报搜集</div></span>
 					</a>
-					<a class="mui-tab-item" href="examples/informationGuiding.html">
+					<a class="mui-tab-item" href="inforguide/informationGuiding.html">
 						<span class="mui-icon mui-icon-list"></span>
 						<!--如果想在上面显示有多少未读消息 则写入代码为<span class="mui-badge">9</span>-->
 						<span class="mui-tab-label"><div style="margin: 0px 0px 0px 0px;">信息指南</div></span>
 					</a>
-					<a class="mui-tab-item" href="examples/selfInformation.html">
+					<a class="mui-tab-item" href="selfInformation.html">
 						<span class="mui-icon mui-icon-person"></span>
 						<span class="mui-tab-label"><div style="margin: 0px 0px 0px 0px;">个人主页</div></span>
 					</a>
@@ -57,8 +61,9 @@
 		<script type="text/javascript" charset="utf-8">
 		(function ($, doc) {
 			//mui初始化
-			mui.init();
-			var subpages = ['examples/businessInformation.html', 'examples/informationGathering.html', 'examples/informationGuiding.html','examples/selfInformation.html'];
+			$.init();
+			$.ready(function(){
+			var subpages = ['bussinessinfo/businessInformation.html', 'inforgather/informationGathering.html', 'inforguide/informationGuiding.html','selfInformation.html'];
 			var subpage_style = {
 				top: '45px',
 				bottom: '51px'
@@ -122,11 +127,17 @@
 			});
 			
 			
+			//公告通知提示数量
+			var notices = document.getElementById("notices");
+//			notices.innerHTML="1"
+			notices.addEventListener('tap',function(){
+				mui.openWindow({
+					url:"notice/noticelist.html",
+					id:"noticelist",
+				});
+			});
 			
-//			按返回键直接返回到手机页面
-//			$.back = function(event) {
-//				plus.runtime.quit();
-//			}
+			
 
 			var menu = null,
 				main = null;
@@ -151,10 +162,8 @@
 				}
 			};
 		   
-//		   document.getElementById("quit").addEventListener('tap',function(event){
-//		   	mui.quit();
-//		   })
-
+			
+      });
 		}(mui, document));
 		</script>
 	

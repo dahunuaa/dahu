@@ -73,9 +73,8 @@
 					li.setAttribute("gather_area",value.area);
 					li.setAttribute("gather_address",value.address);
 					li.setAttribute("gathering_text",value.gathering_text);
-					
-                    li.innerHTML ='<a class="mui-navigate-right"'+value.gather_id+"<br>"+value.gather_editor_name +"<br>" +value.address
-                                          +"<br>"+value.gather_title+'</a>';
+                    li.innerHTML ='<a class="mui-navigate-right"'+value.gather_id+"<br>"+value.gather_editor_name +"<br>"+value.gather_title+"<br>"+value.area+"&nbsp;&nbsp;&nbsp;" +value.address
+                                          '</a>';
                                    
                     search_list.appendChild(li)
 					})

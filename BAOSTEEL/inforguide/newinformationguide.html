@@ -32,14 +32,14 @@
 		</header>
 		<div class="mui-content">
 			<form class="mui-input-group">
-				<div class="mui-input-row">
+				<!--<div class="mui-input-row">
 					<label>编辑人工号</label>
 					<input id="editor" type="text" class="mui-input-clear" placeholder="编辑人工号">
 				</div>
 				<div class="mui-input-row">
 					<label>编辑人姓名</label>
 					<input id="editor_name" type="text" class="mui-input-clear" placeholder="编辑人姓名">
-				</div>
+				</div>-->
 				<div class="mui-input-row">
 					<label>标题</label>
 					<input id="title" type="text" class="mui-input-clear" placeholder="请输入信息指南标题">
@@ -52,7 +52,9 @@
 			    </form>
 				<br>
 				<label>&nbsp;&nbsp;&nbsp;内容</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<i id='msg-image' class="mui-icon mui-icon-camera" style="font-size: 28px;"></i>
+				
+				<!--<i id='msg-image' class="mui-icon mui-icon-camera" style="font-size: 28px;"></i>-->
+				
 				<div class="mui-input-row" style="margin: 10px 5px;">
 					<textarea id="textarea" rows="5" placeholder="请填写正文"></textarea>
 				</div>		
@@ -107,19 +109,15 @@
 					
 					
 			     //提交出差任务
-			        var editorBox = doc.getElementById('editor');
-			        var editornameBox = doc.getElementById('editor_name');
+//			        var editorBox = doc.getElementById('editor');
+//			        var editornameBox = doc.getElementById('editor_name');
 			        var titleBox = doc.getElementById('title');
 					var categoryBox = doc.getElementById('category');
 					var textareaBox = doc.getElementById('textarea');
 					var newguide_submitButton = doc.getElementById("newguide_submit");
 					var newguide_cancelButton = doc.getElementById('newguide_cancel');
 					newguide_submitButton.addEventListener('tap', function(event) {
-						if (editorBox.value==""){
-							alert("请输入编辑人工号")							
-						}else if(editornameBox.value == ""){
-							alert("请输入编辑人姓名")
-						}else if(titleBox.value==""){
+						if(titleBox.value==""){
 							alert("请输入标题")
 						}else if(categoryBox.innerText==""){
 							alert("请选择分类")
@@ -131,8 +129,8 @@
 						type: "post",
 						url: "http://192.168.191.1:8080/baosteel/NewInformationGuide",
 						data: {
-							"guide_editor":editorBox.value,
-							"guide_editor_name":editornameBox.value,
+//							"guide_editor":editorBox.value,
+//							"guide_editor_name":editornameBox.value,
 							"guide_title":titleBox.value,
 							"guide_category":categoryBox.innerText,
 							"guide_text":textareaBox.value,
@@ -159,45 +157,45 @@
 						}
 						});
 //			   拍照
-                var carmer = document.getElementById('msg-image')
-				   carmer.addEventListener('tap', function(event) {
-						var btnArray = [{
-							title: "拍照"
-						}, {
-							title: "从相册选择"
-						}];
-						plus.nativeUI.actionSheet({
-							title: "选择照片",
-							cancel: "取消",
-							buttons: btnArray
-						}, function(e) {
-							var index = e.index;
-							switch (index) {
-								case 0:
-									break;
-								case 1:
-									var cmr = plus.camera.getCamera();
-									cmr.captureImage(function(path) {
-										send({
-											sender: 'self',
-											type: 'image',
-											content: "file://" + plus.io.convertLocalFileSystemURL(path)
-										});
-									}, function(err) {});
-									break;
-								case 2:
-									plus.gallery.pick(function(path) {
-										send({
-											sender: 'self',
-											type: 'image',
-											content: path
-										});
-									}, function(err) {}, null);
-									break;
-							}
-						});
-					}, false); 
-					
+//              var carmer = document.getElementById('msg-image')
+//				   carmer.addEventListener('tap', function(event) {
+//						var btnArray = [{
+//							title: "拍照"
+//						}, {
+//							title: "从相册选择"
+//						}];
+//						plus.nativeUI.actionSheet({
+//							title: "选择照片",
+//							cancel: "取消",
+//							buttons: btnArray
+//						}, function(e) {
+//							var index = e.index;
+//							switch (index) {
+//								case 0:
+//									break;
+//								case 1:
+//									var cmr = plus.camera.getCamera();
+//									cmr.captureImage(function(path) {
+//										send({
+//											sender: 'self',
+//											type: 'image',
+//											content: "file://" + plus.io.convertLocalFileSystemURL(path)
+//										});
+//									}, function(err) {});
+//									break;
+//								case 2:
+//									plus.gallery.pick(function(path) {
+//										send({
+//											sender: 'self',
+//											type: 'image',
+//											content: path
+//										});
+//									}, function(err) {}, null);
+//									break;
+//							}
+//						});
+//					}, false); 
+//					
 
 
 			   newguide_cancelButton.addEventListener('tap',function(event){
