@@ -74,7 +74,8 @@
 			"fonts/mui.ttf",
 			"css/mui.min.css",
 			"createNewTask.html",
-			"myBusinessRecord.html"
+			"myBusinessRecord.html",
+			"css/app.css"
 		],
 		"refer": [
 			"createNewTask.html",
@@ -82,7 +83,10 @@
 			"myBusinessRecord.jsp",
 			"new_file.jsp",
 			"examples/createNewTask.html",
-			"examples/myBusinessRecord.html"
+			"examples/myBusinessRecord.html",
+			"selfsetting/selfsetting.html",
+			"inforguide/myInformationGuiding.html",
+			"bussinessinfo/createNewTask.html"
 		]
 	},
 	"createNewTask.html": {
@@ -746,6 +750,17 @@
 			"css/mui.min.css",
 			"css/mui.poppicker.css",
 			"css/mui.picker.css"
+		]
+	},
+	"selfsetting/selfsetting.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"selfsetting/about_baosteel.html"
 		]
 	}
 }

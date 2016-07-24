@@ -299,7 +299,8 @@
 					"examples/informationGuiding.html",
 					"examples/informationGathering.html",
 					"notice/noticelist.html",
-					"inforguide/informationGuiding.html"
+					"inforguide/informationGuiding.html",
+					"selfInformation.html"
 				],
 				"priority": 0
 			},
@@ -1050,6 +1051,32 @@
 					"css/mui.picker.css"
 				],
 				"refer": [],
+				"priority": 0
+			},
+			"selfInformation.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [
+					"selfsetting/selfsetting.html",
+					"inforguide/myInformationGuiding.html",
+					"bussinessinfo/createNewTask.html"
+				],
+				"priority": 0
+			},
+			"selfsetting/selfsetting.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [
+					"selfsetting/about_baosteel.html"
+				],
 				"priority": 0
 			}
 		},
