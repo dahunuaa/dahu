@@ -12,10 +12,12 @@ import java.util.Map;
 import com.bs.system.DBUtils;
 
 public class BusinessInformationDao {
-	private String buss_editor;
+//	private String buss_editor;
+	private int count;
 	
-	 public BusinessInformationDao(String buss_editor){
-		this.buss_editor = buss_editor;
+	 public BusinessInformationDao(int count){
+//		this.buss_editor = buss_editor;
+		this.count =5*count;
 		
 	}
 	 public List BusinessInformationRecord(){
@@ -29,10 +31,10 @@ public class BusinessInformationDao {
 			 StringBuffer sb = new StringBuffer();
 			 sb.append("SELECT bussinessrecords.`buss_id`,bussinessrecords.`editor`,`editor_name`,`bussmen_name`,`accounts`,`buss_place`,`buss_reason`,`buss_begintime`,`buss_endtime`,`time`");
 			 sb.append(" FROM bussinessrecords");
-			 sb.append(" ORDER BY buss_id DESC");
+			 sb.append(" ORDER BY buss_id DESC LIMIT ?,5");
 //			 sb.append(" WHERE bussinessrecords.`editor`=?");
 			 pstmt = conn.prepareStatement(sb.toString());
-//			 pstmt.setObject(1, this.buss_editor);
+			 pstmt.setObject(1, this.count);
 //			 System.out.println(this.buss_editor);
 			 ResultSet rs = pstmt.executeQuery();
 	         //int sc =Integer.parseInt(rs.getString(7));

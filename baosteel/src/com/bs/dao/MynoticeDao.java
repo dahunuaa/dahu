@@ -28,7 +28,7 @@ public class MynoticeDao {
 			 conn=DBUtils.getConnection();
 			 if(conn==null) return null;
 			 StringBuffer sb = new StringBuffer();
-			 sb.append("SELECT notice.`notice_id`, notice.`publisher`, notice.`notice_title`,`notice`");
+			 sb.append("SELECT notice.`notice_id`, notice.`publisher`, notice.`notice_title`,`notice`,`time`");
 			 sb.append(" FROM notice");
 			 sb.append(" WHERE notice.`publisher`=?");
 			 sb.append(" ORDER BY notice_id DESC");

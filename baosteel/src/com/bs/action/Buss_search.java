@@ -35,9 +35,9 @@ public class Buss_search extends HttpServlet {
 			req.setCharacterEncoding("utf-8");// 先将请求的名字用utf-8进行编码
 			resp.setCharacterEncoding("utf-8");//设置发送到前端的数据格式是utf-8格式
 			String buss_search = req.getParameter("buss_search");
-			
-//			System.out.println(buss_search);
-            Buss_searchDao searchDao = new Buss_searchDao(buss_search);
+			String p_count = req.getParameter("pull_count");
+			int count = Integer.parseInt(p_count);
+            Buss_searchDao searchDao = new Buss_searchDao(buss_search,count);
             List<Map<String,Object>> infos = searchDao.Buss_searchRecord();
 
 		    JSONArray busslist = JSONArray.fromObject(infos);

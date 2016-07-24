@@ -33,7 +33,9 @@ public class InformationGuiding extends HttpServlet {
 			req.setCharacterEncoding("utf-8");
 			resp.setCharacterEncoding("utf-8");
 			String id = (String) session.getAttribute("id");
-			InformationGuidingDao Dao = new InformationGuidingDao(id);
+			String p_count = req.getParameter("pull_count");
+			int count = Integer.parseInt(p_count);
+			InformationGuidingDao Dao = new InformationGuidingDao(count);
 		    List<Map<String,Object>> infos = Dao.InformationGuidingRecord();
       
 		    JSONArray infoslist = JSONArray.fromObject(infos);

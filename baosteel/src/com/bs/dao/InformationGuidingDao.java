@@ -12,10 +12,11 @@ import java.util.Map;
 import com.bs.system.DBUtils;
 
 public class InformationGuidingDao {
-	private String guide_editor;
+	private int count;
 	
-	 public InformationGuidingDao(String guide_editor){
-		this.guide_editor = guide_editor;
+	 public InformationGuidingDao(int count){
+//		this.guide_editor = guide_editor;
+		this.count = 5*count;
 		
 	}
 	 public List InformationGuidingRecord(){
@@ -29,9 +30,10 @@ public class InformationGuidingDao {
 			 StringBuffer sb = new StringBuffer();
 			 sb.append("SELECT informationguiderecord.`guide_id`, informationguiderecord.`guide_editor`,`guide_name`,`guide_title`,`guide_category`,`guide_text`,`time`");
 			 sb.append(" FROM informationguiderecord");
-			 sb.append(" ORDER BY guide_id DESC");
+			 sb.append(" ORDER BY guide_id DESC LIMIT ?,5");
 
 			 pstmt = conn.prepareStatement(sb.toString());
+			 pstmt.setObject(1, this.count);
 			 ResultSet rs = pstmt.executeQuery();
 	       
 			 infos = new ArrayList<Map<String,Object>>();

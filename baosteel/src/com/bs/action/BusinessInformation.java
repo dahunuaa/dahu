@@ -33,12 +33,14 @@ public class BusinessInformation extends HttpServlet {
 			req.setCharacterEncoding("utf-8");
 			resp.setCharacterEncoding("utf-8");
 			String id = (String) session.getAttribute("id");
-			BusinessInformationDao userDao = new BusinessInformationDao(id);
+			String p_count =req.getParameter("pull_count");
+			int count = Integer.parseInt(p_count);
+			BusinessInformationDao userDao = new BusinessInformationDao(count);
 		    List<Map<String,Object>> infos = userDao.BusinessInformationRecord();
       
 		    JSONArray infoslist = JSONArray.fromObject(infos);
-            
-		    
+//            System.out.println(infos);
+//		    System.out.println(p_count);
 
 			PrintWriter pw = null;
 			try {

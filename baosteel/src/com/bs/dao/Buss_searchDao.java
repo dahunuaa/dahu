@@ -13,9 +13,11 @@ import com.bs.system.DBUtils;
 
 public class Buss_searchDao {
 	private String buss_search;
+	private int count;
 	
-	 public Buss_searchDao(String buss_search){
+	 public Buss_searchDao(String buss_search,int count){
 		this.buss_search = buss_search;
+		this.count = 5*count;
 		
 	}
 	 public List Buss_searchRecord(){
@@ -30,9 +32,12 @@ public class Buss_searchDao {
 			 sb.append("SELECT bussinessrecords.`buss_id`,bussinessrecords.`editor`,`editor_name`,`bussmen_name`,`accounts`,`buss_place`,`buss_reason`,`buss_begintime`,`buss_endtime`,`time`");
 			 sb.append(" FROM bussinessrecords");
 			 sb.append(" WHERE CONCAT(bussmen_name,accounts,buss_id,editor,editor_name,buss_place,buss_reason,buss_begintime,buss_endtime,time) LIKE ?");
+			 sb.append(" ORDER BY buss_id DESC LIMIT ?,5");
 //			 sb.append(" WHERE bussinessrecords.`editor`=?");
 			 pstmt = conn.prepareStatement(sb.toString());
 			 pstmt.setObject(1, "%"+this.buss_search+"%");
+			 pstmt.setObject(2, this.count);
+//			 System.out.println(count);
 //			 System.out.println(this.buss_search);
 			 ResultSet rs = pstmt.executeQuery();
 	         //int sc =Integer.parseInt(rs.getString(7));
