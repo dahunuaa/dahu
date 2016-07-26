@@ -573,7 +573,17 @@
 			"js/app.js",
 			"js/mui.min.js",
 			"fonts/mui.ttf",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"bussinessinfo/buss_search_content.html",
+			"bussinessinfo/list.html",
+			"bussinessinfo/buss_search_cond.html",
+			"bussinessinfo/buss_search_condition.html"
+		],
+		"refer": [
+			"bussinessinfo/buss_search_content.html",
+			"bussinessinfo/list.html",
+			"bussinessinfo/buss_search_cond.html",
+			"bussinessinfo/buss_search_condition.html"
 		]
 	},
 	"inforgather/inforGathering_search.html": {
@@ -761,6 +771,43 @@
 		],
 		"refer": [
 			"selfsetting/about_baosteel.html"
+		]
+	},
+	"bussinessinfo/buss_search_content.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"bussinessinfo/buss_search_cond.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"js/mui.poppicker.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css"
+		]
+	},
+	"bussinessinfo/buss_search_condition.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/app.js",
+			"css/app.css",
+			"js/mui.poppicker.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"js/mui.min.js"
+		],
+		"refer": [
+			"bussinessinfo/buss_search_content.html"
 		]
 	}
 }

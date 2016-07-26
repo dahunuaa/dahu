@@ -143,8 +143,8 @@
 						} else{
 						$.ajax({
 						type: "post",
-//						url: "http://121.42.186.54:8081/baosteel/userslogin",
-						url: "http://192.168.191.1:8080/baosteel/userslogin",
+						url: "http://121.42.186.54:8081/baosteel/userslogin",
+//						url: "http://192.168.191.1:8080/baosteel/userslogin",
 						data: {
 							"name": accountBox.value,
 							"pswd": passwordBox.value
@@ -216,23 +216,6 @@
 			$.back = function(event) {
 				plus.runtime.quit();
 			}
-
-
-
-//			var backButtonPress = 0;
-//					$.back = function(event) {
-//						backButtonPress++;
-//						if (backButtonPress > 1) {
-//							plus.runtime.quit();
-//						} else {
-//							plus.nativeUI.toast('再按一次退出应用');
-//						}
-//						setTimeout(function() {
-//							backButtonPress = 0;
-//						}, 1000);
-//						return false;
-//					};
-	
 				
 			});		
 		}(mui, document));
