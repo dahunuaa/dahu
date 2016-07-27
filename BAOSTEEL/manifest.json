@@ -824,11 +824,11 @@
 					"img/huadong.png",
 					"img/huazhong.png",
 					"img/dongbei.png",
-					"fonts/mui.ttf"
+					"fonts/mui.ttf",
+					"inforgather/area_list.html"
 				],
 				"refer": [
-					"inforgather/inforGathering_search.html",
-					"inforgather/area_list.html"
+					"inforgather/inforGathering_search.html"
 				],
 				"priority": 0
 			},
@@ -1067,7 +1067,10 @@
 				"refer": [
 					"selfsetting/selfsetting.html",
 					"inforguide/myInformationGuiding.html",
-					"bussinessinfo/createNewTask.html"
+					"bussinessinfo/createNewTask.html",
+					"bussinessinfo/myBusinessRecord.html",
+					"notice/notice.html",
+					"inforgather/newinformationgathering.html"
 				],
 				"priority": 0
 			},
@@ -1079,7 +1082,9 @@
 					"css/mui.min.css"
 				],
 				"refer": [
-					"selfsetting/about_baosteel.html"
+					"selfsetting/about_baosteel.html",
+					"selfsetting/changepsw.html",
+					"selfsetting/feedback.html"
 				],
 				"priority": 0
 			},
