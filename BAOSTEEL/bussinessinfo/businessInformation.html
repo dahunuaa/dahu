@@ -72,7 +72,7 @@
 				setTimeout(function() {
 					
 					mui.ajax({
-					type: "get",//后面必须加逗号！！！！！！！！
+					type: "post",//后面必须加逗号！！！！！！！！
 					url: "http://192.168.191.1:8080/baosteel/BusinessInformation",
 					data:{
 						"pull_count":count,
@@ -121,7 +121,6 @@
 //				var refresh = document.getElementById("refresh")
 				var buss_search=document.getElementById("buss_search")
 				buss_search.addEventListener("tap",function(event){
-				webviewshow=plus.webview.create("buss_search.html");
 					mui.openWindow({
 						url:"buss_search.html",
 						id:"buss_search"
