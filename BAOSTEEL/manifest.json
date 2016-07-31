@@ -1067,7 +1067,8 @@
 				"refer": [
 					"selfsetting/selfsetting.html",
 					"inforguide/myInformationGuiding.html",
-					"bussinessinfo/createNewTask.html"
+					"bussinessinfo/createNewTask.html",
+					"inforgather/newinformationgathering.html"
 				],
 				"priority": 0
 			},
@@ -1088,7 +1089,8 @@
 					"js/app.js",
 					"js/mui.min.js",
 					"fonts/mui.ttf",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"js/mui.js"
 				],
 				"refer": [],
 				"priority": 0

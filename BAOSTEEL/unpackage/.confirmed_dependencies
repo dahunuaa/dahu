@@ -86,7 +86,8 @@
 			"examples/myBusinessRecord.html",
 			"selfsetting/selfsetting.html",
 			"inforguide/myInformationGuiding.html",
-			"bussinessinfo/createNewTask.html"
+			"bussinessinfo/createNewTask.html",
+			"inforgather/newinformationgathering.html"
 		]
 	},
 	"createNewTask.html": {
@@ -778,7 +779,8 @@
 			"js/app.js",
 			"js/mui.min.js",
 			"fonts/mui.ttf",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"js/mui.js"
 		]
 	},
 	"bussinessinfo/buss_search_cond.html": {

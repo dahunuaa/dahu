@@ -207,10 +207,8 @@
 					searchButton.addEventListener('tap', function(event) {
 						if (timebeginBox.innerText =="您没有选择日期"){
 							timebeginBox.innerText =""
-						}else if(timeend.innerText =="您没有选择日期"){
-							timeend.innerText=""
-						}else if(timeend.innerText =="您没有选择日期"&timebeginBox.innerText =="您没有选择日期"){
-							timebeginBox.innerText ="",
+						}
+						if(timeend.innerText =="您没有选择日期"){
 							timeend.innerText=""
 						}
 						if(nameBox.value==""&accountsBox.value==""&placeBox.value==""&jobBox.value==""&timebeginBox.innerText==""&timeend.innerText==""){
