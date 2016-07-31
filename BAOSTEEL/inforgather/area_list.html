@@ -12,9 +12,7 @@
 			body {
 				background-color:#efeff4;
 			}
-		    div{
-		    	background-color: #EEEEEE;
-		    }
+		    
 		</style>
     </head>
 	<body>
@@ -25,44 +23,45 @@
 			<h1 class="mui-title">情报搜集</h1>
 			
 		</header>
-		<!--<div align="center" style="background-color:#FAFAFA">
-			
-			<input type="search" id="inforgather_search" class="mui-icon mui-icon-search" placeholder="请输入搜索内容" style="width:250px;height:35px; background-color:#E8E8E8; margin-top: 10px;margin-bottom: 5px;"/>
-			<a id="icon-search"><span class="mui-icon mui-icon-search"></span></a>
-			<a class="mui-pull-left" style="margin:15px 15px 15px 15px;" id="refresh">刷新</a>
-			<hr />
-		</div>-->
-		<div class="mui-content" id="content">
-        <ul class="mui-table-view" style="margin-top:-10px;" id="list">
-  				
-		</ul>		
+		<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!--数据列表-->
+				<ul class="mui-table-view mui-table-view-chevron" id="list">
+					
+				</ul>
+			</div>
 		</div>
+		
 	
 	<script src="../js/mui.min.js"></script>
 	<script src="../js/app.js"></script>
 	<script>
 		(function($,doc){
-			$.init();
 			$.plusReady(function(){
-//				var refresh = document.getElementById("refresh")
-//				var content = document.getElementById("content")
-//				var inforgather_search=document.getElementById("inforgather_search")
-//				inforgather_search.addEventListener("tap",function(event){
-//					mui.openWindow({
-//						
-//						url:"inforguide_search.html",
-//						id:"inforguide_search"
-//						styles:{
-//				        top:'0px',//mui标题栏默认高度为45px；
-//				        bottom:'0px'//默认为0px，可不定义；
-//				      }
-//					})
-//				})
-//				refresh.addEventListener("tap",function(event){
-					var self = plus.webview.currentWebview();//必须用plusReady 来获取前面传过来的值
-					var area =self.area
-					var list = document.getElementById("list")	
-					list.innerHTML="";//解决刷新重复出出现的问题
+			mui.init({
+				pullRefresh: {
+					container: '#pullrefresh',
+					down:{
+						callback:pulldownRefresh
+					},
+					up: {
+						contentrefresh: '正在加载...',
+						callback: pullupRefresh
+					}
+				}
+			});
+			var self = plus.webview.currentWebview();//必须用plusReady 来获取前面传过来的值
+			var area =self.area
+			var list = document.getElementById("list")	
+			var count = -1;
+			/**
+			 * 上拉加载具体业务实现
+			 */
+			function pullupRefresh() {
+				count = count +1
+				setTimeout(function() {
+					
 					mui.ajax({
 					type: "post",//后面必须加逗号！！！！！！！！
 					url: "http://192.168.191.1:8080/baosteel/InforGather_dongbei",
@@ -73,10 +72,7 @@
 					dataType:"json",
 					success:function(data){
 						
-						if (data==""){
-							alert("无此区域数据")
-							mui.back()
-						}else{
+						mui('#pullrefresh').pullRefresh().endPullupToRefresh((data ==""||null));
 						mui.each(data,function(key,value){
 						var li = document.createElement("li")
 						 li.className="mui-table-view-cell"
@@ -93,7 +89,6 @@
                                           +"<br>"+"区域："+value.area+"&nbsp&nbsp"+value.gather_oil_field+'</a>';
                         list.appendChild(li)
 						})
-						}
 						mui("#list").on('tap','li',function(){
 								var gather_id = this.getAttribute("gather_id")
 								var gather_editor = this.getAttribute("gather_editor")
@@ -121,19 +116,112 @@
 							    	gather_oil_field:gather_oil_field,
 							    	gather_time:time,
 							    }
-							     
-//						        styles:{
-//						        top:'0px',//mui标题栏默认高度为45px；
-//						        bottom:'0px'//默认为0px，可不定义；
-//						      }
 							})
 		                  });											                                         			           		           
 		   		        },
 				  
-				        });					
-//				     })
-					
+				        });	
+				}, 1500);
+				
+			}
+				
+			})
+
+			/*
+			 下拉刷新(以从新加载本页的方法来实现)
+			 * */
+			function pulldownRefresh(){
+			   mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+               plus.webview.currentWebview().reload();
+			}
+			
+			
+			if (mui.os.plus) {
+				mui.plusReady(function() {
+					setTimeout(function() {
+						mui('#pullrefresh').pullRefresh().pullupLoading();
+					}, 1000);
+
 				});
+			} else {
+				mui.ready(function() {
+					mui('#pullrefresh').pullRefresh().pullupLoading();
+				});
+			}
+			
+			
+//			$.plusReady(function(){
+//
+//					var self = plus.webview.currentWebview();//必须用plusReady 来获取前面传过来的值
+//					var area =self.area
+//					var list = document.getElementById("list")	
+//					list.innerHTML="";//解决刷新重复出出现的问题
+//					mui.ajax({
+//					type: "post",//后面必须加逗号！！！！！！！！
+//					url: "http://192.168.191.1:8080/baosteel/InforGather_dongbei",
+//					data:{
+//						"area":area
+//					},
+//					async:true,
+//					dataType:"json",
+//					success:function(data){
+//						
+//						if (data==""){
+//							alert("无此区域数据")
+//							mui.back()
+//						}else{
+//						mui.each(data,function(key,value){
+//						var li = document.createElement("li")
+//						 li.className="mui-table-view-cell"
+//						 li.setAttribute("gather_id",value.gather_id);
+//						 li.setAttribute("gather_editor",value.gather_editor);
+//						 li.setAttribute("gather_editor_name",value.gather_editor_name);
+//						 li.setAttribute("gather_title",value.gather_title);
+//						 li.setAttribute("gather_area",value.area);
+//						 li.setAttribute("gather_address",value.address);
+//						 li.setAttribute("gathering_text",value.gathering_text);
+//						 li.setAttribute("gather_oil_field",value.gather_oil_field);
+//						 li.setAttribute("time",value.time);
+//                        li.innerHTML ='<a class="mui-navigate-right"'+"<br>"+"序号："+value.gather_id+"&nbsp&nbsp&nbsp"+"编辑者："+value.gather_editor_name +"<br>"+"编辑时间："+value.time+"<br>" +"标题："+value.gather_title 
+//                                        +"<br>"+"区域："+value.area+"&nbsp&nbsp"+value.gather_oil_field+'</a>';
+//                      list.appendChild(li)
+//						})
+//						}
+//						mui("#list").on('tap','li',function(){
+//								var gather_id = this.getAttribute("gather_id")
+//								var gather_editor = this.getAttribute("gather_editor")
+//								var gather_editor_name = this.getAttribute("gather_editor_name")
+//								var gather_title = this.getAttribute("gather_title")
+//								var gather_area = this.getAttribute("gather_area")
+//								var gather_address = this.getAttribute("gather_address")
+//								var gather_text = this.getAttribute("gathering_text")
+//								var gather_oil_field = this.getAttribute("gather_oil_field")
+//								var time = this.getAttribute("time")
+////								alert(guide_id)
+//													
+//								mui.openWindow({
+//							    url:"detail_inforgather.html",
+//							    id:"detail_inforgather",
+//							    
+//							    extras:{
+//							    	gather_id:gather_id,
+//							    	gather_editor:gather_editor,
+//							    	gather_editor_name:gather_editor_name,
+//							    	gather_title:gather_title,
+//							    	gather_area:gather_area,
+//							    	gather_address:gather_address,
+//							    	gather_text:gather_text,
+//							    	gather_oil_field:gather_oil_field,
+//							    	gather_time:time,
+//							    }
+//							})
+//		                  });											                                         			           		           
+//		   		        },
+//				  
+//				        });					
+////				     })
+//					
+//				});
 		}(mui,document))
 		</script>
 

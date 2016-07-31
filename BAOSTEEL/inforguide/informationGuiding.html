@@ -151,6 +151,12 @@
 			
 			$.ready(function(){
 				var inforguide_search=document.getElementById("inforguide_search")
+				inforguide_search.addEventListener("tap",function(event){
+					mui.openWindow({
+						url:"inforguide_search.html",
+						id:"inforguide_search",
+					})
+				})
 //				var list = document.getElementById("list")	
 //					list.innerHTML="";//解决刷新重复出出现的问题
 //					mui.ajax({
