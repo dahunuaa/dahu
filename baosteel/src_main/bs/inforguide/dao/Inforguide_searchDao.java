@@ -12,10 +12,16 @@ import java.util.Map;
 import com.bs.system.DBUtils;
 
 public class Inforguide_searchDao {
-	private String inforguide_search;
+	private String title;
+	private String category;
+	private String content;
+	private int count;
 	
-	 public Inforguide_searchDao(String inforguide_search){
-		this.inforguide_search = inforguide_search;
+	 public Inforguide_searchDao(String title,String category,String content,int count ){
+		this.title = title;
+		this.category = category;
+		this.content = content;
+		this.count = 5*count;
 		
 	}
 	 public List Inforguide_searchrecord(){
@@ -27,11 +33,15 @@ public class Inforguide_searchDao {
 			 conn=DBUtils.getConnection();
 			 if(conn==null) return null;
 			 StringBuffer sb = new StringBuffer();
-			 sb.append("SELECT informationguiderecord.`guide_id`, informationguiderecord.`guide_editor`,`guide_name`,`guide_title`,`guide_category`,`guide_text`,`time`");
+			 sb.append("SELECT *");
 			 sb.append(" FROM informationguiderecord");
-			 sb.append(" WHERE CONCAT(guide_id,guide_editor,guide_name,guide_title,guide_category,guide_text,time) LIKE ?");
+			 sb.append(" WHERE CONCAT(guide_title) LIKE ? AND CONCAT(guide_category) LIKE ? AND CONCAT(guide_text) LIKE ? ");
+			 sb.append(" ORDER BY guide_id DESC LIMIT ?,5");
 			 pstmt = conn.prepareStatement(sb.toString());
-			 pstmt.setObject(1, "%"+this.inforguide_search+"%");
+			 pstmt.setObject(1, "%"+this.title+"%");
+			 pstmt.setObject(2, "%"+this.category+"%");
+			 pstmt.setObject(3, "%"+this.content+"%");
+			 pstmt.setObject(4, this.count);
 			 ResultSet rs = pstmt.executeQuery();
 			 infos = new ArrayList<Map<String,Object>>();
 			 ResultSetMetaData rsmd = rs.getMetaData();	 

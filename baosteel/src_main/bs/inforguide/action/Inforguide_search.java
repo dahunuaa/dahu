@@ -34,12 +34,15 @@ public class Inforguide_search extends HttpServlet {
 		//System.out.println(session.getAttribute(Constant.IS_LOGIN));
 			req.setCharacterEncoding("utf-8");
 			resp.setCharacterEncoding("utf-8");
-			String inforguide_search = req.getParameter("inforguide_search");
+			String title = req.getParameter("inforguide_title");
+			String category = req.getParameter("inforguide_category");
+			String content = req.getParameter("inforguide_content");
+			String p_count = req.getParameter("pull_count");
+			int count = Integer.parseInt(p_count);
 			
 //			System.out.println(inforguide_search);
-            Inforguide_searchDao searchDao = new Inforguide_searchDao(inforguide_search);
+            Inforguide_searchDao searchDao = new Inforguide_searchDao(title,category,content,count);
             List<Map<String,Object>> infos = searchDao.Inforguide_searchrecord();
-            System.out.println(infos);
 		    JSONArray busslist = JSONArray.fromObject(infos);
 			PrintWriter pw = null;
 			try {

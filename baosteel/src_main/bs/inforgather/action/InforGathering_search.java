@@ -34,10 +34,16 @@ public class InforGathering_search extends HttpServlet {
 		//System.out.println(session.getAttribute(Constant.IS_LOGIN));
 			req.setCharacterEncoding("utf-8");
 			resp.setCharacterEncoding("utf-8");
-			String inforgathering_search = req.getParameter("inforgathering_search");
+			String title = req.getParameter("inforgather_title");
+			String area = req.getParameter("inforgather_area");
+			String address = req.getParameter("inforgather_address");
+			String field = req.getParameter("inforgather_oil_field");
+			String textarea = req.getParameter("inforgather_textarea");
+			String pull_count = req.getParameter("pull_count");
+			int count = Integer.parseInt(pull_count);
 			
 //			System.out.println(inforgathering_search);
-            InforGathering_searchDao searchDao = new InforGathering_searchDao(inforgathering_search);
+            InforGathering_searchDao searchDao = new InforGathering_searchDao(title,area,address,field,textarea,count);
             List<Map<String,Object>> infos = searchDao.inforgathering_searchrecord();
 
 		    JSONArray busslist = JSONArray.fromObject(infos);
