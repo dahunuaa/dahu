@@ -85,7 +85,7 @@
 					var contentBox = doc.getElementById("textarea")
 					searchButton = doc.getElementById("search_btn")
 					searchButton.addEventListener('tap',function(event){
-						if (titleBox.value ==""&categoryBox.value==""&contentBox.value==""){
+						if (titleBox.value ==""&categoryBox.innerText==""&contentBox.value==""){
 							alert("请输入查询条件")
 						}else{
 							mui.openWindow({
