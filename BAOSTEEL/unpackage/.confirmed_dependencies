@@ -43,7 +43,8 @@
 			"inforgather/newinformationgathering.html",
 			"inforguide/myInformationGuiding.html",
 			"notice/notice.html",
-			"inforguide/newinformationguide.html"
+			"inforguide/newinformationguide.html",
+			"selfsetting/selfsetting.html"
 		]
 	},
 	"inforgather/informationGathering.html": {
@@ -360,6 +361,45 @@
 		],
 		"refer": [
 			"inforgather/detail_inforgather.html"
+		]
+	},
+	"selfsetting/about_baosteel.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"css/mui.min.css"
+		]
+	},
+	"selfsetting/selfsetting.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"selfsetting/about_baosteel.html",
+			"selfsetting/feedback.html",
+			"selfsetting/changepsw.html"
+		]
+	},
+	"selfsetting/changepsw.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"selfsetting/feedback.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		]
 	}
 }
