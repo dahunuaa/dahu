@@ -33,10 +33,11 @@ public class MyInformationgathering extends HttpServlet {
 			req.setCharacterEncoding("utf-8");
 			resp.setCharacterEncoding("utf-8");
 			String id = (String) session.getAttribute("id");
-
-			MyInformationgatheringDao Dao = new MyInformationgatheringDao(id);
+			String pull_count = req.getParameter("pull_count");
+			int count  = Integer.parseInt(pull_count);
+			MyInformationgatheringDao Dao = new MyInformationgatheringDao(id,count);
 		    List<Map<String,Object>> infos = Dao.MyInformationgathering();
-
+		    System.out.println(infos);
 		    JSONArray infoslist = JSONArray.fromObject(infos);
             
 		    

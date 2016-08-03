@@ -13,9 +13,11 @@ import com.bs.system.DBUtils;
 
 public class myBusinessRecordDao {
 	private String buss_editor;
+	private int count;
 	
-	 public myBusinessRecordDao(String buss_editor){
+	 public myBusinessRecordDao(String buss_editor,int count){
 		this.buss_editor = buss_editor;
+		this.count = 5*count;
 		
 	}
 	 public List myBusinessRecord(){
@@ -30,12 +32,11 @@ public class myBusinessRecordDao {
 			 sb.append("SELECT bussinessrecords.`buss_id`, bussinessrecords.`editor`,`editor_name`,`bussmen_name`,`accounts`,`buss_place`,`buss_reason`,`buss_begintime`,`buss_endtime`,`time`");
 			 sb.append(" FROM bussinessrecords");
 			 sb.append(" WHERE bussinessrecords.`editor`=?");
-			 sb.append(" ORDER BY buss_id DESC");
+			 sb.append(" ORDER BY buss_id DESC LIMIT ?,5");
 			 pstmt = conn.prepareStatement(sb.toString());
 			 pstmt.setObject(1, this.buss_editor);
-//			 System.out.println(this.buss_editor);
+			 pstmt.setObject(2, this.count);
 			 ResultSet rs = pstmt.executeQuery();
-	         //int sc =Integer.parseInt(rs.getString(7));
 			 infos = new ArrayList<Map<String,Object>>();
 			 ResultSetMetaData rsmd = rs.getMetaData();//得到表的结构信息，比如字段名，字段数
 			 while(rs.next()){//遍历列数
