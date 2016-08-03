@@ -1,32 +1,29 @@
 {
 	"main.html": {
 		"resources": [
+			"js/app.js",
 			"js/mui.min.js",
 			"fonts/mui.ttf",
 			"css/mui.min.css",
-			"businessInformation.html",
-			"js/app.js",
 			"js/mui.enterfocus.js",
-			"css/app.css",
-			"informationGathering.html",
-			"examples/businessInformation.html",
-			"bussinessinfo/businessInformation.html",
-			"inforgather/informationGathering.html"
+			"bussinessinfo/businessInformation.html"
 		],
 		"refer": [
-			"guiding.html",
-			"informationGathering.html",
-			"businessInformation.html",
+			"inforguide/informationGuiding.html",
 			"selfInformation.html",
-			"informationGuiding.html",
-			"examples/businessInformation.html",
-			"examples/informationGathering.html",
-			"examples/selfInformation.html",
-			"examples/informationGuiding.html",
-			"notice/noticelist.html",
-			"bussinessinfo/businessInformation.html",
 			"inforgather/informationGathering.html",
-			"inforguide/informationGuiding.html"
+			"bussinessinfo/businessInformation.html"
+		]
+	},
+	"inforguide/informationGuiding.html": {
+		"resources": [
+			"js/app.js",
+			"fonts/mui.ttf",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"inforguide/detail_inforguide.html"
 		]
 	},
 	"login.html": {
@@ -36,525 +33,39 @@
 			"js/mui.min.js",
 			"css/mui.min.css",
 			"css/style.css",
-			"js/mui.enterfocus.js",
-			"fonts/mui.ttf",
-			"css/app.css"
+			"js/mui.enterfocus.js"
 		],
 		"refer": [
-			"main.html",
-			"forget_password.html",
-			"reg.html"
-		]
-	},
-	"forget_password.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"css/style.css"
-		]
-	},
-	"reg.html": {
-		"resources": [
-			"js/app.js",
-			"css/style.css",
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		],
-		"refer": [
-			"login.html"
+			"main.html"
 		]
 	},
 	"selfInformation.html": {
 		"resources": [
-			"js/app.js",
 			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"createNewTask.html",
-			"myBusinessRecord.html",
-			"css/app.css"
+			"css/app.css",
+			"css/mui.min.css"
 		],
 		"refer": [
-			"createNewTask.html",
-			"myBusinessRecord.html",
-			"myBusinessRecord.jsp",
-			"new_file.jsp",
-			"examples/createNewTask.html",
-			"examples/myBusinessRecord.html",
-			"selfsetting/selfsetting.html",
 			"inforguide/myInformationGuiding.html",
-			"bussinessinfo/createNewTask.html",
-			"bussinessinfo/myBusinessRecord.html"
-		]
-	},
-	"createNewTask.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"js/mui.enterfocus.js",
-			"fonts/mui.ttf",
-			"selfInformation.html",
-			"css/app.css",
-			"js/mui.picker.js",
-			"js/mui.poppicker.js",
-			"css/mui.poppicker.css",
-			"css/mui.picker.css"
-		],
-		"refer": [
-			"selfInformation.html",
-			"businessInformation.html"
-		]
-	},
-	"myBusinessRecord.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"fonts/mui.ttf",
-			"js/jquery-1.8.3.min.js",
-			"js/jquery.mobile-1.3.2.min.js"
-		]
-	},
-	"businessInformation.html": {
-		"resources": [
-			"css/mui.min.css",
-			"fonts/mui.ttf",
-			"js/app.js",
-			"js/mui.min.js"
-		]
-	},
-	"informationGathering.html": {
-		"resources": [
-			"css/mui.min.css",
-			"fonts/mui.ttf",
-			"img/northeast.jpg",
-			"img/bg_2.png",
-			"img/BS_4.png",
-			"img/bs_5.png",
-			"img/bs_6.png",
-			"img/BS_2.png",
-			"img/dongbei.png",
-			"img/xinan.png",
-			"img/huabei.png",
-			"img/xibei.png",
-			"img/xinjiang.png",
-			"img/baostell.png",
-			"img/donghai.png",
-			"img/huazhong.png",
-			"img/huadong.png"
-		]
-	},
-	"informationGuiding.html": {
-		"resources": [
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		]
-	},
-	"myBusinessRecord.jsp": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		]
-	},
-	"examples/myBusinessRecord.html": {
-		"resources": [
-			"css/app.css",
-			"js/app.js",
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		],
-		"refer": [
-			"examples/buss_edit.html"
-		]
-	},
-	"examples/createNewTask.html": {
-		"resources": [
-			"js/mui.picker.js",
-			"js/app.js",
-			"js/mui.min.js",
-			"css/app.css",
-			"js/mui.poppicker.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"css/mui.poppicker.css",
-			"css/mui.picker.css"
-		]
-	},
-	"examples/informationGathering.html": {
-		"resources": [
-			"img/BS_2.png",
-			"img/xinan.png",
-			"img/huabei.png",
-			"img/xibei.png",
-			"img/xinjiang.png",
-			"img/donghai.png",
-			"img/bs_5.png",
-			"img/huadong.png",
-			"img/huazhong.png",
-			"img/dongbei.png",
-			"css/mui.min.css",
-			"js/app.js",
-			"js/mui.min.js",
-			"fonts/mui.ttf"
-		],
-		"refer": [
-			"examples/dongbei_list.html",
-			"examples/xinan_list.html",
-			"examples/newinformationgathering.html",
-			"examples/inforGathering_search.html",
-			"examples/xibei_list.html",
-			"examples/area_list.html"
-		]
-	},
-	"examples/selfInformation.html": {
-		"resources": [
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"css/app.css"
-		],
-		"refer": [
-			"examples/createNewTask.html",
-			"examples/myBusinessRecord.html",
-			"login.html",
-			"examples/newinformationguide.html",
-			"examples/myInformationGuiding.html",
-			"examples/myinformationgathering.html",
-			"examples/newinformationgathering.html",
-			"notice/notice.html",
-			"examples/selfsetting.html",
-			"bussinessinfo/createNewTask.html",
 			"bussinessinfo/myBusinessRecord.html",
-			"inforguide/newinformationguide.html",
-			"inforguide/myInformationGuiding.html",
+			"inforgather/myinformationgathering.html",
 			"inforgather/newinformationgathering.html",
-			"inforgather/myinformationgathering.html"
-		]
-	},
-	"examples/informationGuiding.html": {
-		"resources": [
-			"css/mui.min.css",
-			"fonts/mui.ttf",
-			"js/app.js",
-			"js/mui.min.js"
-		],
-		"refer": [
-			"examples/inforguide_search.html",
-			"examples/detail_inforguide.html"
-		]
-	},
-	"examples/businessInformation.html": {
-		"resources": [
-			"js/app.js",
-			"fonts/mui.ttf",
-			"js/mui.min.js",
-			"css/mui.min.css"
-		],
-		"refer": [
-			"examples/buss_search.html"
-		]
-	},
-	"examples/buss_search.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"css/mui.min.css",
-			"fonts/mui.ttf"
-		]
-	},
-	"examples/buss_edit.html": {
-		"resources": [
-			"js/mui.picker.js",
-			"js/app.js",
-			"js/mui.min.js",
-			"css/app.css",
-			"js/mui.poppicker.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"css/mui.poppicker.css",
-			"css/mui.picker.css"
-		]
-	},
-	"examples/newinformationguide.html": {
-		"resources": [
-			"js/mui.picker.js",
-			"js/app.js",
-			"js/mui.poppicker.js",
-			"css/mui.poppicker.css",
-			"css/mui.picker.css",
-			"js/mui.min.js",
-			"css/app.css",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		]
-	},
-	"examples/myInformationGuiding.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"css/app.css",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		],
-		"refer": [
-			"examples/informationguiding_edit.html"
-		]
-	},
-	"examples/informationguiding_edit.html": {
-		"resources": [
-			"js/mui.picker.js",
-			"js/app.js",
-			"js/mui.min.js",
-			"css/app.css",
-			"js/mui.poppicker.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"css/mui.poppicker.css",
-			"css/mui.picker.css"
-		]
-	},
-	"examples/inforguide_search.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		],
-		"refer": [
-			"examples/detail_inforguide.html",
-			"examples/search_detail_inforguide.html"
-		]
-	},
-	"examples/detail_inforguide.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"css/app.css",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		]
-	},
-	"examples/myinformationgathering.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"css/app.css",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		],
-		"refer": [
-			"examples/informationgathering_edit.html"
-		]
-	},
-	"examples/newinformationgathering.html": {
-		"resources": [
-			"js/mui.picker.js",
-			"js/app.js",
-			"js/mui.min.js",
-			"css/app.css",
-			"js/mui.poppicker.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"css/mui.poppicker.css",
-			"css/mui.picker.css"
-		]
-	},
-	"examples/search_detail_inforguide.html": {
-		"resources": [
-			"css/app.css",
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		]
-	},
-	"examples/informationgathering_edit.html": {
-		"resources": [
-			"js/mui.picker.js",
-			"js/mui.poppicker.js",
-			"css/mui.poppicker.css",
-			"css/mui.picker.css",
-			"js/app.js",
-			"js/mui.min.js",
-			"css/app.css",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		]
-	},
-	"examples/dongbei_list.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		],
-		"refer": [
-			"examples/detail_inforguide.html",
-			"examples/detail_inforgather.html"
-		]
-	},
-	"examples/detail_inforgather.html": {
-		"resources": [
-			"css/app.css",
-			"js/app.js",
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		]
-	},
-	"examples/inforGathering_search.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		],
-		"refer": [
-			"examples/informationgathering_edit.html",
-			"examples/detail_inforguide.html",
-			"examples/detail_inforgather.html"
-		]
-	},
-	"examples/area_list.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		],
-		"refer": [
-			"examples/detail_inforgather.html"
-		]
-	},
-	"notice/notice.html": {
-		"resources": [
-			"js/mui.min.js",
-			"css/app.css",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		],
-		"refer": [
-			"notice/new_notice.html",
-			"notice/mynotice.html",
-			"notice/noticelist.html"
-		]
-	},
-	"examples/selfsetting.html": {
-		"resources": [
-			"js/mui.min.js",
-			"css/app.css",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		],
-		"refer": [
-			"selfsetting/feedback.html",
-			"selfsetting/changepsw.html",
-			"selfsetting/about_baosteel.html"
-		]
-	},
-	"notice/new_notice.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"css/app.css",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		]
-	},
-	"notice/mynotice.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"css/app.css",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		],
-		"refer": [
-			"notice/notice_edit.html"
-		]
-	},
-	"selfsetting/feedback.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"css/app.css",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		]
-	},
-	"selfsetting/changepsw.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"css/app.css",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		]
-	},
-	"selfsetting/about_baosteel.html": {
-		"resources": [
-			"css/app.css",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"js/app.js",
-			"js/mui.min.js"
-		]
-	},
-	"notice/notice_edit.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"css/app.css",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		]
-	},
-	"notice/noticelist.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"css/app.css",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		],
-		"refer": [
-			"notice/notice_edit.html",
-			"notice/notice_detail.html"
-		]
-	},
-	"notice/notice_detail.html": {
-		"resources": [
-			"js/mui.min.js",
-			"css/app.css",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"js/app.js"
+			"notice/notice.html"
 		]
 	},
 	"inforgather/informationGathering.html": {
 		"resources": [
-			"js/app.js",
 			"img/xinan.png",
-			"js/mui.min.js",
 			"img/huabei.png",
 			"img/xibei.png",
 			"img/xinjiang.png",
-			"css/mui.min.css",
 			"img/donghai.png",
 			"img/bs_5.png",
 			"img/huadong.png",
 			"img/huazhong.png",
-			"img/dongbei.png",
-			"fonts/mui.ttf"
+			"img/dongbei.png"
 		],
 		"refer": [
-			"inforgather/inforGathering_search.html",
 			"inforgather/area_list.html"
 		]
 	},
@@ -564,102 +75,21 @@
 			"fonts/mui.ttf",
 			"js/mui.min.js",
 			"css/mui.min.css"
-		],
-		"refer": [
-			"bussinessinfo/buss_search.html"
 		]
 	},
-	"bussinessinfo/buss_search.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
-		]
-	},
-	"inforgather/inforGathering_search.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"js/mui.picker.js",
-			"css/app.css",
-			"js/mui.poppicker.js",
-			"css/mui.poppicker.css",
-			"css/mui.picker.css"
-		],
-		"refer": [
-			"inforgather/detail_inforgather.html"
-		]
-	},
-	"inforgather/area_list.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"js/mui.js"
-		],
-		"refer": [
-			"inforgather/detail_inforgather.html"
-		]
-	},
-	"inforgather/detail_inforgather.html": {
-		"resources": [
-			"js/mui.min.js",
-			"css/app.css",
-			"css/mui.min.css",
-			"fonts/mui.ttf",
-			"js/app.js"
-		]
-	},
-	"inforguide/detail_inforguide.html": {
+	"inforguide/myInformationGuiding.html": {
 		"resources": [
 			"js/app.js",
 			"js/mui.min.js",
 			"css/app.css",
 			"fonts/mui.ttf",
 			"css/mui.min.css"
-		]
-	},
-	"inforguide/informationGuiding.html": {
-		"refer": [
-			"inforguide/detail_inforguide.html",
-			"inforguide/inforguide_search.html"
-		],
-		"resources": [
-			"js/app.js",
-			"fonts/mui.ttf",
-			"js/mui.min.js",
-			"css/mui.min.css"
-		]
-	},
-	"bussinessinfo/createNewTask.html": {
-		"resources": [
-			"js/mui.picker.js",
-			"js/app.js",
-			"js/mui.min.js",
-			"css/app.css",
-			"js/mui.poppicker.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"css/mui.poppicker.css",
-			"css/mui.picker.css"
-		]
-	},
-	"inforguide/inforguide_search.html": {
-		"resources": [
-			"js/app.js",
-			"js/mui.min.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css"
 		],
 		"refer": [
-			"inforguide/detail_inforguide.html"
+			"inforguide/informationguiding_edit.html"
 		]
 	},
-	"bussinessinfo/buss_edit.html": {
+	"inforguide/informationguiding_edit.html": {
 		"resources": [
 			"js/app.js",
 			"js/mui.picker.js",
@@ -684,53 +114,19 @@
 			"bussinessinfo/buss_edit.html"
 		]
 	},
-	"inforguide/newinformationguide.html": {
+	"inforgather/area_list.html": {
 		"resources": [
-			"js/mui.picker.js",
 			"js/app.js",
 			"js/mui.min.js",
-			"css/app.css",
-			"js/mui.poppicker.js",
 			"fonts/mui.ttf",
 			"css/mui.min.css",
-			"css/mui.poppicker.css",
-			"css/mui.picker.css"
+			"js/mui.js"
 		]
 	},
-	"inforguide/myInformationGuiding.html": {
-		"resources": [
-			"js/mui.min.js",
-			"css/app.css",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"js/app.js"
-		],
-		"refer": [
-			"inforguide/informationguiding_edit.html"
-		]
-	},
-	"inforguide/informationguiding_edit.html": {
+	"bussinessinfo/buss_edit.html": {
 		"resources": [
 			"js/mui.picker.js",
-			"js/app.js",
-			"js/mui.min.js",
-			"css/app.css",
 			"js/mui.poppicker.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
-			"css/mui.poppicker.css",
-			"css/mui.picker.css"
-		]
-	},
-	"inforgather/newinformationgathering.html": {
-		"resources": [
-			"js/mui.picker.js",
-			"js/app.js",
-			"js/mui.min.js",
-			"css/app.css",
-			"js/mui.poppicker.js",
-			"fonts/mui.ttf",
-			"css/mui.min.css",
 			"css/mui.poppicker.css",
 			"css/mui.picker.css"
 		]
@@ -750,6 +146,19 @@
 	"inforgather/informationgathering_edit.html": {
 		"resources": [
 			"js/mui.picker.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"js/mui.poppicker.js",
+			"css/mui.min.css",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"js/app.js",
+			"fonts/mui.ttf"
+		]
+	},
+	"inforgather/newinformationgathering.html": {
+		"resources": [
+			"js/mui.picker.js",
 			"js/app.js",
 			"js/mui.min.js",
 			"css/app.css",
@@ -760,15 +169,21 @@
 			"css/mui.picker.css"
 		]
 	},
-	"selfsetting/selfsetting.html": {
+	"notice/notice.html": {
 		"resources": [
 			"js/mui.min.js",
 			"css/app.css",
 			"fonts/mui.ttf",
 			"css/mui.min.css"
-		],
-		"refer": [
-			"selfsetting/about_baosteel.html"
+		]
+	},
+	"inforguide/detail_inforguide.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		]
 	}
 }

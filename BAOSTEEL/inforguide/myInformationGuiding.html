@@ -11,10 +11,6 @@
 			body {
 				background-color:#efeff4;
 			}
-		    div{
-		    	background-color: #EEEEEE;
-		    }
-		   
 		   
 		</style>
 
@@ -51,9 +47,6 @@
 			mui.init({
 				pullRefresh: {
 					container: '#pullrefresh',
-					down:{
-						callback:pulldownRefresh
-					},
 					up: {
 						contentrefresh: '正在加载...',
 						callback: pullupRefresh
@@ -74,11 +67,10 @@
 						},
 						async:true,
 						dataType:"json",
-						success:function(date){
+						success:function(data){
 							mui('#pullrefresh').pullRefresh().endPullupToRefresh((data ==""||null));				            
-							mui.each(date,function(key,value){
+							mui.each(data,function(key,value){
 							var li = document.createElement("li")
-							
 							li.className="mui-table-view-cell"
 							li.setAttribute("guide_id",value.guide_id);
 							li.setAttribute("guide_editor",value.guide_editor)
@@ -121,13 +113,10 @@
 			   		},
 				  
 				  });
-				}, 1500);
+				}, 100);
 				
 			}
-			/*
-			 下拉刷新(以从新加载本页的方法来实现)
-			 * */
-			
+
 			if (mui.os.plus) {
 				mui.plusReady(function() {
 					setTimeout(function() {

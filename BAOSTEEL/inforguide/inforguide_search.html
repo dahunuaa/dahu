@@ -6,117 +6,106 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-		<link rel="stylesheet" href="../css/mui.min.css">
+		<link href="../css/mui.min.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="../css/app.css"/>
+        <link href="../css/mui.picker.css" rel="stylesheet" />
+		<link href="../css/mui.poppicker.css" rel="stylesheet" />
 		<style>
-			html,
-			body {
-				background-color:#efeff4;
+			ul {
+				font-size: 14px;
+				color: #8f8f94;
+				
 			}
-		    div{
-		    	background-color: #EEEEEE;
-		    }
+			li{
+				list-style-type:none;/*去掉li前面的小黑点*/
+			}
 		</style>
 	</head>
 	<body>
-		<div align="center" style="background-color:#FAFAFA">
-			
-			<input type="search" id="inforguide_search" class="mui-icon mui-icon-search"  placeholder="请输入搜索内容" style="width:250px;height:35px; background-color:#E8E8E8; margin-top: 10px;margin-bottom: 5px;"/>
-			<a id="icon_search"><span class="mui-icon mui-icon-search"></span></a>
-			 <a id="back" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"style="margin:15px -20px 15px 15px;"></a>
-			<hr />
+		<header class="mui-bar mui-bar-nav">
+			<a id="back" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="buss_search"class="mui-title">信息指南查询</h1>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>标题</label>
+					<input id="title" type="text" class="mui-input-clear" placeholder="请输入标题关键字">
+				</div>
+				<li class="mui-table-view-cell">
+					<a id="selectcategory" class="mui-navigate-right">
+						选择分类<span id="category"style="padding: 0px 0px 0px 45px;"></span>
+					</a>
+				</li>
+				<div class="mui-input-row">
+					<label>内容</label>
+					<input id="textarea" type="text" class="mui-input-clear" placeholder="请输入内容关键字">
+				</div>	
+				<button id="search_btn" type="button" class="mui-table-view-cell mui-btn mui-btn-block mui-btn-primary"  style="margin-top: 25px;">查询</button>
+			</form>
+						
 		</div>
-		<div class="mui-content" id="search_content">
-        <ul class="mui-table-view" style="margin-top:-10px;" id="search_list">
-  				
-		</ul>		
-		</div>
-		
-		<script src="../js/mui.min.js"></script>
-		<script src="../js/app.js"></script>
+		<script type="text/javascript" src="../js/app.js" ></script>
+		<script type="text/javascript" src="../js/mui.min.js" ></script>
+		<script src="../js/mui.picker.js"></script>
+		<script src="../js/mui.poppicker.js"></script>
 		<script>
-		(function($,doc){
-			$.init();
-			$.ready(function(){
-			
-			  	var inforguide_search = document.getElementById("inforguide_search")
-			  	var icon_search = document.getElementById("icon_search")
-			  
-		        icon_search.addEventListener("tap",function(event){
-			    if (inforguide_search.value==""){
-			    	alert("请输入搜索内容")
-			    }else{
-				var search_list = document.getElementById("search_list")	
-				search_list.innerHTML="";//解决刷新重复出出现的问题,先为空，再填充数据
-
-				mui.ajax({
-				type: "post",
-				url: "http://192.168.191.1:8080/baosteel/Inforguide_search",
-				data:{
-					"inforguide_search":inforguide_search.value
-				},
-
-				async:true,
-				dataType:"json",
-				success:function(data){	
-					if (data ==""){
-						alert("无搜索结果")
-					}
-					mui.each(data,function(key,value){
-					var li = document.createElement("li")
-					li.className="mui-table-view-cell"
-					li.setAttribute("guide_id",value.guide_id);
-					li.setAttribute("guide_editor",value.guide_editor)
-					li.setAttribute("guide_name",value.guide_name)
-					li.setAttribute("guide_title",value.guide_title)
-					li.setAttribute("guide_category",value.guide_category)
-					li.setAttribute("guide_text",value.guide_text)
-					li.setAttribute("time",value.time)
-                    li.innerHTML ='<a class="mui-navigate-right"'+"<br>"+"序号："+value.guide_id+"&nbsp&nbsp&nbsp"+"编辑者："+value.guide_name +"<br>"+"编辑时间："+value.time +"<br>"+"分类："+value.guide_category 
-                                          +"<br>"+"标题："+value.guide_title+'</a>';  
-                    search_list.appendChild(li)
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					//选择地点
+					var selectcategory = new $.PopPicker();
+					selectcategory.setData([{
+						value: 'bijixiaojie',
+						text: '笔记小结'
+					},{
+						value: 'yonghuxinxi',
+						text: '用户信息'
+					}, {
+						value: 'chanpinxinxi',
+						text: '产品信息'
+					}, {
+						value: 'hangyexinxi',
+						text: '行业信息'
+					}, {
+						value: 'gongsixinxi',
+						text: '公司新闻'
+					}]);
+					var showUserPickerButton = doc.getElementById('selectcategory');
+					var category = doc.getElementById('category');
+					showUserPickerButton.addEventListener('tap', function(event) {
+						selectcategory.show(function(items) {
+							category.innerText = items[0].text;
+							//返回 false 可以阻止选择框的关闭
+//							return false;
+						});
+					}, false);
+					var titleBox = doc.getElementById("title")
+					var categoryBox = doc.getElementById("category")
+					var contentBox = doc.getElementById("textarea")
+					searchButton = doc.getElementById("search_btn")
+					searchButton.addEventListener('tap',function(event){
+						if (titleBox.value ==""&categoryBox.innerText==""&contentBox.value==""){
+							alert("请输入查询条件")
+						}else{
+							mui.openWindow({
+								url:"inforguide_search_content.html",
+								id:"inforguide_search_content",
+								
+								extras:{
+									"title":titleBox.value,
+									"category":categoryBox.innerText,
+									"content":contentBox.value,
+									
+								}
+							})
+						}
 					})
 					
-					mui("#search_list").on('tap','li',function(){
-					var guide_id = this.getAttribute("guide_id")
-					var guide_editor = this.getAttribute("guide_editor")
-					var guide_name = this.getAttribute("guide_name")
-					var guide_title = this.getAttribute("guide_title")
-					var guide_category = this.getAttribute("guide_category")
-					var guide_text = this.getAttribute("guide_text")
-					var time = this.getAttribute("time")
-//								alert(guide_id)
-										
-					mui.openWindow({
-				    url:"detail_inforguide.html",
-				    id:"detail_inforguide",
-				    
-				    extras:{
-				    	guide_id:guide_id,
-				    	guide_editor:guide_editor,
-				    	guide_name:guide_name,
-				    	guide_title:guide_title,
-				    	guide_category:guide_category,
-				    	guide_text:guide_text,
-				    	guide_time:time,
-				    }
-				     
-//						        styles:{
-//						        top:'0px',//mui标题栏默认高度为45px；
-//						        bottom:'0px'//默认为0px，可不定义；
-//						      }
-				            })
-		                  });											                                         			           		           
-		   		        										                                         			           		           
-	   		                         },
-			  
-			           });	
-			          }
-			     })
-				
+			
 				});
-		}(mui,document))
+			})(mui, document);
+			
 		</script>
-	
 	</body>
 </html>
