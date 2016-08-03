@@ -86,7 +86,8 @@
 			"examples/myBusinessRecord.html",
 			"selfsetting/selfsetting.html",
 			"inforguide/myInformationGuiding.html",
-			"bussinessinfo/createNewTask.html"
+			"bussinessinfo/createNewTask.html",
+			"bussinessinfo/myBusinessRecord.html"
 		]
 	},
 	"createNewTask.html": {
@@ -581,7 +582,12 @@
 			"js/app.js",
 			"js/mui.min.js",
 			"fonts/mui.ttf",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"js/mui.picker.js",
+			"css/app.css",
+			"js/mui.poppicker.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css"
 		],
 		"refer": [
 			"inforgather/detail_inforgather.html"
@@ -592,7 +598,8 @@
 			"js/app.js",
 			"js/mui.min.js",
 			"fonts/mui.ttf",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"js/mui.js"
 		],
 		"refer": [
 			"inforgather/detail_inforgather.html"
@@ -695,7 +702,8 @@
 			"js/mui.min.js",
 			"css/app.css",
 			"fonts/mui.ttf",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"js/app.js"
 		],
 		"refer": [
 			"inforguide/informationguiding_edit.html"
