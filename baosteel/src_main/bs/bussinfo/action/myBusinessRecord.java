@@ -34,12 +34,11 @@ public class myBusinessRecord extends HttpServlet {
 			req.setCharacterEncoding("utf-8");// 先将请求的名字用utf-8进行编码
 			resp.setCharacterEncoding("utf-8");//设置发送到前端的数据格式是utf-8格式
 			String id = (String) session.getAttribute("id");
-//			System.out.println(id);
-			myBusinessRecordDao userDao = new myBusinessRecordDao(id);
+			String p_count = req.getParameter("pull_count");
+			int count  = Integer.parseInt(p_count);
+			myBusinessRecordDao userDao = new myBusinessRecordDao(id,count);
 		    List<Map<String,Object>> infos = userDao.myBusinessRecord();
-
 		    JSONArray infoslist = JSONArray.fromObject(infos);
-            
 		    
 
 			PrintWriter pw = null;

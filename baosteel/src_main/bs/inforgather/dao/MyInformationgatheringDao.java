@@ -13,9 +13,11 @@ import com.bs.system.DBUtils;
 
 public class MyInformationgatheringDao {
 	private String gather_editor;
+	private int count;
 	
-	 public MyInformationgatheringDao(String gather_editor){
+	 public MyInformationgatheringDao(String gather_editor,int count){
 		this.gather_editor = gather_editor;
+		this.count = 5*count;
 		
 	}
 	 public List MyInformationgathering(){
@@ -30,9 +32,10 @@ public class MyInformationgatheringDao {
 			 sb.append("SELECT informationgatheringrecord.`gather_id`, informationgatheringrecord.`gather_editor`,`gather_editor_name`,`gather_title`,`area`,`address`,`gathering_text`,`gather_oil_field`,`time`");
 			 sb.append(" FROM informationgatheringrecord");
 			 sb.append(" WHERE informationgatheringrecord.`gather_editor`=?");
-			 sb.append(" ORDER BY gather_id DESC");
+			 sb.append(" ORDER BY gather_id DESC LIMIT ?,5");
 			 pstmt = conn.prepareStatement(sb.toString());
 			 pstmt.setObject(1, this.gather_editor);
+			 pstmt.setObject(2, this.count);
 			 ResultSet rs = pstmt.executeQuery();
 			 infos = new ArrayList<Map<String,Object>>();
 			 ResultSetMetaData rsmd = rs.getMetaData();

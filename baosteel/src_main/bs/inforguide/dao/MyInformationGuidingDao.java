@@ -13,9 +13,11 @@ import com.bs.system.DBUtils;
 
 public class MyInformationGuidingDao {
 	private String guide_editor;
+	private int count;
 	
-	 public MyInformationGuidingDao(String guide_editor){
+	 public MyInformationGuidingDao(String guide_editor,int count){
 		this.guide_editor = guide_editor;
+		this.count = 5*count;
 		
 	}
 	 public List MyInformationGuiding(){
@@ -30,10 +32,10 @@ public class MyInformationGuidingDao {
 			 sb.append("SELECT informationguiderecord.`guide_id`, informationguiderecord.`guide_editor`,`guide_name`,`guide_title`,`guide_category`,`guide_text`,`time`");
 			 sb.append(" FROM informationguiderecord");
 			 sb.append(" WHERE informationguiderecord.`guide_editor`=?");
-			 sb.append(" ORDER BY guide_id DESC");
+			 sb.append(" ORDER BY guide_id DESC LIMIT ?,5");
 			 pstmt = conn.prepareStatement(sb.toString());
 			 pstmt.setObject(1, this.guide_editor);
-//			 System.out.println(this.buss_editor);
+			 pstmt.setObject(2, this.count);
 			 ResultSet rs = pstmt.executeQuery();
 	         //int sc =Integer.parseInt(rs.getString(7));
 			 infos = new ArrayList<Map<String,Object>>();
