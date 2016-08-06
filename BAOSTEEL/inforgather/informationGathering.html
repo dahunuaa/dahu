@@ -19,41 +19,15 @@
 		</style>
    </head>
 	<body>
-		<!--<img src="../img/bs_5.png" style="width: 359px;height: 75px;"/>
-		<div class="mui-content" style="margin-top: -23px;">
-		        <ul class="mui-table-view mui-grid-view mui-grid-9">
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-							<img src="../img/dongbei.png" style="width: 50px; height: 50px;" />
-							<div class="mui-media-body">东北</div></a></li>
-					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-			                <img src="../img/xinan.png" style="width: 50px; height: 50px;" />
-			                <div class="mui-media-body">西南</div></a></li>
-			        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-		                    <img src="../img/donghai.png" style="width: 50px; height: 50px;" />
-		                    <div class="mui-media-body">中海油</div></a></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="">
-		                    <img src="../img/huabei.png" style="width: 50px; height: 50px;" />
-		                    <div class="mui-media-body">华北</div></a></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-		                   <img src="../img/huazhong.png" style="width: 50px; height: 50px;" />
-		                    <div class="mui-media-body">华中</div></a></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-		                    <img src="../img/huadong.png" style="width: 50px; height: 50px;" />
-		                    <div class="mui-media-body">华东</div></a></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-		                    <img src="../img/xinjiang.png" style="width: 50px; height: 50px;" />
-		                    <div class="mui-media-body">新疆</div></a></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-		                   <img src="../img/xibei.png" style="width: 50px; height: 50px;" />
-		                    <div class="mui-media-body">西北</div></a></li>
-		           <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-		                     <img src="../img/BS_2.png" style="width: 50px; height: 50px;" />
-		                    <div class="mui-media-body">其他</div></a></li>
-		        </ul> 
+
+		<div align="center" style="background-color:#FAFAFA">
+			<input type="search" id="inforgather_search" class="mui-icon mui-icon-search" placeholder="请输入搜索内容" style="width:250px;height:35px; background-color:#E8E8E8; margin-top: 10px;margin-bottom: 5px;"/>
+			<a id="inforgather_search"><span class="mui-icon mui-icon-search"></span></a>
+			<hr>
 		</div>
-	-->
-	<img src="../img/bs_5.png" style="width: 359px;height: 75px;"/>
-		<div class="mui-content" style=" margin-top: -23px;">
+		<!--<img src="../img/bs_5.png" style="width: 359px;height: 75px; "/>-->
+		<div class="mui-content" style=" margin-top:-23px;">
+
 		        <ul class="mui-table-view mui-grid-view mui-grid-9">
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
 							<img src="../img/dongbei.png"  id="dongbei"/>
@@ -80,8 +54,8 @@
 		                   <img src="../img/xibei.png" id="xibei" />
 		                    <div class="mui-media-body">西北</div></a></li>
 		           <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-							<span class="mui-icon mui-icon-search" id="inforgather_search"></span>
-							<div class="mui-media-body">搜索</div>
+							<span class="mui-icon mui-icon-list" id="inforgather_list" style="margin: 3px;"></span>
+							<div class="mui-media-body" >情报列表</div>
 								</a>
 							</li>
 		        </ul> 
@@ -191,6 +165,14 @@
 					extras:{
 							  area:"西北"
 							    }
+					})
+				})
+				
+				var inforgather_list = document.getElementById("inforgather_list")
+				inforgather_list.addEventListener('tap',function(event){
+					mui.openWindow({
+						url:"inforgather_list.html",
+						id:"inforgather_list",
 					})
 				})
 				
