@@ -300,7 +300,8 @@
 					"examples/informationGathering.html",
 					"notice/noticelist.html",
 					"inforguide/informationGuiding.html",
-					"selfInformation.html"
+					"selfInformation.html",
+					null
 				],
 				"priority": 0
 			},
@@ -828,7 +829,8 @@
 					"inforgather/area_list.html"
 				],
 				"refer": [
-					"inforgather/inforGathering_search.html"
+					"inforgather/inforGathering_search.html",
+					"inforgather/inforgather_list.html"
 				],
 				"priority": 0
 			},
@@ -1169,6 +1171,16 @@
 				"refer": [
 					"inforgather/detail_inforgather.html"
 				],
+				"priority": 0
+			},
+			"inforgather/inforgather_list.html": {
+				"resources": [
+					"js/app.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},
