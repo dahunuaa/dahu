@@ -169,6 +169,15 @@
     <servlet-name>InforGather_dongbei</servlet-name>
     <url-pattern>/InforGather_dongbei</url-pattern>
   </servlet-mapping>
+   <servlet>
+    <servlet-name>InformationGather</servlet-name>
+    <servlet-class>bs.inforgather.action.InformationGather</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InformationGather</servlet-name>
+    <url-pattern>/InformationGather</url-pattern>
+  </servlet-mapping> 
+  
   <servlet>
     <servlet-name>Feedback</servlet-name>
     <servlet-class>com.bs.action.Feedback</servlet-class>

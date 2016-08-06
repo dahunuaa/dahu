@@ -1,4 +1,4 @@
-package bs.inforguide.dao;
+package bs.inforgather.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,16 +11,15 @@ import java.util.Map;
 
 import com.bs.system.DBUtils;
 
-public class MyInformationGuidingDao {
-	private String guide_editor;
+public class InformationGatherDao {
 	private int count;
 	
-	 public MyInformationGuidingDao(String guide_editor,int count){
-		this.guide_editor = guide_editor;
+	 public InformationGatherDao(int count){
+//		this.guide_editor = guide_editor;
 		this.count = 5*count;
 		
 	}
-	 public List MyInformationGuiding(){
+	 public List InformationGuidingRecord(){
          Connection conn =null;
          PreparedStatement pstmt =null;
          List infos = null;
@@ -29,21 +28,21 @@ public class MyInformationGuidingDao {
 			 conn=DBUtils.getConnection();
 			 if(conn==null) return null;
 			 StringBuffer sb = new StringBuffer();
-			 sb.append("SELECT informationguiderecord.`guide_id`, informationguiderecord.`guide_editor`,`guide_name`,`guide_title`,`guide_category`,`guide_text`,`time`");
-			 sb.append(" FROM informationguiderecord");
-			 sb.append(" WHERE informationguiderecord.`guide_editor`=?");
-			 sb.append(" ORDER BY guide_id DESC LIMIT ?,5");
+			 sb.append("SELECT informationgatheringrecord.`gather_id`, informationgatheringrecord.`gather_editor`,`gather_editor_name`,`gather_title`,`area`,`address`,`gathering_text`,`gather_oil_field`,`time`");
+			 sb.append(" FROM informationgatheringrecord");
+			 sb.append(" ORDER BY gather_id DESC LIMIT ?,5");
+
 			 pstmt = conn.prepareStatement(sb.toString());
-			 pstmt.setObject(1, this.guide_editor);
-			 pstmt.setObject(2, this.count);
+			 pstmt.setObject(1, this.count);
 			 ResultSet rs = pstmt.executeQuery();
+	       
 			 infos = new ArrayList<Map<String,Object>>();
-			 ResultSetMetaData rsmd = rs.getMetaData();//得到表的结构信息，比如字段名，字段数
-			 while(rs.next()){//遍历列数
+			 ResultSetMetaData rsmd = rs.getMetaData();
+			 while(rs.next()){
 				 Map<String,Object> item = new HashMap<String, Object>();
-				 int nCount = rsmd.getColumnCount();//得到列的数量  getrowcount是获取行的数量
+				 int nCount = rsmd.getColumnCount();
 				 for(int i = 0; i <nCount;++i){
-					 item.put(rsmd.getColumnLabel(i+1), rs.getString(i+1));//将获取的信息存入到map中
+					 item.put(rsmd.getColumnLabel(i+1), rs.getString(i+1));
 				 }
 				 		 
 				 infos.add(item);
