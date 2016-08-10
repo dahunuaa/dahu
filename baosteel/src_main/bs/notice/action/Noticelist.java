@@ -33,7 +33,9 @@ public class Noticelist extends HttpServlet {
 		    HttpSession session = req.getSession();
 			req.setCharacterEncoding("utf-8");
 			resp.setCharacterEncoding("utf-8");
-			NoticelistDao Dao = new NoticelistDao();
+			String p_count  = req.getParameter("pull_count");
+			int count = Integer.parseInt(p_count);
+			NoticelistDao Dao = new NoticelistDao(count);
 		    List<Map<String,Object>> infos = Dao.Noticelist();
       
 		    JSONArray infoslist = JSONArray.fromObject(infos);

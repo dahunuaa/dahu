@@ -13,16 +13,17 @@ import com.bs.system.DBUtils;
 
 public class MynoticeDao {
 	private String publisher;
+	private int count;
 	
-	 public MynoticeDao(String publisher){
+	 public MynoticeDao(String publisher,int count){
 		this.publisher = publisher;
+		this.count=5*count;
 		
 	}
 	 public List mynotice(){
          Connection conn =null;
          PreparedStatement pstmt =null;
          List infos = null;
-//         System.out.println(publisher);
          try {
         	
 			 conn=DBUtils.getConnection();
@@ -31,10 +32,10 @@ public class MynoticeDao {
 			 sb.append("SELECT notice.`notice_id`, notice.`publisher`, notice.`notice_title`,`notice`,`time`");
 			 sb.append(" FROM notice");
 			 sb.append(" WHERE notice.`publisher`=?");
-			 sb.append(" ORDER BY notice_id DESC");
+			 sb.append(" ORDER BY notice_id DESC LIMIT ?,5");
 			 pstmt = conn.prepareStatement(sb.toString());
 			 pstmt.setObject(1, this.publisher);
-          
+			 pstmt.setObject(2, this.count);
 			 ResultSet rs = pstmt.executeQuery();
 
 			 infos = new ArrayList<Map<String,Object>>();

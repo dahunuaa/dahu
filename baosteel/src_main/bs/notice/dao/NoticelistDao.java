@@ -12,10 +12,10 @@ import java.util.Map;
 import com.bs.system.DBUtils;
 
 public class NoticelistDao {
-//	private String guide_editor;
+	private int count;
 	
-	 public NoticelistDao(){
-//		this.guide_editor = guide_editor;
+	 public NoticelistDao(int count){
+		this.count = 5*count;
 		
 	}
 	 public List Noticelist(){
@@ -29,8 +29,9 @@ public class NoticelistDao {
 			 StringBuffer sb = new StringBuffer();
 			 sb.append("SELECT notice.`notice_id`,`name`,`notice`,`notice_title`,`time`");
 			 sb.append(" FROM notice");
-			 sb.append(" ORDER BY notice_id DESC");
+			 sb.append(" ORDER BY notice_id DESC LIMIT ?,5");
 			 pstmt = conn.prepareStatement(sb.toString());
+			 pstmt.setObject(1, this.count);
 			 ResultSet rs = pstmt.executeQuery();
 	       
 			 infos = new ArrayList<Map<String,Object>>();
