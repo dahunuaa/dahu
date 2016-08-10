@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.bs.dao.UserDao;
+import com.bs.dao.UploadPicDao;
 
-public class Action extends HttpServlet{
+public class Uploadpic extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -24,24 +24,17 @@ public class Action extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
-		String id = req.getParameter("name");
-		String password = req.getParameter("pswd");
-
-		UserDao dao = new UserDao(id);
-         String psw = dao.getPassWord();
-         HttpSession session=req.getSession();
-         session.setAttribute("psw", psw);
-         session.setAttribute("id", id);
-         String str = "";
-         
+		resp.setCharacterEncoding("utf-8");
+		String path_1 = req.getParameter("path");
+		String pic = req.getParameter("file");
+		pic = pic.substring(22,pic.length());
+		UploadPicDao dao = new UploadPicDao(path_1, pic);
+		boolean res = dao.uploadpic();
+//		System.out.println(res);
          PrintWriter pw = null;
-         if(psw.equals(password)){
-        	str = "ok";
-         }else{
-        	 str = "sorry";
-         } try {
+         try {
 				pw = resp.getWriter(); 
-				 pw.print(str);//²»ÄÜÐ´³Éprintln
+				 pw.print("111");
 				 pw.flush();
 			} catch (Exception e) {
 				e.printStackTrace();

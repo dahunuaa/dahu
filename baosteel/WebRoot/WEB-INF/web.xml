@@ -234,4 +234,13 @@
     <servlet-name>Noticelist</servlet-name>
     <url-pattern>/Noticelist</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>Uploadpic</servlet-name>
+    <servlet-class>com.bs.action.Uploadpic</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Uploadpic</servlet-name>
+    <url-pattern>/uploadpic</url-pattern>
+  </servlet-mapping>
+
 </web-app>
