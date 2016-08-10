@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" type="text/css" href="css/feedback-page.css" />
+		<link rel="stylesheet" href="css/mui.min.css">
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			.mui-views,
+			.mui-view,
+			.mui-pages,
+			.mui-page,
+			.mui-content {
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 50px;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+				background-color: #efeff4;
+			}
+			
+			#head {
+				line-height: 40px;
+			}
+			#head-img1 {
+				position: absolute;
+				bottom: 10px;
+				right: 40px;
+				width: 40px;
+				height: 40px;
+			}
+			/*固定添加的图片的大小*/
+			.picture{
+				width:100px;
+				height:100px;
+			}
+		</style>
+	
+	</head>
+
+
+
+		<div class="mui-content">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>设置
+				</button>
+				<h1 class="mui-center mui-title">账号与安全</h1>
+			</div>
+			<img class="picture" id="pic_1" src="img/iconfont-tianjia.png"/>
+			<img class="picture" id="pic_2" src="img/iconfont-tianjia.png"/>
+			<!--//直接调用的是feedback-page.js 可以直接打开图库-->
+			<!--<div id='image-list' class="row image-list" >-->
+			<div class="mui-button-row">
+			<button id="submit_pic" class="mui-button-row">上传</button>
+			</div>
+			
+		</div>
+
+	</body>
+	<script src="js/mui.min.js "></script>
+	<script src="js/mui.view.js "></script>
+	<!--<script src='js/feedback.js'></script>-->
+	<!--<script src="js/feedback-page.js"></script>-->
+	<script>
+		
+	(function($,doc){
+		mui.init();
+		
+		//添加图片
+		var carmer_1 = doc.getElementById('pic_1')
+		carmer_1.addEventListener('tap', function(event) {
+//		mui(".mui-table-view-cell").on("tap", "#head", function(e) {
+			if(mui.os.plus){
+				var a = [{
+					title: "拍照"
+				}, {
+					title: "从手机相册选择"
+				}];
+				plus.nativeUI.actionSheet({
+//					title: "修改头像",
+					cancel: "取消",
+					buttons: a
+				}, function(b) {
+					switch (b.index) {
+						case 0:
+							break;
+						case 1:
+							getImage();
+							break;
+						case 2:
+							galleryImg();
+							break;
+						default:
+							break
+					}
+				})	
+			}
+			
+		});
+
+		//拍照
+		function getImage() {
+			var c = plus.camera.getCamera();
+			c.captureImage(function(e) {
+				plus.io.resolveLocalFileSystemURL(e, function(entry) {
+					var s = entry.toLocalURL() + "?version=" + new Date().getTime();
+					appendFile(s);
+					document.getElementById("pic_1").src = s;
+					//变更大图预览的src
+					//目前仅有一张图片，暂时如此处理，后续需要通过标准组件实现
+//					document.querySelector("#__mui-imageview__group .mui-slider-item img").src = s + "?version=" + new Date().getTime();;;
+				}, function(e) {
+					console.log("读取拍照文件错误：" + e.message);
+				});
+			}, function(s) {
+				console.log("error" + s);
+			}, {
+				filename: "_doc/head.jpg"
+			})
+		}
+		//从相册选择图片
+		function galleryImg() {
+			plus.gallery.pick(function(a) {
+				plus.io.resolveLocalFileSystemURL(a, function(entry) {
+					plus.io.resolveLocalFileSystemURL("_doc/", function(root) {
+						root.getFile("head.jpg", {}, function(file) {
+							//文件已存在
+							file.remove(function() {
+								console.log("file remove success");
+								entry.copyTo(root, 'head.jpg', function(e) {
+										var e = e.fullPath + "?version=" + new Date().getTime();
+										appendFile(e);
+										document.getElementById("pic_1").src = e;
+										//变更大图预览的src
+										//目前仅有一张图片，暂时如此处理，后续需要通过标准组件实现
+//										document.querySelector("#__mui-imageview__group .mui-slider-item img").src = e + "?version=" + new Date().getTime();;
+									},
+									function(e) {
+										console.log('copy image fail:' + e.message);
+									});
+							}, function() {
+								console.log("delete image fail:" + e.message);
+							});
+						}, function() {
+							//文件不存在
+							entry.copyTo(root, 'head.jpg', function(e) {
+									var path = e.fullPath + "?version=" + new Date().getTime();
+									appendFile(e)
+									document.getElementById("head-img1").src = path;
+									//变更大图预览的src
+									//目前仅有一张图片，暂时如此处理，后续需要通过标准组件实现
+									document.querySelector("#__mui-imageview__group .mui-slider-item img").src = path;
+								},
+								function(e) {
+									console.log('copy image fail:' + e.message);
+								});
+						});
+					}, function(e) {
+						console.log("get _www folder fail");
+					})
+				}, function(e) {
+					console.log("读取拍照文件错误：" + e.message);
+				});
+			}, function(a) {}, {
+				filter: "image"
+			})
+		};
+		
+		
+//		生成canvas	
+		var f1 = null;
+		var path_pic= "";
+		function appendFile(path){
+			var img = new Image();
+			path_pic = path;
+			img.src=path;
+			img.onload = function(){
+				var that = this;
+//				生成比例
+				var w = that.width,
+					h = that.height,
+					scale = w/h;
+					w = 480 ||w;//480 你想压缩到多大 改这里
+					h = w/scale;
+//				生成canvas
+ 				var canvas = document.createElement('canvas');
+ 				var ctx = canvas.getContext('2d');
+ 				canvas.width = w;
+        		canvas.height = h;
+ 				ctx.drawImage(that,0,0,w,h);
+ 				var base64 = canvas.toDataURL('image/png',1||0.8);//1最清晰，越低越模糊。有一点不清楚这里明明设置的是png。弹出 base64 开头的一段 data：image/png;却是png。哎开心就好，开心就好
+				f1 = base64;//把base64数据丢过去，上传要用
+				
+				//下面两行，就是显示当前所选取的图片，之前的方法里面已经实现
+//				var pic = document.getElementById("x");
+//				pic.src = base64; //这里丢到img 的 src 里面就能看到效果了
+					
+			}
+		}
+		
+//		上传文件
+		var submit_pic = document.getElementById('submit_pic');
+		submit_pic.addEventListener('tap',function(){
+			$.ajax({
+				type: "post",
+				url: "http://192.168.191.1:8080/baosteel/uploadpic",
+				data: {
+					"path":path_pic,
+					 "file":f1,       //base64数据    
+					
+				},
+				async: true,
+				dataType:'json',
+				success: function(data) {
+					if (data=="111")
+					{
+						alert("上传图片成功");
+						
+					}else{
+						alert("上传图片失败");
+					}
+				},
+				error: function() {
+					alert("请求服务器失败!");
+				}
+			});
+			})
+		})(mui,document);
+		
+	</script>
+	</body>
+</html>

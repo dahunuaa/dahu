@@ -1088,7 +1088,8 @@
 					"notice/notice.html",
 					"inforgather/newinformationgathering.html",
 					"inforgather/myinformationgathering.html",
-					"inforguide/newinformationguide.html"
+					"inforguide/newinformationguide.html",
+					"photoDemo.html"
 				],
 				"priority": 0
 			},
@@ -1179,6 +1180,28 @@
 					"js/mui.min.js",
 					"fonts/mui.ttf",
 					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"photoDemo.html": {
+				"resources": [
+					"css/mui.poppicker.css",
+					"css/mui.picker.css",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/app.js",
+					"js/mui.min.js",
+					"js/feedback.js",
+					"js/feedback-page.js",
+					"js/mui.view.js",
+					"css/feedback-page.css",
+					"libs/easymob-webim-sdk/easemob.im-1.0.5.js",
+					"libs/easymob-webim-sdk/json2.js",
+					"libs/easymob-webim-sdk/jquery-1.11.1.js",
+					"libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
+					"img/iconfont-tianjia.png"
 				],
 				"refer": [],
 				"priority": 0
