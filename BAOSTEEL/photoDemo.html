@@ -50,35 +50,37 @@
 	</head>
 
 
-
+	<body>
 		<div class="mui-content">
-			<div class="mui-navbar-inner mui-bar mui-bar-nav">
-				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
-					<span class="mui-icon mui-icon-left-nav"></span>设置
-				</button>
-				<h1 class="mui-center mui-title">账号与安全</h1>
+			<div class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-center mui-title">photoDemo</h1>
 			</div>
-			<img class="picture" id="pic_1" src="img/iconfont-tianjia.png"/>
-			<img class="picture" id="pic_2" src="img/iconfont-tianjia.png"/>
+			<img class="picture" id="pic_1" src="img/iconfont-tianjia.png"/ style="margin-left: 130px;">
+			
 			<!--//直接调用的是feedback-page.js 可以直接打开图库-->
 			<!--<div id='image-list' class="row image-list" >-->
 			<div class="mui-button-row">
-			<button id="submit_pic" class="mui-button-row">上传</button>
+			<button id="submit_pic" class="mui-button-row">上传图片</button>
+			<button id="down_pic" class="mui-button-row">下载图片</button>
 			</div>
-			
+			<img class="picture" id="pic_2" src="img/iconfont-tianjia.png"/ style="margin-left: 130px;">
+			<div id='image-list' class="row image-list">
+			</div>
+			<img src="http://192.168.191.1:8081/C:/123.jpg" alt="pic_1"></img>
 		</div>
 
 	</body>
 	<script src="js/mui.min.js "></script>
 	<script src="js/mui.view.js "></script>
 	<!--<script src='js/feedback.js'></script>-->
-	<!--<script src="js/feedback-page.js"></script>-->
+	<script src="js/feedback-page.js"></script>
 	<script>
 		
 	(function($,doc){
 		mui.init();
-		
-		//添加图片
+		$.plusReady(function(){
+					//添加图片
 		var carmer_1 = doc.getElementById('pic_1')
 		carmer_1.addEventListener('tap', function(event) {
 //		mui(".mui-table-view-cell").on("tap", "#head", function(e) {
@@ -213,6 +215,7 @@
 //		上传文件
 		var submit_pic = document.getElementById('submit_pic');
 		submit_pic.addEventListener('tap',function(){
+			var wt=plus.nativeUI.showWaiting("正在上传照片");
 			$.ajax({
 				type: "post",
 				url: "http://192.168.191.1:8080/baosteel/uploadpic",
@@ -225,17 +228,68 @@
 				dataType:'json',
 				success: function(data) {
 					if (data=="111")
-					{
-						alert("上传图片成功");
+					{   
+						wt.close();
+						plus.nativeUI.toast("上传图片成功");
 						
 					}else{
-						alert("上传图片失败");
+						plus.nativeUI.toast("上传图片失败");
 					}
 				},
 				error: function() {
-					alert("请求服务器失败!");
+					plus.nativeUI.toast("请求服务器失败!");
 				}
 			});
+			})
+		
+		//下载图片
+		var pathfile = "d://111.png"
+		var down_pic = document.getElementById("down_pic");
+		down_pic.addEventListener('tap',function(){
+			$.ajax({
+				type:"post",
+				url:"http://192.168.191.1:8080/baosteel/downloadpic",
+				data:{
+					"imgfile":pathfile,
+				},
+				async:true,
+				success:function(data){
+					
+		    		if(mui.os.android){
+		            var Base64 = plus.android.importClass("android.util.Base64");
+		            var File = plus.android.importClass("java.io.File");
+		            var FileOutputStream = plus.android.importClass("java.io.FileOutputStream");
+		            var dir = new File(path);
+		            if (!dir.exists()) dir.mkdirs();        
+		            try{
+		                var out = new FileOutputStream(path+name);
+		                var bytes = Base64.decode(base64Str.replace('data:audio/amr;base64,',''), Base64.DEFAULT);
+		                out.write(bytes); 
+		                out.close();
+		                callback && callback(name,extra);
+		                console.log(path)
+		            }catch(e){
+		                console.log(e.message);
+		            }
+			        }else if(mui.os.ios){
+			            var NSData = plus.ios.importClass('NSData');
+			            var nsData = new NSData();
+			            nsData = nsData.initWithBase64EncodedStringoptions(base64Str,0);
+			            nsData.plusCallMethod({writeToFile:path+name,atomically:true});
+			            plus.ios.deleteObject(nsData);
+			            callback && callback(); 
+			        }
+			        plus.nativeUI.toast("111")
+				},
+				error: function() {
+					plus.nativeUI.toast("请求服务器失败!");
+				}
+			});
+			
+		 })
+		
+ 
+        
 			})
 		})(mui,document);
 		

@@ -81,7 +81,7 @@
 		(function($, doc) {
 				$.init();
 				$.plusReady(function() {
-//					alert(gather_id)
+//					plus.nativeUI.toast(gather_id)
 					//选择地点
 					var selectarea = new $.PopPicker();
 					selectarea.setData([{
@@ -152,11 +152,11 @@
 					
 					inforgather_alterButton.addEventListener('tap', function(event) {
 						if(titleBox.value==""){
-							alert("请输入标题")
+							plus.nativeUI.toast("请输入标题")
 						}else if(areaBox.innerText==""){
-							alert("请选择分类")
+							plus.nativeUI.toast("请选择分类")
 						}else if(textareaBox.value==""){
-							alert("请填写正文")
+							plus.nativeUI.toast("请填写正文")
 						}else{
 						
 						$.ajax({
@@ -174,18 +174,18 @@
 						async: true,
 						dataType:"text",
 						success: function(data) {
-//							alert("服务器传回来的消息为:" +data);
+//							plus.nativeUI.toast("服务器传回来的消息为:" +data);
 							if (data=="ok")
 							{
-								alert("修改情报搜集成功");
+								plus.nativeUI.toast("修改情报搜集成功");
 								mui.back();
 								
 							}else{
-								alert("修改情报搜集失败");
+								plus.nativeUI.toast("修改情报搜集失败");
 							}
 						},
 						error: function() {
-							alert("请求服务器出现失败!");
+							plus.nativeUI.toast("请求服务器出现失败!");
 						}
 					});
 			
@@ -205,18 +205,18 @@
 						async: true,
 						dataType:"text",
 						success: function(data) {
-//							alert("服务器传回来的消息为:" +data);
+//							plus.nativeUI.toast("服务器传回来的消息为:" +data);
 							if (data=="ok")
 							{
-								alert("删除情报搜集成功");
+								plus.nativeUI.toast("删除情报搜集成功");
 								mui.back();
 								
 							}else{
-								alert("删除情报搜集失败");
+								plus.nativeUI.toast("删除情报搜集失败");
 							}
 						},
 						error: function() {
-							alert("请求服务器出现失败!");
+							plus.nativeUI.toast("请求服务器出现失败!");
 						}
 					});
 			

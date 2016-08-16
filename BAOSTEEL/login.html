@@ -78,7 +78,8 @@
 					var state = app.getState();
 					var mainPage = $.preload({
 						"id": 'main',
-						"url": 'main.html'
+						"url": 'main.html',
+						
 					});
 					var toMain = function() {
 						$.fire(mainPage, 'show', null);
@@ -103,7 +104,7 @@
 					var forgetButton = doc.getElementById('forgetPassword');
 					loginButton.addEventListener('tap', function(event) {
 						if (accountBox.value==""||passwordBox.value=="") {
-							alert("用户名或密码错误")
+							plus.nativeUI.toast("用户名或密码错误")
 						} else{
 						$.ajax({
 						type: "post",
@@ -116,7 +117,7 @@
 						async: true,
 						dataType:"text",
 						success: function(data) {
-//							alert("服务器传回来的消息为:" +data);
+//							plus.nativeUI.toast("服务器传回来的消息为:" +data);
 							if (data=="ok")
 							{
 								mui.openWindow({
@@ -125,11 +126,11 @@
 								  });
 								
 							}else{
-								alert("用户名或密码错误");
+								plus.nativeUI.toast("用户名或密码错误");
 							}
 						},
 						error: function() {
-							alert("请求服务器出现失败!");
+							plus.nativeUI.toast("请求服务器出现失败!");
 						}
 					});
 						

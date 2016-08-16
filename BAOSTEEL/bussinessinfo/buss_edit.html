@@ -246,23 +246,23 @@
 
 					altertaskButton.addEventListener('tap', function(event) {
 						if(nameBox.value==""){
-							alert("请输入所有出差人姓名")
+							plus.nativeUI.toast("请输入所有出差人姓名")
 						}else if(accountsBox.value==""){
-							alert("请输入出差人数")
+							plus.nativeUI.toast("请输入出差人数")
 						}else if (placeBox.value==""){
-							alert("请填写出差地")
+							plus.nativeUI.toast("请填写出差地")
 						}else if (jobBox.value==""){
-							alert("请填写出差任务")
+							plus.nativeUI.toast("请填写出差任务")
 						}else if(timebeginBox.innerText==""){
-							alert("请选择出差开始时间")
+							plus.nativeUI.toast("请选择出差开始时间")
 						}else if(timebeginBox.innerText=="您没有选择日期"){
-							alert("请选择出差开始时间")
+							plus.nativeUI.toast("请选择出差开始时间")
 						}else if (timeend.innerText=="您没有选择日期"){
-							alert("请选择出差结束时间")
+							plus.nativeUI.toast("请选择出差结束时间")
 						}else if (timeend.innerText==""){
-							alert("请选择出差结束时间")
+							plus.nativeUI.toast("请选择出差结束时间")
 						}else if(timebeginBox.innerText>timeend.innerText){
-							alert("请检查出差时间")
+							plus.nativeUI.toast("请检查出差时间")
 						}else{
 						
 						$.ajax({
@@ -281,17 +281,17 @@
 						async: true,
 						dataType:"text",
 						success: function(data) {
-//							alert("服务器传回来的消息为:" +data);
+//							plus.nativeUI.toast("服务器传回来的消息为:" +data);
 							if (data=="ok")
 							{
-								alert("修改出差任务成功");
+								plus.nativeUI.toast("修改出差任务成功");
 								mui.back();
 							}else{
-								alert("修改出差任务失败");
+								plus.nativeUI.toast("修改出差任务失败");
 							}
 						},
 						error: function() {
-							alert("请求服务器出现失败!");
+							plus.nativeUI.toast("请求服务器出现失败!");
 						}
 					});
 			
@@ -299,23 +299,23 @@
 						});
 			   		deletetaskButton.addEventListener('tap', function(event) {
 						if(nameBox.value==""){
-							alert("请输入所有出差人姓名")
+							plus.nativeUI.toast("请输入所有出差人姓名")
 						}else if(accountsBox.value==""){
-							alert("请输入出差人数")
+							plus.nativeUI.toast("请输入出差人数")
 						}else if (placeBox.value==""){
-							alert("请填写出差地")
+							plus.nativeUI.toast("请填写出差地")
 						}else if (jobBox.value==""){
-							alert("请填写出差任务")
+							plus.nativeUI.toast("请填写出差任务")
 						}else if(timebeginBox.innerText==""){
-							alert("请选择出差开始时间")
+							plus.nativeUI.toast("请选择出差开始时间")
 						}else if(timebeginBox.innerText=="您没有选择日期"){
-							alert("请选择出差开始时间")
+							plus.nativeUI.toast("请选择出差开始时间")
 						}else if (timeend.innerText=="您没有选择日期"){
-							alert("请选择出差结束时间")
+							plus.nativeUI.toast("请选择出差结束时间")
 						}else if (timeend.innerText==""){
-							alert("请选择出差结束时间")
+							plus.nativeUI.toast("请选择出差结束时间")
 						}else if(timebeginBox.innerText>timeend.innerText){
-							alert("请检查出差时间")
+							plus.nativeUI.toast("请检查出差时间")
 						}else{
 						
 						$.ajax({
@@ -327,18 +327,18 @@
 						async: true,
 						dataType:"text",
 						success: function(data) {
-//							alert("服务器传回来的消息为:" +data);
+//							plus.nativeUI.toast("服务器传回来的消息为:" +data);
 							if (data=="ok")
 							{
-								alert("删除出差任务成功");
+								plus.nativeUI.toast("删除出差任务成功");
 								mui.back();
 								
 							}else{
-								alert("删除出差任务失败");
+								plus.nativeUI.toast("删除出差任务失败");
 							}
 						},
 						error: function() {
-							alert("请求服务器出现失败!");
+							plus.nativeUI.toast("请求服务器出现失败!");
 						}
 					});
 			

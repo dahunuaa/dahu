@@ -285,7 +285,8 @@
 					"fonts/mui.ttf",
 					"examples/businessInformation.html",
 					"bussinessinfo/businessInformation.html",
-					"inforgather/informationGathering.html"
+					"inforgather/informationGathering.html",
+					"inforguide/informationGuiding.html"
 				],
 				"refer": [
 					"setting.html",
@@ -299,7 +300,6 @@
 					"examples/informationGuiding.html",
 					"examples/informationGathering.html",
 					"notice/noticelist.html",
-					"inforguide/informationGuiding.html",
 					"selfInformation.html",
 					null
 				],
@@ -317,7 +317,8 @@
 				],
 				"refer": [
 					"main.html",
-					"reg.html"
+					"reg.html",
+					"selfInformation.html"
 				],
 				"priority": 0
 			},
@@ -1089,7 +1090,10 @@
 					"inforgather/newinformationgathering.html",
 					"inforgather/myinformationgathering.html",
 					"inforguide/newinformationguide.html",
-					"photoDemo.html"
+					"photoDemo.html",
+					"login.html",
+					"uploadfile.html",
+					"fileupload.html"
 				],
 				"priority": 0
 			},
@@ -1181,7 +1185,9 @@
 					"fonts/mui.ttf",
 					"css/mui.min.css"
 				],
-				"refer": [],
+				"refer": [
+					"inforgather/detail_inforgather.html"
+				],
 				"priority": 0
 			},
 			"photoDemo.html": {
@@ -1202,6 +1208,28 @@
 					"libs/easymob-webim-sdk/jquery-1.11.1.js",
 					"libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
 					"img/iconfont-tianjia.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"uploadfile.html": {
+				"resources": [
+					"js/mui.js",
+					"css/feedback-page.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"fileupload.html": {
+				"resources": [
+					"js/app.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"css/feedback-page.css",
+					"js/mui.min.js",
+					"css/common.css",
+					"js/immersed.js",
+					"js/common.js"
 				],
 				"refer": [],
 				"priority": 0

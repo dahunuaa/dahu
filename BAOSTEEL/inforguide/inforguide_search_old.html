@@ -44,7 +44,7 @@
 			  
 		        icon_search.addEventListener("tap",function(event){
 			    if (inforguide_search.value==""){
-			    	alert("请输入搜索内容")
+			    	plus.nativeUI.toast("请输入搜索内容")
 			    }else{
 				var search_list = document.getElementById("search_list")	
 				search_list.innerHTML="";//解决刷新重复出出现的问题,先为空，再填充数据
@@ -60,7 +60,7 @@
 				dataType:"json",
 				success:function(data){	
 					if (data ==""){
-						alert("无搜索结果")
+						plus.nativeUI.toast("无搜索结果")
 					}
 					mui.each(data,function(key,value){
 					var li = document.createElement("li")
@@ -85,7 +85,7 @@
 					var guide_category = this.getAttribute("guide_category")
 					var guide_text = this.getAttribute("guide_text")
 					var time = this.getAttribute("time")
-//								alert(guide_id)
+//								plus.nativeUI.toast(guide_id)
 										
 					mui.openWindow({
 				    url:"detail_inforguide.html",

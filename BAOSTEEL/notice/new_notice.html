@@ -64,9 +64,9 @@
 					
 					submit_button.addEventListener('tap',function(event){
 						if(notice_title.value==""){
-							alert("请填写您的通知公告标题")
+							plus.nativeUI.toast("请填写您的通知公告标题")
 						}else if(notice.value==""){
-						    alert("请填写您的通知公告")	
+						    plus.nativeUI.toast("请填写您的通知公告")	
 						}else{
 							$.ajax({
 								type:"post",
@@ -79,14 +79,14 @@
 								datatype:"text",
 								success:function(data){
 									if (data=="ok"){
-										alert("新建通知公告成功")
+										plus.nativeUI.toast("新建通知公告成功")
 										mui.back();
 									}else{
-										alert("新建通知公告失败，请重试！")
+										plus.nativeUI.toast("新建通知公告失败，请重试！")
 									}
 								},
 								error:function(){
-									alert("请求服务器失败！")
+									plus.nativeUI.toast("请求服务器失败！")
 								}
 							
 							});

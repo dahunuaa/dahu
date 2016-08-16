@@ -6,7 +6,8 @@
 			"fonts/mui.ttf",
 			"css/mui.min.css",
 			"js/mui.enterfocus.js",
-			"bussinessinfo/businessInformation.html"
+			"bussinessinfo/businessInformation.html",
+			"inforguide/informationGuiding.html"
 		],
 		"refer": [
 			"inforguide/informationGuiding.html",
@@ -39,7 +40,8 @@
 			"fonts/mui.ttf"
 		],
 		"refer": [
-			"main.html"
+			"main.html",
+			"selfInformation.html"
 		]
 	},
 	"selfInformation.html": {
@@ -58,7 +60,10 @@
 			"selfsetting/selfsetting.html",
 			"bussinessinfo/createNewTask.html",
 			"inforguide/newinformationguide.html",
-			"photoDemo.html"
+			"photoDemo.html",
+			"login.html",
+			"uploadfile.html",
+			"fileupload.html"
 		]
 	},
 	"inforgather/informationGathering.html": {
@@ -138,6 +143,9 @@
 			"fonts/mui.ttf",
 			"css/mui.min.css",
 			"js/mui.js"
+		],
+		"refer": [
+			"inforgather/detail_inforgather.html"
 		]
 	},
 	"bussinessinfo/buss_edit.html": {
@@ -145,7 +153,12 @@
 			"js/mui.picker.js",
 			"js/mui.poppicker.js",
 			"css/mui.poppicker.css",
-			"css/mui.picker.css"
+			"css/mui.picker.css",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		]
 	},
 	"inforgather/myinformationgathering.html": {
@@ -242,6 +255,9 @@
 			"fonts/mui.ttf",
 			"css/mui.min.css",
 			"js/mui.js"
+		],
+		"refer": [
+			"inforgather/detail_inforgather.html"
 		]
 	},
 	"inforguide/inforguide_search.html": {
@@ -263,7 +279,9 @@
 	"inforguide/inforguide_search_content.html": {
 		"resources": [
 			"css/mui.min.css",
-			"js/mui.js"
+			"js/mui.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf"
 		]
 	},
 	"notice/notice_detail.html": {
@@ -298,6 +316,9 @@
 			"css/mui.min.css",
 			"css/mui.poppicker.css",
 			"css/mui.picker.css"
+		],
+		"refer": [
+			"bussinessinfo/buss_search_content.html"
 		]
 	},
 	"notice/mynotice.html": {
@@ -314,7 +335,8 @@
 			"js/app.js",
 			"js/mui.min.js",
 			"css/app.css",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"fonts/mui.ttf"
 		]
 	},
 	"selfsetting/selfsetting.html": {
@@ -325,7 +347,9 @@
 			"css/mui.min.css"
 		],
 		"refer": [
-			"selfsetting/about_baosteel.html"
+			"selfsetting/about_baosteel.html",
+			"selfsetting/feedback.html",
+			"selfsetting/changepsw.html"
 		]
 	},
 	"notice/new_notice.html": {
@@ -343,6 +367,9 @@
 			"js/mui.min.js",
 			"fonts/mui.ttf",
 			"css/mui.min.css"
+		],
+		"refer": [
+			"inforgather/detail_inforgather.html"
 		]
 	},
 	"bussinessinfo/createNewTask.html": {
@@ -389,6 +416,59 @@
 			"libs/easymob-webim-sdk/jquery-1.11.1.js",
 			"libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
 			"img/iconfont-tianjia.png"
+		]
+	},
+	"bussinessinfo/buss_search_content.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/mui.js"
+		]
+	},
+	"uploadfile.html": {
+		"resources": [
+			"js/mui.js",
+			"css/feedback-page.css"
+		]
+	},
+	"fileupload.html": {
+		"resources": [
+			"js/app.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/feedback-page.css",
+			"js/mui.min.js",
+			"css/common.css",
+			"js/immersed.js",
+			"js/common.js"
+		]
+	},
+	"inforgather/detail_inforgather.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"selfsetting/feedback.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"selfsetting/changepsw.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		]
 	}
 }

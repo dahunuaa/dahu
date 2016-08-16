@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>fileupload</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/feedback-page.css" />
+		<link rel="stylesheet" href="css/mui.min.css">
+	</head>
+	<body>
+		<div class="mui-content">
+			<div class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1  class="mui-title">fileupload</h1>
+			</div>
+			<form id="uploadForm" style="margin-top: 50px;">
+				<p>上传文件：<input type="file" name="file"/></p>
+				<input type="button" value="上传" id="submit"/>
+			</form>
+		</div>
+	</body>
+	
+	<script type="text/javascript" src="js/mui.min.js" ></script>
+	<script>
+		(function($,doc){
+			mui.init();
+//			function doUpload(){
+				
+			document.getElementById("submit").addEventListener('tap',function(e){
+			console.log(111)
+			var wt  = plus.nativeUI.showWaiting("正在上传文件");
+			var formData = new FormData($("#uploadForm")[0]);
+			$.ajax({
+				type:"post",
+				url:"http://192.168.191.1:8080/baosteel/uploadfile",
+				data:formData,
+				async:true,
+				cache:false,
+				contentType:false,
+				processData:false,
+				success:function(data){
+					wt.close("上传成功！");
+					plus.nativeUI.toast("上传成功！");
+				},
+				error:function(data){
+					plus.nativeUI.toast("上传失败！");
+				}
+			});
+			})
+
+//		 }
+		})(mui,document);
+		
+		
+	</script>
+	
+	
+	
+	
+	<!--<body>
+		<div class="mui-content">
+			<div class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1  class="mui-title">fileupload</h1>
+				
+				<input type="file" id="fileToUpload" class="file_upload" onchange="fileSelected();"/>
+				<div id="fileName"></div>
+				<div id="fileSize"></div>
+				<div id="fileType"></div>
+				<input type="button" id="upload_btn" value="上传文件">
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/app.js" ></script>
+	<script type="text/javascript" src="js/mui.min.js" ></script>
+	<script>
+
+				var file = null;
+				var filetoupload = document.getElementById("fileToUpload");
+//				filetoupload.addEventListener('tap',function(event){
+					function fileSelected() {
+			        file = filetoupload.files[0];
+			        if (file) {
+			          var fileSize = 0;
+			          if (file.size > 1024 * 1024)
+			            fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';
+			          else
+			            fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
+			
+			          document.getElementById('fileName').innerHTML = 'Name: ' + file.name;
+			          document.getElementById('fileSize').innerHTML = 'Size: ' + fileSize;
+			          document.getElementById('fileType').innerHTML = 'Type: ' + file.type;
+			        }
+			      }
+//					 	var v = $(this).val();
+//				        var reader = new FileReader();
+//				        reader.readAsDataURL(this.files[0]);
+//				        reader.onload = function(e){
+//				            console.log(e.target.result);
+//				            $('#file_base64').val(e.target.result);
+//				        };
+				        
+				var upload_btn = document.getElementById("upload_btn");
+				upload_btn.addEventListener('tap',function(event){
+					alert(file)
+				var wt = plus.nativeUI.showWaiting("正在上传文件");
+				mui.ajax({
+				type: "post",
+				url: "http://192.168.191.1:8080/baosteel/uploadfile",
+				data: {
+					 "file":file,       //base64数据    
+					
+				},
+				async: true,
+				dataType:'json',
+				success: function(data) {
+					if (data=="111")
+					{
+						wt.close()
+						plus.nativeUI.toast("上传文件成功");
+						
+					}else{
+						plus.nativeUI.toast("上传文件失败");
+					}
+				},
+				error: function() {
+					plus.nativeUI.toast("请求服务器失败!");
+				}
+			});
+				});
+//		(function($,doc){
+//			mui.init();
+//			mui.plusReady(function(){				
+//				});
+//			});
+//		})(mui,document);
+	</script>-->
+</html>

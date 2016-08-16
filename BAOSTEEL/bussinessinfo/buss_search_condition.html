@@ -212,7 +212,7 @@
 							timeend.innerText=""
 						}
 						if(nameBox.value==""&accountsBox.value==""&placeBox.value==""&jobBox.value==""&timebeginBox.innerText==""&timeend.innerText==""){
-							alert("请输入查询条件")
+							plus.nativeUI.toast("请输入查询条件")
 						}else{
 							mui.openWindow({
 								url:"buss_search_content.html",
