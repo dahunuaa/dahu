@@ -86,7 +86,7 @@
 					searchButton = doc.getElementById("search_btn")
 					searchButton.addEventListener('tap',function(event){
 						if (titleBox.value ==""&categoryBox.innerText==""&contentBox.value==""){
-							alert("请输入查询条件")
+							plus.nativeUI.toast("请输入查询条件")
 						}else{
 							mui.openWindow({
 								url:"inforguide_search_content.html",

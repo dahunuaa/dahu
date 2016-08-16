@@ -61,13 +61,13 @@
 					
 					alter_psw_button.addEventListener('tap',function(event){
 						if(oldpsw.value==""){
-							alert("请输入原密码")
+							plus.nativeUI.toast("请输入原密码")
 						}else if(newpsw.value==""){
-							alert("请输入确认密码")
+							plus.nativeUI.toast("请输入确认密码")
 						}else if(psw_confirm.value==""){
-							alert("请输入确认密码")
+							plus.nativeUI.toast("请输入确认密码")
 						}else if(newpsw.value != psw_confirm.value){
-							alert("确认密码与新密码不一致")
+							plus.nativeUI.toast("确认密码与新密码不一致")
 						}else{
 							$.ajax({
 								type:"post",
@@ -80,16 +80,16 @@
 								dataType:"text",
 								success:function(data){
 									if(data=="ok"){
-                                   		alert("修改密码成功");	
+                                   		plus.nativeUI.toast("修改密码成功");	
                                    		mui.back();
 									}else if(data == "fail"){
-										alert("原密码输入错误！");
+										plus.nativeUI.toast("原密码输入错误！");
 									}else{
-										alert("修改密码失败！请重试!")
+										plus.nativeUI.toast("修改密码失败！请重试!")
 									}
 								},
 								error:function(){
-									alert("请求服务器失败！");
+									plus.nativeUI.toast("请求服务器失败！");
 								}
 							});
 						}

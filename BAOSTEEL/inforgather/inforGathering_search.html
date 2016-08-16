@@ -101,8 +101,8 @@
 					var textareaBox = doc.getElementById("textarea")
 					searchButton = doc.getElementById("search_btn")
 					searchButton.addEventListener('tap',function(event){
-						if (titleBox.value ==""&addressBox.value==""&areaBox.value==""&oil_fieldBox.value==""&textareaBox.value==""){
-							alert("请输入查询条件")
+						if (titleBox.value ==""&addressBox.value==""&areaBox.innerHTML==""&oil_fieldBox.value==""&textareaBox.value==""){
+							plus.nativeUI.toast("请输入查询条件")
 						}else{
 							mui.openWindow({
 								url:"inforgather_search_content.html",
