@@ -6,7 +6,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;  
 import java.io.InputStream;  
 import java.io.OutputStream;  
+
 import com.sun.mail.util.BASE64DecoderStream;
+import com.sun.mail.util.BASE64EncoderStream;
 
 import sun.misc.BASE64Decoder;  
 import sun.misc.BASE64Encoder;
@@ -46,7 +48,5 @@ public class UploadPicDao {
 		} 
 		 
 	 }
-	 
 
-	
 }
