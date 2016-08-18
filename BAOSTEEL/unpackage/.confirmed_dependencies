@@ -159,6 +159,9 @@
 			"css/app.css",
 			"fonts/mui.ttf",
 			"css/mui.min.css"
+		],
+		"refer": [
+			"bussinessinfo/myBusinessRecord.html"
 		]
 	},
 	"inforgather/myinformationgathering.html": {

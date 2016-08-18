@@ -972,7 +972,9 @@
 					"css/mui.poppicker.css",
 					"css/mui.picker.css"
 				],
-				"refer": [],
+				"refer": [
+					"bussinessinfo/myBusinessRecord.html"
+				],
 				"priority": 0
 			},
 			"bussinessinfo/myBusinessRecord.html": {

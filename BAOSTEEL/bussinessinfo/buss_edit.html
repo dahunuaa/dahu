@@ -286,6 +286,7 @@
 							{
 								plus.nativeUI.toast("修改出差任务成功");
 								mui.back();
+								plus.webview.getWebviewById("myBusinessRecord").reload();
 							}else{
 								plus.nativeUI.toast("修改出差任务失败");
 							}
@@ -332,6 +333,7 @@
 							{
 								plus.nativeUI.toast("删除出差任务成功");
 								mui.back();
+								plus.webview.getWebviewById("myBusinessRecord").reload();
 								
 							}else{
 								plus.nativeUI.toast("删除出差任务失败");

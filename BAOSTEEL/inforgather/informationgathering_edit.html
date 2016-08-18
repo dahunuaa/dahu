@@ -179,6 +179,7 @@
 							{
 								plus.nativeUI.toast("修改情报搜集成功");
 								mui.back();
+								plus.webview.getWebviewById("myinformationgathering").reload();
 								
 							}else{
 								plus.nativeUI.toast("修改情报搜集失败");
@@ -210,6 +211,7 @@
 							{
 								plus.nativeUI.toast("删除情报搜集成功");
 								mui.back();
+								plus.webview.getWebviewById("myinformationgathering").reload();
 								
 							}else{
 								plus.nativeUI.toast("删除情报搜集失败");

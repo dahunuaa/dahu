@@ -154,6 +154,7 @@
 							{
 								plus.nativeUI.toast("修改信息指南成功");
 								mui.back();
+								plus.webview.getWebviewById("myInformationGuiding").reload();
 								
 							}else{
 								plus.nativeUI.toast("修改信息指南失败");
@@ -174,8 +175,6 @@
 						url: "http://192.168.191.1:8080/baosteel/Inforguide_delete",
 						data: {
 							"guide_id":guide_id,//后面必须加上逗号
-							
-							
 						},
 						async: true,
 						dataType:"text",
@@ -185,6 +184,7 @@
 							{
 								plus.nativeUI.toast("删除信息指南成功");
 								mui.back();
+								plus.webview.getWebviewById("myInformationGuiding").reload();
 								
 							}else{
 								plus.nativeUI.toast("删除信息指南失败");
