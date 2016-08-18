@@ -242,5 +242,21 @@
     <servlet-name>Uploadpic</servlet-name>
     <url-pattern>/uploadpic</url-pattern>
   </servlet-mapping>
-
+  <servlet>
+    <servlet-name>Downloadpic</servlet-name>
+    <servlet-class>com.bs.action.Downloadpic</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Downloadpic</servlet-name>
+    <url-pattern>/downloadpic</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <servlet-name>uploadfile</servlet-name>
+    <servlet-class>com.bs.action.Uploadfile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>uploadfile</servlet-name>
+    <url-pattern>/uploadfile</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

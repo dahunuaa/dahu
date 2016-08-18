@@ -36,7 +36,7 @@ public class InforGathering_searchDao {
 			 conn=DBUtils.getConnection();
 			 if(conn==null) return null;
 			 StringBuffer sb = new StringBuffer();
-			 sb.append("SELECT *");
+			 sb.append("SELECT informationgatheringrecord.`gather_id`, informationgatheringrecord.`gather_editor`,`gather_editor_name`,`gather_title`,`area`,`address`,`gathering_text`,`gather_oil_field`,`time`");
 			 sb.append(" FROM informationgatheringrecord");
 			 sb.append(" WHERE CONCAT(gather_title) LIKE ? AND CONCAT(area) LIKE ? AND CONCAT(address) LIKE ? AND CONCAT(gather_oil_field) LIKE ? AND CONCAT(gathering_text) LIKE ?");
 			 sb.append(" ORDER BY gather_id DESC LIMIT ?,5");

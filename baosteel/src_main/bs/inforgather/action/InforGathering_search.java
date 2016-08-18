@@ -42,12 +42,10 @@ public class InforGathering_search extends HttpServlet {
 			String pull_count = req.getParameter("pull_count");
 			int count = Integer.parseInt(pull_count);
 			
-//			System.out.println(inforgathering_search);
             InforGathering_searchDao searchDao = new InforGathering_searchDao(title,area,address,field,textarea,count);
             List<Map<String,Object>> infos = searchDao.inforgathering_searchrecord();
 
 		    JSONArray busslist = JSONArray.fromObject(infos);
-//            System.out.println(busslist);
 			PrintWriter pw = null;
 			try {
 				pw = resp.getWriter(); 
