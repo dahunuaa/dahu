@@ -78,6 +78,11 @@
 						UploadFile
 					</a>
 				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" id="downloadfile">
+						downloadfile
+					</a>
+				</li>
 			</ul>
 			<ul class="mui-table-view" style="margin-top: 25px;">
 				<li class="mui-table-view-cell">
@@ -212,6 +217,12 @@
 			mui.openWindow({
 				url:"fileupload.html",
 				id:"fileupload",
+			})
+		});
+		document.getElementById("downloadfile").addEventListener('tap',function(){
+			mui.openWindow({
+				url:"downloadfile.html",
+				id:"downloadfile",
 			})
 		});
 	})
