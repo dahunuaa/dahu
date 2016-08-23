@@ -58,16 +58,20 @@
 					<input id="oil_field" type="text" class="mui-input-clear" placeholder="请输入油田">
 				</div>
 			    </form>
-				<br>
+			    <br/>
 				<label>&nbsp;&nbsp;&nbsp;内容</label>
 				<div class="mui-input-row" style="margin: 10px 5px;">
 					<textarea id="textarea" rows="6" placeholder="请填写正文"></textarea>
 				</div>
-				
-				
-        
+				<form id="uploadForm" style="margin-top: -15px;">
+				<label>&nbsp;&nbsp;&nbsp;上传文件（可选）</label>
+				<br/>
+				&nbsp;&nbsp;&nbsp;<input type="file" name="upload_file" value="添加" style="margin-top: 10px;"/>
+				</form>
+				<div>
+        		<br/>
 				<div class="mui-button-row">
-					<button id="newgather_submit" class="mui-btn mui-btn-primary" type="button" onclick="return true;">提交</button>&nbsp;&nbsp;
+					<button id="newgather_submit" class="mui-btn mui-btn-primary" type="button" onclick="return true;">提交</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<button id="newgather_cancel" class="mui-btn mui-btn-danger" type="button" onclick="return false;">取消</button>
 				</div>
 		
@@ -116,6 +120,9 @@
 					}, false);
 					
 					
+					
+					
+					
 			     //提交出差任务
 //			        var editorBox = doc.getElementById('editor');
 //			        var editornameBox = doc.getElementById('editor_name');
@@ -138,6 +145,8 @@
 						}else if(textareaBox.value==""){
 							plus.nativeUI.toast("请填写正文")
 						}else{
+						var wt  = plus.nativeUI.showWaiting("正在提交...");
+						var formData = new FormData($("#uploadForm")[0]);
 						$.ajax({
 						type: "post",
 						url: "http://192.168.191.1:8080/baosteel/NewInformationgathering",
@@ -149,6 +158,7 @@
 							"gather_area":areaBox.innerText,
 							"gather_text":textareaBox.value,
 							"gather_oil_field":oil_fieldBox.value,
+							"formData":formData,
 							
 							
 						},
@@ -159,6 +169,7 @@
 //							plus.nativeUI.toast("服务器传回来的消息为:" +data);
 							if (data=="ok")
 							{
+								wt.close();
 								plus.nativeUI.toast("新建情报搜集成功");
 								mui.back();
 								

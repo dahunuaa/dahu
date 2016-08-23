@@ -8,6 +8,7 @@
         <link rel="stylesheet" type="text/css" href="../css/app.css"/>
         <link href="../css/mui.picker.css" rel="stylesheet" />
 		<link href="../css/mui.poppicker.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/defined_uploadimg.css" />
 		<style>
 			ul {
 				font-size: 14px;
@@ -32,14 +33,6 @@
 		</header>
 		<div class="mui-content">
 			<form class="mui-input-group">
-				<!--<div class="mui-input-row">
-					<label>编辑人工号</label>
-					<input id="editor" type="text" class="mui-input-clear" placeholder="编辑人工号">
-				</div>
-				<div class="mui-input-row">
-					<label>编辑人姓名</label>
-					<input id="editor_name" type="text" class="mui-input-clear" placeholder="编辑人姓名">
-				</div>-->
 				<div class="mui-input-row">
 					<label>标题</label>
 					<input id="title" type="text" class="mui-input-clear" placeholder="请输入信息指南标题">
@@ -53,20 +46,20 @@
 				<br>
 				<label>&nbsp;&nbsp;&nbsp;内容</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				
-				<i id='msg-image' class="mui-icon mui-icon-camera" style="font-size: 28px;"></i>
 				<div class="mui-input-row" style="margin: 10px 5px;">
 					<textarea id="textarea" rows="5" placeholder="请填写正文"></textarea>
-				</div>		
-        
+				</div>	
+				
+				<label>&nbsp;&nbsp;&nbsp;上传图片（可选）</label>
+				<br />
+				<img class="picture" id="pic_1" src="../img/iconfont-tianjia.png" style="margin-left: 30px; height: 100px;">
+				<br/>        
 				<div class="mui-button-row">
-					<button id="newguide_submit" class="mui-btn mui-btn-primary" type="button" onclick="return true;">提交</button>&nbsp;&nbsp;
+					<button id="newguide_submit" class="mui-btn mui-btn-primary" type="button" onclick="return true;">提交</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<button id="newguide_cancel" class="mui-btn mui-btn-danger" type="button" onclick="return false;">取消</button>
 				</div>
 				
-				<!--<div class="mui-content">
-					<div id='msg-list'>
-					</div>
-				</div>-->
+				
 		
 			
 		</div>
@@ -74,9 +67,14 @@
 		<script src="../js/app.js"></script>
 		<script src="../js/mui.picker.js"></script>
 		<script src="../js/mui.poppicker.js"></script>
+		<script src="../js/mui.view.js "></script>
+		<script src="../js/feedback-page.js"></script>
+		<script src="../js/mui.zoom.js"></script>
+		<script src="../js/mui.previewimage.js"></script>
 		<script>
 		(function($, doc) {
 				$.init();
+				$.previewImage();
 				$.ready(function() {
 					//选择地点
 					var selectcategory = new $.PopPicker();
@@ -107,9 +105,139 @@
 					}, false);
 					
 					
+				//上传图片
+				var carmer_1 = doc.getElementById('pic_1')
+				carmer_1.addEventListener('tap', function(event) {
+					if(mui.os.plus){
+						var a = [{
+							title: "拍照"
+						}, {
+							title: "从手机相册选择"
+						}];
+						plus.nativeUI.actionSheet({
+							cancel: "取消",
+							buttons: a
+						}, function(b) {
+							switch (b.index) {
+								case 0:
+									break;
+								case 1:
+									getImage();
+									break;
+								case 2:
+									galleryImg();
+									break;
+								default:
+									break
+							}
+						})	
+					}
+					
+				});
+		
+				//拍照
+				function getImage() {
+					var c = plus.camera.getCamera();
+					c.captureImage(function(e) {
+						plus.io.resolveLocalFileSystemURL(e, function(entry) {
+							var s = entry.toLocalURL() + "?version=" + new Date().getTime();
+							appendFile(s);
+							document.getElementById("pic_1").src = s;
+							//变更大图预览的src
+							//目前仅有一张图片，暂时如此处理，后续需要通过标准组件实现
+		//					document.querySelector("#__mui-imageview__group .mui-slider-item img").src = s + "?version=" + new Date().getTime();;;
+						}, function(e) {
+							console.log("读取拍照文件错误：" + e.message);
+						});
+					}, function(s) {
+						console.log("error" + s);
+					}, {
+						filename: "_doc/head.jpg"
+					})
+				}
+				//从相册选择图片
+				function galleryImg() {
+					plus.gallery.pick(function(a) {
+						plus.io.resolveLocalFileSystemURL(a, function(entry) {
+							plus.io.resolveLocalFileSystemURL("_doc/", function(root) {
+								root.getFile("head.jpg", {}, function(file) {
+									//文件已存在
+									file.remove(function() {
+										console.log("file remove success");
+										entry.copyTo(root, 'head.jpg', function(e) {
+												var e = e.fullPath + "?version=" + new Date().getTime();
+												appendFile(e);
+												document.getElementById("pic_1").src = e;
+												//变更大图预览的src
+												//目前仅有一张图片，暂时如此处理，后续需要通过标准组件实现
+		//										document.querySelector("#__mui-imageview__group .mui-slider-item img").src = e + "?version=" + new Date().getTime();;
+											},
+											function(e) {
+												console.log('copy image fail:' + e.message);
+											});
+									}, function() {
+										console.log("delete image fail:" + e.message);
+									});
+								}, function() {
+									//文件不存在
+									entry.copyTo(root, 'head.jpg', function(e) {
+											var path = e.fullPath + "?version=" + new Date().getTime();
+											appendFile(e)
+											document.getElementById("head-img1").src = path;
+											//变更大图预览的src
+											//目前仅有一张图片，暂时如此处理，后续需要通过标准组件实现
+											document.querySelector("#__mui-imageview__group .mui-slider-item img").src = path;
+										},
+										function(e) {
+											console.log('copy image fail:' + e.message);
+										});
+								});
+							}, function(e) {
+								console.log("get _www folder fail");
+							})
+						}, function(e) {
+							console.log("读取拍照文件错误：" + e.message);
+						});
+					}, function(a) {}, {
+						filter: "image"
+					})
+				};
+				
+				
+		//		生成canvas	
+				var f1 = null;
+				var path_pic= "";
+				function appendFile(path){
+					var img = new Image();
+					path_pic = path;
+					plus.nativeUI.toast(path_pic)
+					img.src=path;
+					img.onload = function(){
+						var that = this;
+		//				生成比例
+						var w = that.width,
+							h = that.height,
+							scale = w/h;
+							w = 480 ||w;//480 你想压缩到多大 改这里
+							h = w/scale;
+		//				生成canvas
+		 				var canvas = document.createElement('canvas');
+		 				var ctx = canvas.getContext('2d');
+		 				canvas.width = w;
+		        		canvas.height = h;
+		 				ctx.drawImage(that,0,0,w,h);
+		 				var base64 = canvas.toDataURL('image/png',1||0.8);//1最清晰，越低越模糊。有一点不清楚这里明明设置的是png。弹出 base64 开头的一段 data：image/png;却是png。哎开心就好，开心就好
+						f1 = base64;//把base64数据丢过去，上传要用
+						
+						//下面两行，就是显示当前所选取的图片，之前的方法里面已经实现
+		//				var pic = document.getElementById("x");
+		//				pic.src = base64; //这里丢到img 的 src 里面就能看到效果了
+							
+					}
+				}
+				
+				
 			     //提交出差任务
-//			        var editorBox = doc.getElementById('editor');
-//			        var editornameBox = doc.getElementById('editor_name');
 			        var titleBox = doc.getElementById('title');
 					var categoryBox = doc.getElementById('category');
 					var textareaBox = doc.getElementById('textarea');
@@ -123,7 +251,7 @@
 						}else if(textareaBox.value==""){
 							plus.nativeUI.toast("请填写正文")
 						}else{
-						
+						var wt=plus.nativeUI.showWaiting("正在提交...");
 						$.ajax({
 						type: "post",
 						url: "http://192.168.191.1:8080/baosteel/NewInformationGuide",
@@ -134,14 +262,16 @@
 							"guide_title":titleBox.value,
 							"guide_category":categoryBox.innerText,
 							"guide_text":textareaBox.value,
-							
+							"file":f1, 
+							"path":path_pic,
 						},
 						async: true,
-						dataType:"text",
+						dataType:"json",
 						success: function(data) {
 //							plus.nativeUI.toast("服务器传回来的消息为:" +data);
 							if (data=="ok")
-							{
+							{	
+								wt.close();
 								plus.nativeUI.toast("新建信息指南成功");
 								mui.back();
 								
@@ -156,47 +286,6 @@
 			
 						}
 						});
-//			   拍照
-                var carmer = document.getElementById('msg-image')
-				   carmer.addEventListener('tap', function(event) {
-						var btnArray = [{
-							title: "拍照"
-						}, {
-							title: "从相册选择"
-						}];
-						plus.nativeUI.actionSheet({
-							title: "选择照片",
-							cancel: "取消",
-							buttons: btnArray
-						}, function(e) {
-							var index = e.index;
-							switch (index) {
-								case 0:
-									break;
-								case 1:
-									var cmr = plus.camera.getCamera();
-									cmr.captureImage(function(path) {
-										send({
-											sender: 'self',
-											type: 'image',
-											content: "file://" + plus.io.convertLocalFileSystemURL(path)
-										});
-									}, function(err) {});
-									break;
-								case 2:
-									plus.gallery.pick(function(path) {
-										send({
-											sender: 'self',
-											type: 'image',
-											content: path
-										});
-									}, function(err) {}, null);
-									break;
-							}
-						});
-					}, false); 
-					
-
 
 			   newguide_cancelButton.addEventListener('tap',function(event){
 			   	mui.back();

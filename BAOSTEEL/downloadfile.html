@@ -7,46 +7,33 @@
 		<meta name="MobileOptimized" content="320"/>
 		<title>Hello H5+</title>
 		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/defined_downloadfile.js" ></script>
 		<script type="text/javascript">
 var dtask=null;
+var fileName = "123.txt";
+
+
 function createDownloadTask(){
 	if ( dtask ) {
 		outLine( "下载任务已创建！" );
 		return;
 	}
     var url = "http://121.42.186.54:8081/uploadfiles/1.txt";
-    var options = {method:"GET"};
+    
+    var options = {method:"GET",filename:"_doc/"+fileName};
 	dtask = plus.downloader.createDownload( url,options);
-    dtask.addEventListener( "statechanged", function(task,status){
-    	task.filename="/storage/sdcard1/MAKA/123.txt"
-    	if(!dtask){return;}
-    	switch(task.state) {
-    		case 1: // 开始
-    			outLine( "开始下载..." );
-    		break;
-    		case 2: // 已连接到服务器
-    			outLine( "链接到服务器..." );
-    		break;
-    		case 3:	// 已接收到数据
-    			outSet( "下载数据更新:" );
-    			outLine( task.downloadedSize+"/"+task.totalSize );
-    		break;
-    		case 4:	// 下载完成
-    			outSet( "下载完成！" );
-    			outLine( task.totalSize );
-    			outLine(task.filename)
-    		break;
-    	}
-    } );
-    outSet( "创建下载任务成功！" );
-}
-function startDownloadTask(){
-	if ( !dtask ) {
-		outSet( "请先创建下载任务！" );
-		return;
-	}
 	dtask.start();
+	
 }
+
+function openTask(){
+	plus.runtime.openFile("_doc/"+fileName, {},function(e){
+    			plus.nativeUI.toast("打开文件")
+    })
+}
+	
+
+
 // 暂停下载任务
 function pauseDownloadTask(){
     dtask.pause();
@@ -85,6 +72,7 @@ function startAll(){
 				<li class="ditem" onclick="pauseDownloadTask();">暂停下载任务</li>
 				<li class="ditem" onclick="resumeDownloadTask();">恢复下载任务</li>
 				<li class="ditem" onclick="cancelDownloadTask();">取消下载任务</li>
+				<li class="ditem" onclick="openTask();">打开文件</li>
 				<!--<li class="ditem" onclick="clearDownloadTask();">清除所有任务</li>-->
 			</ul>
 		</div>
