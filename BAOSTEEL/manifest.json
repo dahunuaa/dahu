@@ -221,8 +221,8 @@
 			"splashscreen": {
 				"ios": {
 					"iphone": {
-						"default": "F:/app workspace/BAOSTEEL_3/img/bg_3.png", /*iPhone3启动图片选，分辨率：320x480*/
-						"retina35": "F:/app workspace/BAOSTEEL_3/img/bg_3.png",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+						"default": "F:/tips/girlab——001.png", /*iPhone3启动图片选，分辨率：320x480*/
+						"retina35": "F:/tips/girlab——001.png",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
 						"retina40": "F:/app workspace/BAOSTEEL_3/img/bg_3.png",/*4.0 英寸设备(iPhone5/iPhone5s)启动图片，分辨率：640x1136*/
 						"retina47": "F:/app workspace/BAOSTEEL_3/img/bg_3.png",/*4.7 英寸设备(iPhone6)启动图片，分辨率：750x1334*/
 						"retina55": "F:/app workspace/BAOSTEEL_3/img/bg_3.png",/*5.5 英寸设备(iPhone6 Plus)启动图片，分辨率：1242x2208*/
