@@ -1,1 +1,121 @@
-null
+{
+	"main.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"bussinessinfo/businessInformation.html",
+			"js/app.js",
+			"js/mui.enterfocus.js"
+		],
+		"refer": [
+			"inforguide/informationGuiding.html",
+			"selfInformation.html",
+			"inforgather/informationGathering.html",
+			"bussinessinfo/businessInformation.html"
+		]
+	},
+	"login.html": {
+		"resources": [
+			"js/app.js",
+			"img/bg_2.png",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/mui.enterfocus.js",
+			"fonts/mui.ttf"
+		],
+		"refer": [
+			"main.html"
+		]
+	},
+	"selfInformation.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/app.css",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"fileupload.html",
+			"inforguide/newinformationguide.html",
+			"downloadfile.html",
+			"inforgather/newinformationgathering.html"
+		]
+	},
+	"inforgather/informationGathering.html": {
+		"resources": [
+			"img/xinan.png",
+			"img/huabei.png",
+			"fonts/mui.ttf",
+			"img/xibei.png",
+			"img/xinjiang.png",
+			"img/donghai.png",
+			"img/huadong.png",
+			"img/huazhong.png",
+			"img/dongbei.png",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		]
+	},
+	"bussinessinfo/businessInformation.html": {
+		"resources": [
+			"js/app.js",
+			"fonts/mui.ttf"
+		]
+	},
+	"inforguide/informationGuiding.html": {
+		"resources": [
+			"fonts/mui.ttf",
+			"js/app.js"
+		]
+	},
+	"fileupload.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/feedback-page.css"
+		]
+	},
+	"inforguide/newinformationguide.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/app.js",
+			"js/mui.zoom.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"js/mui.poppicker.js",
+			"css/defined_uploadimg.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/mui.previewimage.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"js/feedback-page.js",
+			"img/iconfont-tianjia.png",
+			"js/mui.view.js"
+		]
+	},
+	"downloadfile.html": {
+		"resources": [
+			"js/common.js",
+			"css/common.css",
+			"js/defined_downloadfile.js",
+			"js/immersed.js"
+		]
+	},
+	"inforgather/newinformationgathering.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"js/mui.poppicker.js",
+			"css/mui.min.css",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"fonts/mui.ttf"
+		]
+	}
+}

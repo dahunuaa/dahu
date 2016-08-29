@@ -13,10 +13,10 @@
 		<div class="mui-content">
 			<div class="mui-bar mui-bar-nav">
 				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-				<h1  class="mui-title">fileupload</h1>
+				<h1  class="mui-title">fileupload </h1>
 			</div>
 			<form id="uploadForm" style="margin-top: 50px;">
-				<p>上传文件：<input type="file" name="file"/></p>
+				<p>上传文件：<input type="file" name="file" id="file_up"/></p>
 				<input type="button" value="上传" id="submit"/>
 			</form>
 		</div>
@@ -26,13 +26,14 @@
 	<script>
 		(function($,doc){
 			mui.init();
-//			function doUpload(){
-				
+			$.ready(function(){
 			document.getElementById("submit").addEventListener('tap',function(e){
-			console.log(111)
+			var  file = document.getElementById("file_up").files[0];
+			alert(file.name)
 			var wt  = plus.nativeUI.showWaiting("正在上传文件");
 			var formData = new FormData($("#uploadForm")[0]);
-			alert(formData.filename)
+			console.log()
+//			alert(formData.fileName)
 			$.ajax({
 				type:"post",
 				url:"http://192.168.191.1:8080/baosteel/uploadfile",
@@ -52,7 +53,7 @@
 			});
 			})
 
-//		 }
+		 });
 		})(mui,document);
 		
 		

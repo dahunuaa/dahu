@@ -210,7 +210,6 @@
 				function appendFile(path){
 					var img = new Image();
 					path_pic = path;
-					plus.nativeUI.toast(path_pic)
 					img.src=path;
 					img.onload = function(){
 						var that = this;
@@ -266,9 +265,8 @@
 							"path":path_pic,
 						},
 						async: true,
-						dataType:"json",
+						dataType:"text",//如果返回的是str，那么这个地方必须用text，用json报错
 						success: function(data) {
-//							plus.nativeUI.toast("服务器传回来的消息为:" +data);
 							if (data=="ok")
 							{	
 								wt.close();
