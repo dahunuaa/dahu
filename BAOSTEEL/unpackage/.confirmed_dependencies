@@ -39,7 +39,8 @@
 			"fileupload.html",
 			"inforguide/newinformationguide.html",
 			"downloadfile.html",
-			"inforgather/newinformationgathering.html"
+			"inforgather/newinformationgathering.html",
+			"notice/notice.html"
 		]
 	},
 	"inforgather/informationGathering.html": {
@@ -67,7 +68,9 @@
 	"inforguide/informationGuiding.html": {
 		"resources": [
 			"fonts/mui.ttf",
-			"js/app.js"
+			"js/app.js",
+			"js/mui.min.js",
+			"css/mui.min.css"
 		]
 	},
 	"fileupload.html": {
@@ -116,6 +119,14 @@
 			"css/mui.poppicker.css",
 			"css/mui.picker.css",
 			"fonts/mui.ttf"
+		]
+	},
+	"notice/notice.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		]
 	}
 }
