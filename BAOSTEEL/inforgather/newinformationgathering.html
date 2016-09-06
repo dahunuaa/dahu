@@ -149,6 +149,25 @@
 						var formData = new FormData($("#uploadForm")[0]);
 						var wt  = plus.nativeUI.showWaiting("正在提交...");
 						$.ajax({
+							type:"post",
+							url:"http://192.168.191.1:8080/baosteel/uploadfile",
+			//				url:"http://121.42.186.54:8081/baosteel/uploadfile",
+							data:formData,
+							async:true,
+							cache:false,
+							contentType:false,
+							processData:false,
+							success:function(data){
+//								wt.close("上传成功！");
+								plus.nativeUI.toast("上传成功！");
+							},
+							error:function(data){
+								plus.nativeUI.toast("上传失败！");
+							}
+						});
+						
+						
+						$.ajax({
 						type: "post",
 						url: "http://192.168.191.1:8080/baosteel/NewInformationgathering",
 //						url: "http://121.42.186.54:8081/baosteel/NewInformationgathering",
@@ -159,7 +178,7 @@
 							"gather_area":areaBox.innerText,
 							"gather_text":textareaBox.value,
 							"gather_oil_field":oil_fieldBox.value,
-							"file":formData,
+//							"file":formData,
 							"file_name":file.name,
 							
 							
