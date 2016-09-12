@@ -1216,7 +1216,10 @@
 					"libs/easymob-webim-sdk/json2.js",
 					"libs/easymob-webim-sdk/jquery-1.11.1.js",
 					"libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
-					"img/iconfont-tianjia.png"
+					"img/iconfont-tianjia.png",
+					"js/mui.zoom.js",
+					"css/defined_uploadimg.css",
+					"js/mui.previewimage.js"
 				],
 				"refer": [],
 				"priority": 0

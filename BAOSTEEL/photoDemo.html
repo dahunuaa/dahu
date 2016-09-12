@@ -28,7 +28,10 @@
 				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 				<h1 class="mui-center mui-title">photoDemo</h1>
 			</div>
-			<img class="picture" id="pic_1" src="img/iconfont-tianjia.png"/ style="margin-left: 130px;">
+			<div style="margin-top: 50px;">
+			<img class="picture" id="pic_1" src="img/iconfont-tianjia.png"/ style="margin-left: 130px; margin-top: 50px;">	
+			</div>
+			
 			
 			<!--//直接调用的是feedback-page.js 可以直接打开图库-->
 			<!--<div id='image-list' class="row image-list" >-->
@@ -96,7 +99,6 @@
 					var s = entry.toLocalURL() + "?version=" + new Date().getTime();
 					appendFile(s);
 					document.getElementById("pic_1").src = s;
-					//变更大图预览的src
 					//目前仅有一张图片，暂时如此处理，后续需要通过标准组件实现
 //					document.querySelector("#__mui-imageview__group .mui-slider-item img").src = s + "?version=" + new Date().getTime();;;
 				}, function(e) {

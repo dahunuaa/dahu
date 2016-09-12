@@ -29,11 +29,10 @@
 			$.ready(function(){
 			document.getElementById("submit").addEventListener('tap',function(e){
 			var  file = document.getElementById("file_up").files[0];
-			alert(file.name)
 			var wt  = plus.nativeUI.showWaiting("正在上传文件");
 			var formData = new FormData($("#uploadForm")[0]);
 			console.log()
-//			alert(formData.fileName)
+			alert(formData.fileName)
 			$.ajax({
 				type:"post",
 				url:"http://192.168.191.1:8080/baosteel/uploadfile",

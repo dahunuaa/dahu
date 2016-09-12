@@ -66,7 +66,7 @@
 				<form id="uploadForm" style="margin-top: -15px;">
 				<label>&nbsp;&nbsp;&nbsp;上传文件（可选）</label>
 				<br/>
-				&nbsp;&nbsp;&nbsp;<input type="file" id="upload_file" value="添加" style="margin-top: 10px;"/>
+				&nbsp;&nbsp;&nbsp;<input type="file" name="file" id="file_up" style="margin-top: 10px;"/>
 				</form>
 				<div>
         		<br/>
@@ -83,7 +83,7 @@
 		<script src="../js/mui.poppicker.js"></script>
 		<script>
 		(function($, doc) {
-				$.init();
+				mui.init();
 				$.ready(function() {
 					//选择地点
 					var selectarea = new $.PopPicker();
@@ -145,27 +145,30 @@
 						}else if(textareaBox.value==""){
 							plus.nativeUI.toast("请填写正文")
 						}else{
-						var  file = document.getElementById("upload_file").files[0];
+//							console.log("111")
+						var  file = document.getElementById("file_up");
 						var formData = new FormData($("#uploadForm")[0]);
-						var wt  = plus.nativeUI.showWaiting("正在提交...");
-						$.ajax({
+//						alert(file.value)
+//						var wt  = plus.nativeUI.showWaiting("正在提交...");
+//						if(file){
+//							alert("111")
+							$.ajax({
 							type:"post",
 							url:"http://192.168.191.1:8080/baosteel/uploadfile",
 			//				url:"http://121.42.186.54:8081/baosteel/uploadfile",
 							data:formData,
-							async:true,
+							async: true,
 							cache:false,
 							contentType:false,
 							processData:false,
 							success:function(data){
-//								wt.close("上传成功！");
-								plus.nativeUI.toast("上传成功！");
+//								plus.nativeUI.toast("上传成功！");
 							},
 							error:function(data){
 								plus.nativeUI.toast("上传失败！");
 							}
-						});
-						
+						});	
+//						}
 						
 						$.ajax({
 						type: "post",
@@ -190,7 +193,7 @@
 //							plus.nativeUI.toast("服务器传回来的消息为:" +data);
 							if (data=="ok")
 							{
-								wt.close();
+//								wt.close("新建情报搜集成功");
 								plus.nativeUI.toast("新建情报搜集成功");
 								mui.back();
 								

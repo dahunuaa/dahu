@@ -42,7 +42,9 @@
 			"inforgather/newinformationgathering.html",
 			"notice/notice.html",
 			"bussinessinfo/myBusinessRecord.html",
-			"bussinessinfo/createNewTask.html"
+			"bussinessinfo/createNewTask.html",
+			"photoDemo.html",
+			"inforgather/myinformationgathering.html"
 		]
 	},
 	"inforgather/informationGathering.html": {
@@ -78,6 +80,9 @@
 			"js/app.js",
 			"js/mui.min.js",
 			"css/mui.min.css"
+		],
+		"refer": [
+			"inforguide/detail_inforguide.html"
 		]
 	},
 	"fileupload.html": {
@@ -156,6 +161,38 @@
 			"css/mui.min.css",
 			"css/mui.poppicker.css",
 			"css/mui.picker.css"
+		]
+	},
+	"photoDemo.html": {
+		"resources": [
+			"js/mui.zoom.js",
+			"css/defined_uploadimg.css",
+			"js/mui.previewimage.js",
+			"css/feedback-page.css",
+			"js/feedback-page.js",
+			"img/iconfont-tianjia.png",
+			"js/mui.view.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"inforguide/detail_inforguide.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"inforgather/myinformationgathering.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		]
 	}
 }
