@@ -6,13 +6,15 @@
 			"css/mui.min.css",
 			"bussinessinfo/businessInformation.html",
 			"js/app.js",
-			"js/mui.enterfocus.js"
+			"js/mui.enterfocus.js",
+			"js/mui.js"
 		],
 		"refer": [
 			"inforguide/informationGuiding.html",
 			"selfInformation.html",
 			"inforgather/informationGathering.html",
-			"bussinessinfo/businessInformation.html"
+			"bussinessinfo/businessInformation.html",
+			"notice/noticelist.html"
 		]
 	},
 	"login.html": {
@@ -44,7 +46,8 @@
 			"bussinessinfo/myBusinessRecord.html",
 			"bussinessinfo/createNewTask.html",
 			"photoDemo.html",
-			"inforgather/myinformationgathering.html"
+			"inforgather/myinformationgathering.html",
+			"selfsetting/selfsetting.html"
 		]
 	},
 	"inforgather/informationGathering.html": {
@@ -187,6 +190,23 @@
 		]
 	},
 	"inforgather/myinformationgathering.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"selfsetting/selfsetting.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"notice/noticelist.html": {
 		"resources": [
 			"js/app.js",
 			"js/mui.min.js",

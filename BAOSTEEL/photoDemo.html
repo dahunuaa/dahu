@@ -42,7 +42,10 @@
 			<img class="picture" id="pic_2" src="img/iconfont-tianjia.png"/ style="margin-left: 130px;">
 			<!--<div id='image-list' class="row image-list">
 			</div>-->
-			<img hspace="10" vspace="10" style="width:-webkit-fill-available; visibility: visible;" src="http://121.42.186.54:8081/uploadimage/123.jpg";" data-preview-src="" data-preview-group="1"></img>
+			<p style="display: none;" id="picture_down">
+			<img id="picture_src" src="" hspace="10" vspace="10" style="width:-webkit-fill-available;"></img>
+			</p>
+			
 		</div>
 		
 	</body>
@@ -58,7 +61,12 @@
 		mui.init();
 		mui.previewImage();
 		$.plusReady(function(){
-					//添加图片
+		var pic_download = document.getElementById("picture_down")
+		pic_download.style.display = "block"
+		document.getElementById("picture_src").src="http://121.42.186.54:8081/uploadimage/123.jpg"
+		
+//		pic_src. = "http://121.42.186.54:8081/uploadimage/123.jpg"
+		//添加图片
 		var carmer_1 = doc.getElementById('pic_1')
 		carmer_1.addEventListener('tap', function(event) {
 			if(mui.os.plus){

@@ -286,7 +286,8 @@
 					"examples/businessInformation.html",
 					"bussinessinfo/businessInformation.html",
 					"inforgather/informationGathering.html",
-					"inforguide/informationGuiding.html"
+					"inforguide/informationGuiding.html",
+					"js/mui.js"
 				],
 				"refer": [
 					"setting.html",
