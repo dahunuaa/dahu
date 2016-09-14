@@ -67,6 +67,7 @@
 				<label>&nbsp;&nbsp;&nbsp;上传文件（可选）</label>
 				<br/>
 				&nbsp;&nbsp;&nbsp;<input type="file" name="file" id="file_up" style="margin-top: 10px;"/>
+				&nbsp;&nbsp;&nbsp;<button id="cancel_file"  type="button"style="margin-top: 10px; margin-left: 12px; height: 30px; width: 85px; background-color:skyblue"  >撤销文件</button>
 				</form>
 				<div>
         		<br/>
@@ -119,10 +120,6 @@
 						});
 					}, false);
 					
-					
-					
-					
-					
 			     //提交出差任务
 //			        var editorBox = doc.getElementById('editor');
 //			        var editornameBox = doc.getElementById('editor_name');
@@ -133,6 +130,15 @@
 					var textareaBox = doc.getElementById('textarea');
 					var newgather_submitButton = doc.getElementById("newgather_submit");
 					var newgather_cancelButton = doc.getElementById('newgather_cancel');
+					
+					var  file = document.getElementById("file_up").files[0];
+					var formData = new FormData($("#uploadForm")[0]);
+					
+					document.getElementById("cancel_file").addEventListener('tap',function(e){
+		          		var obj= document.getElementById("file_up");
+		          		obj.outerHTML = obj.outerHTML
+					})
+					
 					newgather_submitButton.addEventListener('tap', function(event) {
 						if(titleBox.value==""){
 							plus.nativeUI.toast("请输入标题")
@@ -144,11 +150,7 @@
 							plus.nativeUI.toast("请输入油田")
 						}else if(textareaBox.value==""){
 							plus.nativeUI.toast("请填写正文")
-						}else{
-//							console.log("111")
-						var  file = document.getElementById("file_up");
-						var formData = new FormData($("#uploadForm")[0]);
-//						alert(file.value)
+						}else{						
 //						var wt  = plus.nativeUI.showWaiting("正在提交...");
 //						if(file){
 //							alert("111")

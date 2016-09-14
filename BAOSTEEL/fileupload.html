@@ -17,6 +17,7 @@
 			</div>
 			<form id="uploadForm" style="margin-top: 50px;">
 				<p>上传文件：<input type="file" name="file" id="file_up"/></p>
+				<input type="button" value="撤销文件" id="cancel_file"/>
 				<input type="button" value="上传" id="submit"/>
 			</form>
 		</div>
@@ -27,12 +28,16 @@
 		(function($,doc){
 			mui.init();
 			$.ready(function(){
-			document.getElementById("submit").addEventListener('tap',function(e){
 			var  file = document.getElementById("file_up").files[0];
-			var wt  = plus.nativeUI.showWaiting("正在上传文件");
+
 			var formData = new FormData($("#uploadForm")[0]);
-			console.log()
-			alert(formData.fileName)
+			document.getElementById("cancel_file").addEventListener('tap',function(e){
+          		var obj= document.getElementById("file_up");
+          		obj.outerHTML = obj.outerHTML
+			})
+				
+			document.getElementById("submit").addEventListener('tap',function(e){
+			var wt  = plus.nativeUI.showWaiting("正在上传文件");
 			$.ajax({
 				type:"post",
 				url:"http://192.168.191.1:8080/baosteel/uploadfile",
