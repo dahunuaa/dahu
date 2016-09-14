@@ -45,10 +45,16 @@
         <span >类别:</span>&nbsp;&nbsp;&nbsp;<span id="guide_category"></span>   
         <br />
         <span style="border-left:20px;">正文:</span>&nbsp;&nbsp;&nbsp;<span id="guide_text"></span>
+        <p style="display: none;" id="picture_down">
+		<img id="picture_src" src="" hspace="10" vspace="10" style="width:-webkit-fill-available;"></img>
+		</p>
 		</div>
 		
 		<script src="../js/app.js"></script>
 		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.view.js "></script>
+		<script src="../js/mui.zoom.js"></script>
+		<script src="../js/mui.previewimage.js"></script>
 		<script>
 			(function($,doc){
 				$.init();
@@ -60,6 +66,7 @@
 					var guide_category = document.getElementById('guide_category');
 					var guide_text = document.getElementById("guide_text");
 					var guide_time = document.getElementById("guide_time");
+					var pic_path = document.getElementById("pic_path");
 					
 					//获取前一个页面传过来的值
 					var self = plus.webview.currentWebview();//必须用plusReady 来获取前面传过来的值
@@ -70,6 +77,7 @@
 					var guideinfor_category = self.guide_category
 					var guideinfor_text = self.guide_text
 					var time = self.guide_time
+					var pic_path = self.pic_path
 //					plus.nativeUI.toast(gatherinfor_time)
 
 					
@@ -80,6 +88,10 @@
 					guide_name.innerHTML=guideinfor_name
 					guide_category.innerHTML=guideinfor_category
 					guide_text.innerHTML=guideinfor_text
+					
+					var pic_download = document.getElementById("picture_down")
+					pic_download.style.display = "block"
+					document.getElementById("picture_src").src="http://121.42.186.54:8081/uploadimage/"+"pic_path"
 					
 					
 				})
