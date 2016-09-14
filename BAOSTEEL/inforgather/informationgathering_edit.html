@@ -63,9 +63,15 @@
 				<div class="mui-input-row" style="margin: 10px 5px;">
 					<textarea id="textarea" rows="5" placeholder="请填写正文"></textarea>
 				</div>
-				
-				
-        
+				<form id="uploadForm" style="margin-top: -15px;">
+				<label>&nbsp;&nbsp;&nbsp;上传文件（可选）</label>
+				<br/>
+				<input type="file" name="file" id="file_up" style="margin-top: 10px; margin-left: 12px; "/>
+				<br/>
+				<button id="cancel_file"  type="button"style="margin-top: 10px; margin-left: 12px; height: 30px; width: 85px; background-color:skyblue"  >撤销文件</button>
+				</form>
+				<div>
+        		<br/>
 				<div class="mui-button-row">
 					<button id="inforgather_alter" class="mui-btn mui-btn-primary" type="button" onclick="return true;">确定</button>&nbsp;&nbsp;
 					<button id="inforgather_delete" class="mui-btn mui-btn-danger" type="button" onclick="return false;">删除</button>
@@ -149,6 +155,13 @@
 					textareaBox.value=gather_text
 					oil_fieldBox.value=gather_oil_field
 					
+					var  file = document.getElementById("file_up").files[0];
+					var formData = new FormData($("#uploadForm")[0]);
+					
+					document.getElementById("cancel_file").addEventListener('tap',function(e){
+		          		var obj= document.getElementById("file_up");
+		          		obj.outerHTML = obj.outerHTML
+					})
 					
 					inforgather_alterButton.addEventListener('tap', function(event) {
 						if(titleBox.value==""){
@@ -158,38 +171,54 @@
 						}else if(textareaBox.value==""){
 							plus.nativeUI.toast("请填写正文")
 						}else{
-						
-						$.ajax({
-						type: "post",
-						url: "http://192.168.191.1:8080/baosteelpipe/Inforgathering_edit",
-//						url: "http://121.42.186.54:8081/baosteelpipe/Inforgathering_edit",
-						data: {
-							"gather_id":gather_id,
-							"gather_title":titleBox.value,
-							"gather_address":addressBox.value,
-							"gather_area":areaBox.innerText,
-							"gather_text":textareaBox.value,
-							"gather_oil_field":oil_fieldBox.value,
+							$.ajax({
+								type:"post",
+								url:"http://192.168.191.1:8080/baosteelpipe/uploadfile",
+				//				url:"http://121.42.186.54:8081/baosteelpipe/uploadfile",
+								data:formData,
+								async: true,
+								cache:false,
+								contentType:false,
+								processData:false,
+								success:function(data){
+	//								plus.nativeUI.toast("上传成功！");
+								},
+								error:function(data){
+									plus.nativeUI.toast("上传失败！");
+								}
+							});	
 							
-						},
-						async: true,
-						dataType:"text",
-						success: function(data) {
-//							plus.nativeUI.toast("服务器传回来的消息为:" +data);
-							if (data=="ok")
-							{
-								plus.nativeUI.toast("修改情报搜集成功");
-								mui.back();
-								plus.webview.getWebviewById("myinformationgathering").reload();
+							$.ajax({
+							type: "post",
+							url: "http://192.168.191.1:8080/baosteelpipe/Inforgathering_edit",
+	//						url: "http://121.42.186.54:8081/baosteelpipe/Inforgathering_edit",
+							data: {
+								"gather_id":gather_id,
+								"gather_title":titleBox.value,
+								"gather_address":addressBox.value,
+								"gather_area":areaBox.innerText,
+								"gather_text":textareaBox.value,
+								"gather_oil_field":oil_fieldBox.value,
 								
-							}else{
-								plus.nativeUI.toast("修改情报搜集失败");
+							},
+							async: true,
+							dataType:"text",
+							success: function(data) {
+	//							plus.nativeUI.toast("服务器传回来的消息为:" +data);
+								if (data=="ok")
+								{
+									plus.nativeUI.toast("修改情报搜集成功");
+									mui.back();
+									plus.webview.getWebviewById("myinformationgathering").reload();
+									
+								}else{
+									plus.nativeUI.toast("修改情报搜集失败");
+								}
+							},
+							error: function() {
+								plus.nativeUI.toast("请求服务器出现失败!");
 							}
-						},
-						error: function() {
-							plus.nativeUI.toast("请求服务器出现失败!");
-						}
-					});
+						});
 			
 						}
 						});

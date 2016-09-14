@@ -153,8 +153,6 @@
 							plus.nativeUI.toast("请填写正文")
 						}else{						
 //						var wt  = plus.nativeUI.showWaiting("正在提交...");
-//						if(file){
-//							alert("111")
 							$.ajax({
 							type:"post",
 							url:"http://192.168.191.1:8080/baosteelpipe/uploadfile",
@@ -171,7 +169,6 @@
 								plus.nativeUI.toast("上传失败！");
 							}
 						});	
-//						}
 						
 						$.ajax({
 						type: "post",

@@ -20,6 +20,9 @@
 				<input type="button" value="撤销文件" id="cancel_file"/>
 				<input type="button" value="上传" id="submit"/>
 			</form>
+			<span style="margin-left: 15px;">文件名：</span><span id="file_to_download"></span>
+			<br>
+			<input type="button" value="点击下载" id="download_file"/>
 		</div>
 	</body>
 	
@@ -56,7 +59,9 @@
 				}
 			});
 			})
-
+  
+   			var file_name = document.getElementById("file_to_download")
+   			file_name.innerHTML = "123.pdf"
 		 });
 		})(mui,document);
 		

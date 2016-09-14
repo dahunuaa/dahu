@@ -87,6 +87,8 @@
 						 li.setAttribute("gathering_text",value.gathering_text);
 						 li.setAttribute("gather_oil_field",value.gather_oil_field);
 						 li.setAttribute("time",value.time);
+						 li.setAttribute("time",value.origin_file_name);
+						 li.setAttribute("time",value.new_file_name);
                           li.innerHTML ='<a class="mui-navigate-right"'+"<br>"+"序号："+value.gather_id+"&nbsp&nbsp&nbsp"+"编辑者："+value.gather_editor_name +"<br>"+"编辑时间："+value.time+"<br>" +"标题："+value.gather_title 
                                           +"<br>"+"区域："+value.area+'</a>';
                         list.appendChild(li)
@@ -101,6 +103,8 @@
 								var gather_text = this.getAttribute("gathering_text")
 								var gather_oil_field = this.getAttribute("gather_oil_field")
 								var time = this.getAttribute("time")
+								var origin_file_name = this.getAttribute("origin_file_name")
+								var new_file_name = this.getAttribute("new_file_name")
 //								plus.nativeUI.toast(guide_id)
 													
 								mui.openWindow({
@@ -117,6 +121,8 @@
 							    	gather_text:gather_text,
 							    	gather_oil_field:gather_oil_field,
 							    	gather_time:time,
+							    	origin_file_name:origin_file_name,
+							    	new_file_name:new_file_name,
 							    }
 							})
 		                  });											                                         			           		           
