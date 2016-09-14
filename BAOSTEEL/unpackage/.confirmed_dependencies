@@ -177,7 +177,9 @@
 			"js/mui.view.js",
 			"js/mui.min.js",
 			"fonts/mui.ttf",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"js/feedback.js",
+			"img/BS_2.png"
 		]
 	},
 	"inforguide/detail_inforguide.html": {

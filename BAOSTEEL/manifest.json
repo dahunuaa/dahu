@@ -1220,7 +1220,8 @@
 					"img/iconfont-tianjia.png",
 					"js/mui.zoom.js",
 					"css/defined_uploadimg.css",
-					"js/mui.previewimage.js"
+					"js/mui.previewimage.js",
+					"img/BS_2.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -1259,9 +1260,7 @@
 			}
 		},
 		"idle": {
-			"resources": [
-				"img/BS_2.png"
-			]
+			"resources": []
 		}
 	}
 }

@@ -51,7 +51,7 @@
 	</body>
 	<script src="js/mui.min.js "></script>
 	<script src="js/mui.view.js "></script>
-	<!--<script src='js/feedback.js'></script>-->
+	<script src='js/feedback.js'></script>
 	<script src="js/feedback-page.js"></script>
 	<script src="js/mui.zoom.js"></script>
 	<script src="js/mui.previewimage.js"></script>
@@ -74,6 +74,8 @@
 					title: "拍照"
 				}, {
 					title: "从手机相册选择"
+				},{
+					title:"撤销"
 				}];
 				plus.nativeUI.actionSheet({
 //					title: "修改头像",
@@ -88,6 +90,9 @@
 							break;
 						case 2:
 							galleryImg();
+							break;
+						case 3:
+							deleteImg();
 							break;
 						default:
 							break
@@ -164,6 +169,12 @@
 			})
 		};
 		
+		//删除已选图片
+
+		function deleteImg(path){
+			document.getElementById("pic_1").src="img/iconfont-tianjia.png"
+		}
+		
 		
 //		生成canvas	
 		var f1 = null;
@@ -171,7 +182,7 @@
 		function appendFile(path){
 			var img = new Image();
 			path_pic = path;
-			plus.nativeUI.toast(path_pic)
+//			plus.nativeUI.toast(path_pic)
 			img.src=path;
 			img.onload = function(){
 				var that = this;

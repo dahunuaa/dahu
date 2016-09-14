@@ -71,6 +71,7 @@
 		<script src="../js/feedback-page.js"></script>
 		<script src="../js/mui.zoom.js"></script>
 		<script src="../js/mui.previewimage.js"></script>
+		
 		<script>
 		(function($, doc) {
 				$.init();
@@ -113,6 +114,8 @@
 							title: "拍照"
 						}, {
 							title: "从手机相册选择"
+						},{
+							title:"撤销"
 						}];
 						plus.nativeUI.actionSheet({
 							cancel: "取消",
@@ -126,6 +129,9 @@
 									break;
 								case 2:
 									galleryImg();
+									break;
+								case 3:
+									deleteImg();
 									break;
 								default:
 									break
@@ -163,7 +169,6 @@
 								root.getFile("head.jpg", {}, function(file) {
 									//文件已存在
 									file.remove(function() {
-										console.log("file remove success");
 										entry.copyTo(root, 'head.jpg', function(e) {
 												var e = e.fullPath + "?version=" + new Date().getTime();
 												appendFile(e);
@@ -203,6 +208,9 @@
 					})
 				};
 				
+				function deleteImg(path){
+					document.getElementById("pic_1").src="../img/iconfont-tianjia.png"
+				}
 				
 		//		生成canvas	
 				var f1 = null;
