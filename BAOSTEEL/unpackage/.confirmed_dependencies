@@ -206,6 +206,9 @@
 			"css/app.css",
 			"fonts/mui.ttf",
 			"css/mui.min.css"
+		],
+		"refer": [
+			"selfsetting/about_baosteel.html"
 		]
 	},
 	"notice/noticelist.html": {
@@ -215,6 +218,11 @@
 			"css/app.css",
 			"fonts/mui.ttf",
 			"css/mui.min.css"
+		]
+	},
+	"selfsetting/about_baosteel.html": {
+		"resources": [
+			"js/app.js"
 		]
 	}
 }

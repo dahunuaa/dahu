@@ -173,8 +173,8 @@
 						}else{
 							$.ajax({
 								type:"post",
-								url:"http://192.168.191.1:8080/baosteelpipe/uploadfile",
-				//				url:"http://121.42.186.54:8081/baosteelpipe/uploadfile",
+//								url:"http://192.168.191.1:8080/baosteelpipe/uploadfile",
+								url:"http://121.42.186.54:8081/baosteelpipe/uploadfile",
 								data:formData,
 								async: true,
 								cache:false,
@@ -190,8 +190,8 @@
 							
 							$.ajax({
 							type: "post",
-							url: "http://192.168.191.1:8080/baosteelpipe/Inforgathering_edit",
-	//						url: "http://121.42.186.54:8081/baosteelpipe/Inforgathering_edit",
+//							url: "http://192.168.191.1:8080/baosteelpipe/Inforgathering_edit",
+							url: "http://121.42.186.54:8081/baosteelpipe/Inforgathering_edit",
 							data: {
 								"gather_id":gather_id,
 								"gather_title":titleBox.value,
@@ -227,8 +227,8 @@
 							
 						$.ajax({
 						type: "post",
-						url: "http://192.168.191.1:8080/baosteelpipe/Inforgathering_delete",
-//						url: "http://121.42.186.54:8081/baosteelpipe/Inforgathering_delete",
+//						url: "http://192.168.191.1:8080/baosteelpipe/Inforgathering_delete",
+						url: "http://121.42.186.54:8081/baosteelpipe/Inforgathering_delete",
 						data: {
 							"gather_id":gather_id,//后面必须加上逗号
 							

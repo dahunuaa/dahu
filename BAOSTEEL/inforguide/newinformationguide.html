@@ -69,8 +69,8 @@
 		<script src="../js/mui.poppicker.js"></script>
 		<script src="../js/mui.view.js "></script>
 		<script src="../js/feedback-page.js"></script>
-		<!--<script src="../js/mui.zoom.js"></script>
-		<script src="../js/mui.previewimage.js"></script>-->
+		<script src="../js/mui.zoom.js"></script>
+		<script src="../js/mui.previewimage.js"></script>
 		
 		<script>
 		(function($, doc) {
@@ -115,7 +115,7 @@
 						}, {
 							title: "从手机相册选择"
 						},{
-							title:"撤销"
+							title:"撤销图片"
 						}];
 						plus.nativeUI.actionSheet({
 							cancel: "取消",
@@ -261,8 +261,8 @@
 						var wt=plus.nativeUI.showWaiting("正在提交...");
 						$.ajax({
 						type: "post",
-						url: "http://192.168.191.1:8080/baosteelpipe/NewInformationGuide",
-//						url: "http://121.42.186.54:8081/baosteelpipe/NewInformationGuide",
+//						url: "http://192.168.191.1:8080/baosteelpipe/NewInformationGuide",
+						url: "http://121.42.186.54:8081/baosteelpipe/NewInformationGuide",
 						data: {
 //							"guide_editor":editorBox.value,
 //							"guide_editor_name":editornameBox.value,
