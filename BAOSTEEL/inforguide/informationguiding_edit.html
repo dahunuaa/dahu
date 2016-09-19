@@ -133,7 +133,10 @@
 					titleBox.value=guide_title
 					categoryBox.innerText=guide_category
 					textareaBox.value=guide_text
-					document.getElementById("pic_1").src="http://121.42.186.54:8081/uploadimage/"+"pic_path"
+					if(pic_path!=0){
+						document.getElementById("pic_1").src="http://121.42.186.54:8081/uploadimage/"+pic_path	
+					}
+					
 					
 				
 				//图片处理

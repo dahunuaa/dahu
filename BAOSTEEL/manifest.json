@@ -910,7 +910,14 @@
 					"js/mui.min.js",
 					"css/app.css",
 					"fonts/mui.ttf",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"js/mui.zoom.js",
+					"js/mui.previewimage.js",
+					"js/mui.view.js",
+					"js/feedback.js",
+					"js/feedback-page.js",
+					"css/defined_uploadimg.css",
+					"css/feedback-page.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -1035,7 +1042,13 @@
 					"fonts/mui.ttf",
 					"css/mui.min.css",
 					"css/mui.poppicker.css",
-					"css/mui.picker.css"
+					"css/mui.picker.css",
+					"js/mui.zoom.js",
+					"css/defined_uploadimg.css",
+					"js/mui.previewimage.js",
+					"js/feedback-page.js",
+					"img/iconfont-tianjia.png",
+					"js/mui.view.js"
 				],
 				"refer": [],
 				"priority": 0
