@@ -207,6 +207,9 @@
 			"css/app.css",
 			"fonts/mui.ttf",
 			"css/mui.min.css"
+		],
+		"refer": [
+			"inforgather/informationgathering_edit.html"
 		]
 	},
 	"selfsetting/selfsetting.html": {
@@ -268,6 +271,14 @@
 	"inforgather/area_list.html": {
 		"resources": [
 			"js/mui.js"
+		]
+	},
+	"inforgather/informationgathering_edit.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/mui.poppicker.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css"
 		]
 	}
 }
