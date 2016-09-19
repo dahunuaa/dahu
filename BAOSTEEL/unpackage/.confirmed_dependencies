@@ -47,7 +47,8 @@
 			"bussinessinfo/createNewTask.html",
 			"photoDemo.html",
 			"inforgather/myinformationgathering.html",
-			"selfsetting/selfsetting.html"
+			"selfsetting/selfsetting.html",
+			"inforguide/myInformationGuiding.html"
 		]
 	},
 	"inforgather/informationGathering.html": {
@@ -66,7 +67,8 @@
 			"css/mui.min.css"
 		],
 		"refer": [
-			"inforgather/inforgather_list.html"
+			"inforgather/inforgather_list.html",
+			"inforgather/area_list.html"
 		]
 	},
 	"bussinessinfo/businessInformation.html": {
@@ -188,7 +190,14 @@
 			"js/mui.min.js",
 			"css/app.css",
 			"fonts/mui.ttf",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"js/mui.zoom.js",
+			"js/mui.previewimage.js",
+			"js/mui.view.js",
+			"js/feedback.js",
+			"js/feedback-page.js",
+			"css/defined_uploadimg.css",
+			"css/feedback-page.css"
 		]
 	},
 	"inforgather/myinformationgathering.html": {
@@ -223,6 +232,42 @@
 	"selfsetting/about_baosteel.html": {
 		"resources": [
 			"js/app.js"
+		]
+	},
+	"inforguide/myInformationGuiding.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"inforguide/informationguiding_edit.html"
+		]
+	},
+	"inforguide/informationguiding_edit.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/mui.zoom.js",
+			"js/mui.poppicker.js",
+			"css/defined_uploadimg.css",
+			"js/mui.previewimage.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"js/feedback-page.js",
+			"img/iconfont-tianjia.png",
+			"js/mui.view.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"inforgather/area_list.html": {
+		"resources": [
+			"js/mui.js"
 		]
 	}
 }
