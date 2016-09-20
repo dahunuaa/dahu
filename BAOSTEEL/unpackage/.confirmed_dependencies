@@ -289,7 +289,8 @@
 			"js/app.js",
 			"js/mui.min.js",
 			"fonts/mui.ttf",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"css/common.css"
 		]
 	},
 	"inforgather/inforGathering_search.html": {

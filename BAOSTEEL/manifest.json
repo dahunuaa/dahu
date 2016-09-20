@@ -901,7 +901,8 @@
 					"fonts/mui.ttf",
 					"js/app.js",
 					"js/common.js",
-					"js/defined_downloadfile.js"
+					"js/defined_downloadfile.js",
+					"css/common.css"
 				],
 				"refer": [],
 				"priority": 0

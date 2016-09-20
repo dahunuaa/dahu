@@ -10,7 +10,7 @@
 		<script type="text/javascript" src="js/defined_downloadfile.js" ></script>
 		<script type="text/javascript">
 var dtask=null;
-var fileName = "123.txt";
+var fileName = "Baosteel_app_train_1474355241838_57.pdf";
 
 
 function createDownloadTask(){
@@ -18,7 +18,7 @@ function createDownloadTask(){
 		outLine( "下载任务已创建！" );
 		return;
 	}
-    var url = "http://121.42.186.54:8081/uploadfiles/1.txt";
+    var url = "http://121.42.186.54:8081/uploadfiles/Baosteel_app_train_1474355241838_57.pdf";
     
     var options = {method:"GET",filename:"_doc/"+fileName};
 	dtask = plus.downloader.createDownload( url,options);
@@ -68,7 +68,7 @@ function startAll(){
 			<br/>
 			<ul class="dlist">
 				<li class="ditem" onclick="createDownloadTask();">创建下载任务</li>
-				<li class="ditem" onclick="startDownloadTask();">启动下载任务</li>
+				<!--<li class="ditem" onclick="startDownloadTask();">启动下载任务</li>-->
 				<li class="ditem" onclick="pauseDownloadTask();">暂停下载任务</li>
 				<li class="ditem" onclick="resumeDownloadTask();">恢复下载任务</li>
 				<li class="ditem" onclick="cancelDownloadTask();">取消下载任务</li>
