@@ -152,7 +152,7 @@
 						}else if(textareaBox.value==""){
 							plus.nativeUI.toast("请填写正文")
 						}else{						
-//						var wt  = plus.nativeUI.showWaiting("正在提交...");
+						var wt  = plus.nativeUI.showWaiting("正在提交...");
 							$.ajax({
 							type:"post",
 //							url:"http://192.168.191.1:8080/baosteelpipe/uploadfile",
@@ -182,7 +182,7 @@
 							"gather_text":textareaBox.value,
 							"gather_oil_field":oil_fieldBox.value,
 //							"file":formData,
-							"file_name":file.name,
+//							"file_name":file.name,
 							
 							
 						},
@@ -193,7 +193,7 @@
 //							plus.nativeUI.toast("服务器传回来的消息为:" +data);
 							if (data=="ok")
 							{
-//								wt.close("新建情报搜集成功");
+								wt.close("新建情报搜集成功");
 								plus.nativeUI.toast("新建情报搜集成功");
 								mui.back();
 								
