@@ -132,8 +132,7 @@
 					var newgather_submitButton = doc.getElementById("newgather_submit");
 					var newgather_cancelButton = doc.getElementById('newgather_cancel');
 					
-					var  file = document.getElementById("file_up").files[0];
-					var formData = new FormData($("#uploadForm")[0]);
+					
 					
 					document.getElementById("cancel_file").addEventListener('tap',function(e){
 		          		var obj= document.getElementById("file_up");
@@ -152,7 +151,10 @@
 						}else if(textareaBox.value==""){
 							plus.nativeUI.toast("请填写正文")
 						}else{						
-						var wt  = plus.nativeUI.showWaiting("正在提交...");
+							//必须把155行 156行代码放在这儿 如果放在刚开始不行
+							var  file = document.getElementById("file_up").files[0];
+							var formData = new FormData($("#uploadForm")[0]);
+							var wt  = plus.nativeUI.showWaiting("正在提交...");
 							$.ajax({
 							type:"post",
 //							url:"http://192.168.191.1:8080/baosteelpipe/uploadfile",
@@ -181,8 +183,6 @@
 							"gather_area":areaBox.innerText,
 							"gather_text":textareaBox.value,
 							"gather_oil_field":oil_fieldBox.value,
-//							"file":formData,
-//							"file_name":file.name,
 							
 							
 						},
