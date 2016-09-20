@@ -285,7 +285,11 @@
 		"resources": [
 			"js/common.js",
 			"css/app.css",
-			"js/defined_downloadfile.js"
+			"js/defined_downloadfile.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		]
 	},
 	"inforgather/inforGathering_search.html": {
@@ -307,6 +311,17 @@
 			"js/mui.poppicker.js",
 			"css/mui.poppicker.css",
 			"css/mui.picker.css"
+		]
+	},
+	"inforgather/inforgather_list.html": {
+		"refer": [
+			"inforgather/detail_inforgather.html"
+		],
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		]
 	}
 }

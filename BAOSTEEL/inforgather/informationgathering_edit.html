@@ -155,9 +155,6 @@
 					textareaBox.value=gather_text
 					oil_fieldBox.value=gather_oil_field
 					
-					var  file = document.getElementById("file_up").files[0];
-					var formData = new FormData($("#uploadForm")[0]);
-					
 					document.getElementById("cancel_file").addEventListener('tap',function(e){
 		          		var obj= document.getElementById("file_up");
 		          		obj.outerHTML = obj.outerHTML
@@ -171,17 +168,21 @@
 						}else if(textareaBox.value==""){
 							plus.nativeUI.toast("请填写正文")
 						}else{
+							var  file = document.getElementById("file_up").files[0];
+							var formData = new FormData($("#uploadForm")[0]);
+							var wt  = plus.nativeUI.showWaiting("正在提交...");
+							window.new_file_name;
 							$.ajax({
 								type:"post",
 //								url:"http://192.168.191.1:8080/baosteelpipe/uploadfile",
 								url:"http://121.42.186.54:8081/baosteelpipe/uploadfile",
 								data:formData,
-								async: true,
+								async: false,
 								cache:false,
 								contentType:false,
 								processData:false,
 								success:function(data){
-	//								plus.nativeUI.toast("上传成功！");
+									window.new_file_name = data;
 								},
 								error:function(data){
 									plus.nativeUI.toast("上传失败！");
@@ -199,6 +200,8 @@
 								"gather_area":areaBox.innerText,
 								"gather_text":textareaBox.value,
 								"gather_oil_field":oil_fieldBox.value,
+								"origin_file_name":file.name,
+								"new_file_name":new_file_name,
 								
 							},
 							async: true,
