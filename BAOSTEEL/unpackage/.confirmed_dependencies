@@ -35,7 +35,8 @@
 		"resources": [
 			"js/mui.min.js",
 			"css/app.css",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"fonts/mui.ttf"
 		],
 		"refer": [
 			"fileupload.html",
@@ -246,7 +247,11 @@
 	},
 	"selfsetting/about_baosteel.html": {
 		"resources": [
-			"js/app.js"
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		]
 	},
 	"inforguide/myInformationGuiding.html": {
@@ -323,7 +328,12 @@
 			"js/mui.picker.js",
 			"js/mui.poppicker.js",
 			"css/mui.poppicker.css",
-			"css/mui.picker.css"
+			"css/mui.picker.css",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		]
 	},
 	"inforgather/inforgather_list.html": {

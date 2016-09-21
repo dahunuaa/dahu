@@ -105,34 +105,35 @@
 					var dtask=null;
 					var fileName=new_file_name;
 					document.getElementById("downloadfile").addEventListener('tap',function(e){
-						if ( dtask ) {
-							outLine( "下载任务已创建！" );
-							return;
-						}
-					    var url = "http://121.42.186.54:8081/uploadfiles/"+new_file_name;
-					    var options = {method:"GET",filename:"_doc/"+fileName};
-						dtask = plus.downloader.createDownload( url, options );
-					    dtask.addEventListener( "statechanged", function(task,status){
-					    	if(!dtask){return;}
-					    	switch(task.state) {
-					    		case 1: // 开始
-					    			plus.nativeUI.toast("开始下载...");			    			
-					    		break;
-					    		case 2: // 已连接到服务器
-					    			plus.nativeUI.toast("开始下载...");
-					    		break;
-					    		case 3:	// 已接收到数据
-									processtext.innerHTML=task.downloadedSize+"/"+task.totalSize;
-					    			
-					    		break;
-					    		case 4:	// 下载完成			    			
-					    			processtext.innerHTML=parseInt(task.totalSize/1024)+"KB"
-					    			plus.nativeUI.toast("下载完成!");
-					    		break;
-					    	}
-					    } );
-		
-					    dtask.start();
+						if(origin_file_name==""||origin_file_name==null){
+							plus.nativeUI.toast("无文件可下载！")
+						}else{
+							var url = "http://121.42.186.54:8081/uploadfiles/"+new_file_name;
+						    var options = {method:"GET",filename:"_doc/"+fileName};
+							dtask = plus.downloader.createDownload( url, options );
+						    dtask.addEventListener( "statechanged", function(task,status){
+						    	if(!dtask){return;}
+						    	switch(task.state) {
+						    		case 1: // 开始
+						    			plus.nativeUI.toast("开始下载...");			    			
+						    		break;
+						    		case 2: // 已连接到服务器
+						    			plus.nativeUI.toast("开始下载...");
+						    		break;
+						    		case 3:	// 已接收到数据
+										processtext.innerHTML=task.downloadedSize+"/"+task.totalSize;
+						    			
+						    		break;
+						    		case 4:	// 下载完成			    			
+						    			processtext.innerHTML=parseInt(task.totalSize/1024)+"KB"
+						    			plus.nativeUI.toast("下载完成!");
+						    		break;
+						    	}
+						    } );
+			
+						    dtask.start();
+							}
+					    
 					})
 				document.getElementById("openfile").addEventListener('tap',function(e){
 					plus.runtime.openFile("_doc/"+fileName, {},function(e){

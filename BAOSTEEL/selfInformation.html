@@ -68,21 +68,6 @@
 						个人设置
 					</a>
 				</li>
-				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right" id="photo">
-						PhotoDemo
-					</a>
-				</li>
-				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right" id="UploadFile">
-						UploadFile
-					</a>
-				</li>
-				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right" id="downloadfile">
-						downloadfile
-					</a>
-				</li>
 			</ul>
 			<ul class="mui-table-view" style="margin-top: 25px;">
 				<li class="mui-table-view-cell">
@@ -204,25 +189,6 @@
 			mui.openWindow({
 				url:"notice/notice.html",
 				id:"noice",
-			})
-		});
-		document.getElementById("photo").addEventListener('tap',function(){
-			mui.openWindow({
-				url:"photoDemo.html",
-				id:"photoDmo",
-			})
-		});
-		
-		document.getElementById("UploadFile").addEventListener('tap',function(){
-			mui.openWindow({
-				url:"fileupload.html",
-				id:"fileupload",
-			})
-		});
-		document.getElementById("downloadfile").addEventListener('tap',function(){
-			mui.openWindow({
-				url:"downloadfile.html",
-				id:"downloadfile",
 			})
 		});
 	})
