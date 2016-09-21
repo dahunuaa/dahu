@@ -902,7 +902,8 @@
 					"js/app.js",
 					"js/common.js",
 					"js/defined_downloadfile.js",
-					"css/common.css"
+					"css/common.css",
+					"js/immersed.js"
 				],
 				"refer": [],
 				"priority": 0

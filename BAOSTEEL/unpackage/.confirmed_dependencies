@@ -151,6 +151,11 @@
 			"css/app.css",
 			"fonts/mui.ttf",
 			"css/mui.min.css"
+		],
+		"refer": [
+			"notice/mynotice.html",
+			"notice/new_notice.html",
+			"notice/noticelist.html"
 		]
 	},
 	"bussinessinfo/myBusinessRecord.html": {
@@ -296,7 +301,8 @@
 			"js/mui.min.js",
 			"fonts/mui.ttf",
 			"css/mui.min.css",
-			"css/common.css"
+			"css/common.css",
+			"js/immersed.js"
 		]
 	},
 	"inforgather/inforGathering_search.html": {
@@ -327,6 +333,20 @@
 		"resources": [
 			"js/app.js",
 			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"notice/mynotice.html": {
+		"resources": [
+			"js/app.js"
+		]
+	},
+	"notice/new_notice.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
 			"fonts/mui.ttf",
 			"css/mui.min.css"
 		]
