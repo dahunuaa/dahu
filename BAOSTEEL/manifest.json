@@ -1269,7 +1269,13 @@
 					"js/common.js",
 					"css/common.css",
 					"js/defined_downloadfile.js",
-					"js/immersed.js"
+					"js/immersed.js",
+					"css/app.css",
+					"js/app.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/mui.js"
 				],
 				"refer": [],
 				"priority": 0
