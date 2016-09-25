@@ -35,7 +35,8 @@
 		"resources": [
 			"js/mui.min.js",
 			"css/app.css",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"fonts/mui.ttf"
 		],
 		"refer": [
 			"fileupload.html",
@@ -68,7 +69,8 @@
 		],
 		"refer": [
 			"inforgather/inforgather_list.html",
-			"inforgather/area_list.html"
+			"inforgather/area_list.html",
+			"inforgather/inforGathering_search.html"
 		]
 	},
 	"bussinessinfo/businessInformation.html": {
@@ -122,7 +124,13 @@
 			"js/common.js",
 			"css/common.css",
 			"js/defined_downloadfile.js",
-			"js/immersed.js"
+			"js/immersed.js",
+			"css/app.css",
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/mui.js"
 		]
 	},
 	"inforgather/newinformationgathering.html": {
@@ -144,6 +152,11 @@
 			"css/app.css",
 			"fonts/mui.ttf",
 			"css/mui.min.css"
+		],
+		"refer": [
+			"notice/mynotice.html",
+			"notice/new_notice.html",
+			"notice/noticelist.html"
 		]
 	},
 	"bussinessinfo/myBusinessRecord.html": {
@@ -234,7 +247,11 @@
 	},
 	"selfsetting/about_baosteel.html": {
 		"resources": [
-			"js/app.js"
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		]
 	},
 	"inforguide/myInformationGuiding.html": {
@@ -280,19 +297,76 @@
 			"inforgather/detail_inforgather.html"
 		]
 	},
-	"inforgather/informationgathering_edit.html": {
+	"inforgather/detail_inforgather.html": {
+		"resources": [
+			"js/common.js",
+			"css/app.css",
+			"js/defined_downloadfile.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/common.css",
+			"js/immersed.js"
+		]
+	},
+	"inforgather/inforGathering_search.html": {
 		"resources": [
 			"js/mui.picker.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
 			"js/mui.poppicker.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
 			"css/mui.poppicker.css",
 			"css/mui.picker.css"
 		]
 	},
+<<<<<<< HEAD
 	"inforgather/detail_inforgather.html": {
 		"resources": [
 			"js/common.js",
 			"css/app.css",
 			"js/defined_downloadfile.js"
+=======
+	"inforgather/informationgathering_edit.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/mui.poppicker.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"inforgather/inforgather_list.html": {
+		"refer": [
+			"inforgather/detail_inforgather.html"
+		],
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"notice/mynotice.html": {
+		"resources": [
+			"js/app.js"
+		]
+	},
+	"notice/new_notice.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+>>>>>>> b86d71b66a5a84c3ccc9e4f15c1f312bde61f853
 		]
 	}
 }

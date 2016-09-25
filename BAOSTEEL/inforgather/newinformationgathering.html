@@ -150,28 +150,36 @@
 							plus.nativeUI.toast("请输入油田")
 						}else if(textareaBox.value==""){
 							plus.nativeUI.toast("请填写正文")
-						}else{
+						}else{						
 							//必须把155行 156行代码放在这儿 如果放在刚开始不行
 							var  file = document.getElementById("file_up").files[0];
 							var formData = new FormData($("#uploadForm")[0]);
 							var wt  = plus.nativeUI.showWaiting("正在提交...");
-							$.ajax({
-							type:"post",
-//							url:"http://192.168.191.1:8080/baosteelpipe/uploadfile",
-							url:"http://121.42.186.54:8081/baosteelpipe/uploadfile",
-							data:formData,
-							async: true,
-							cache:false,
-							contentType:false,
-							processData:false,
-							success:function(data){
-//								plus.nativeUI.toast("上传成功！");
-							},
-							error:function(data){
-								plus.nativeUI.toast("上传失败！");
+							window.new_file_name="";
+							origin_name="";
+							if(file !=""&&file !=undefined){
+								origin_name=file.name
+								$.ajax({
+								type:"post",
+	//							url:"http://192.168.191.1:8080/baosteelpipe/uploadfile",
+								url:"http://121.42.186.54:8081/baosteelpipe/uploadfile",
+								data:formData,
+								async: false,//想把data值赋给一个全局变量 然后给下一个ajax里面用，必须将此处改为false，应为js是非阻塞的，会同时执行多个ajax
+								cache:false,
+								contentType:false,
+								processData:false,
+	//							dataType:"text",
+								success:function(data){
+								   window.new_file_name = data;
+									
+								},
+								error:function(data){
+									plus.nativeUI.toast("上传失败！");
+								}
+							});	
 							}
-						});	
-						
+							
+							
 						$.ajax({
 						type: "post",
 //						url: "http://192.168.191.1:8080/baosteelpipe/NewInformationgathering",
@@ -183,7 +191,8 @@
 							"gather_area":areaBox.innerText,
 							"gather_text":textareaBox.value,
 							"gather_oil_field":oil_fieldBox.value,
-							
+							"origin_file_name":origin_name,
+							"new_file_name":new_file_name,
 							
 						},
 						async: true,
