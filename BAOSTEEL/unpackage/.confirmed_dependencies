@@ -270,7 +270,14 @@
 	},
 	"inforgather/area_list.html": {
 		"resources": [
-			"js/mui.js"
+			"js/mui.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"inforgather/detail_inforgather.html"
 		]
 	},
 	"inforgather/informationgathering_edit.html": {
@@ -279,6 +286,13 @@
 			"js/mui.poppicker.js",
 			"css/mui.poppicker.css",
 			"css/mui.picker.css"
+		]
+	},
+	"inforgather/detail_inforgather.html": {
+		"resources": [
+			"js/common.js",
+			"css/app.css",
+			"js/defined_downloadfile.js"
 		]
 	}
 }
