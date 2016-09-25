@@ -94,9 +94,9 @@
 					guide_name.innerHTML=guideinfor_name
 					guide_category.innerHTML=guideinfor_category
 					guide_text.innerHTML=guideinfor_text
-
+					
 					var pic_download = document.getElementById("picture_down")
-					if(pic_path!=0){
+					if(pic_path!=0&&pic_path!="null"){
 					pic_download.style.display = "block"
 					document.getElementById("picture_src").src="http://121.42.186.54:8081/uploadimage/"+pic_path
 					}

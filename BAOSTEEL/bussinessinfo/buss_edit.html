@@ -170,7 +170,7 @@
 			
 					document.getElementById("begintime").addEventListener('tap', function() {
 						var dDate = new Date();
-						dDate.setFullYear(2016, 7, 16);//月份小1
+						dDate.setFullYear(dDate.getFullYear(), dDate.getMonth(), dDate.getDate());//月份小1
 						var minDate = new Date();
 						minDate.setFullYear(2016, 0, 1);
 						var maxDate = new Date();
@@ -193,7 +193,7 @@
 					
 							document.getElementById("endtime").addEventListener('tap', function() {
 								var dDate = new Date();
-								dDate.setFullYear(2016, 7, 16);//月份小1
+								dDate.setFullYear(dDate.getFullYear(), dDate.getMonth(), dDate.getDate());//月份小1
 								var minDate = new Date();
 								minDate.setFullYear(2016, 0, 1);
 								var maxDate = new Date();

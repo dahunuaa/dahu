@@ -196,7 +196,6 @@
 								}
 							});	
 							}
-							
 							$.ajax({
 							type: "post",
 //							url: "http://192.168.191.1:8080/baosteelpipe/Inforgathering_edit",
@@ -209,7 +208,7 @@
 								"gather_text":textareaBox.value,
 								"gather_oil_field":oil_fieldBox.value,
 								"origin_file_name":origin_name,
-								"new_file_name":new_file_name,
+								"new_file_name":window.new_file_name,
 								
 							},
 							async: true,

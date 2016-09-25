@@ -79,6 +79,7 @@
 		<script>
 		(function($, doc) {
 				$.init();
+				$.previewImage();
 				$.plusReady(function() {
 					//选择地点
 					var selectcategory = new $.PopPicker();
@@ -278,7 +279,6 @@
 					}
 				}
 					
-					
 					inforguide_alterButton.addEventListener('tap', function(event) {
 						if(titleBox.value==""){
 							plus.nativeUI.toast("请输入标题")
@@ -287,7 +287,7 @@
 						}else if(textareaBox.value==""){
 							plus.nativeUI.toast("请填写正文")
 						}else{
-						
+						var wt=plus.nativeUI.showWaiting("正在提交...");
 						$.ajax({
 						type: "post",
 //						url: "http://192.168.191.1:8080/baosteelpipe/Inforguide_edit",
@@ -305,7 +305,8 @@
 						success: function(data) {
 //							plus.nativeUI.toast("服务器传回来的消息为:" +data);
 							if (data=="ok")
-							{
+							{	
+								wt.close();
 								plus.nativeUI.toast("修改信息指南成功");
 								mui.back();
 								plus.webview.getWebviewById("myInformationGuiding").reload();
@@ -326,8 +327,8 @@
 							
 						$.ajax({
 						type: "post",
-						url: "http://192.168.191.1:8080/baosteelpipe/Inforguide_delete",
-//						url: "http://121.42.186.54:8081/baosteelpipe/Inforguide_delete",
+//						url: "http://192.168.191.1:8080/baosteelpipe/Inforguide_delete",
+						url: "http://121.42.186.54:8081/baosteelpipe/Inforguide_delete",
 						data: {
 							"guide_id":guide_id,//后面必须加上逗号
 						},

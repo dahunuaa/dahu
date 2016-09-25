@@ -51,6 +51,8 @@
 	        <br/>
 	        <span>文件：</span><span id="file_to_download"></span>
 			<br/>
+			<!--<span>文件大小：</span><span id="filesize"></span>
+			<br/>-->
 			<span>下载进度：</span><span id="processtext"></span>
 			<div class="mui-button-row">
 				<button id="downloadfile" class="mui-btn mui-btn-primary" type="button" onclick="return true;" >点击下载</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -75,6 +77,7 @@
 					var gather_oil_field = document.getElementById("gather_oil_field");
 					var gather_time = document.getElementById("gather_time");
 					var file_to_download = document.getElementById("file_to_download");
+					var file_size = document.getElementById("filesize")
 					
 					//获取前一个页面传过来的值
 					var self = plus.webview.currentWebview();//必须用plusReady 来获取前面传过来的值
@@ -89,6 +92,9 @@
 					var time = self.gather_time
 					var origin_file_name = self.origin_file_name
 					var new_file_name = self.new_file_name
+					if(origin_file_name == "null"||origin_file_name ==""){
+						origin_file_name = "无"
+					}
 	
 					
 				
@@ -105,7 +111,7 @@
 					var dtask=null;
 					var fileName=new_file_name;
 					document.getElementById("downloadfile").addEventListener('tap',function(e){
-						if(origin_file_name==""||origin_file_name==null){
+						if(origin_file_name=="无"){
 							plus.nativeUI.toast("无文件可下载！")
 						}else{
 							var url = "http://121.42.186.54:8081/uploadfiles/"+new_file_name;

@@ -179,41 +179,40 @@
 							});	
 							}
 							
+							$.ajax({
+							type: "post",
+	//						url: "http://192.168.191.1:8080/baosteelpipe/NewInformationgathering",
+							url: "http://121.42.186.54:8081/baosteelpipe/NewInformationgathering",
+							data: {
 							
-						$.ajax({
-						type: "post",
-//						url: "http://192.168.191.1:8080/baosteelpipe/NewInformationgathering",
-						url: "http://121.42.186.54:8081/baosteelpipe/NewInformationgathering",
-						data: {
-						
-							"gather_title":titleBox.value,
-							"gather_address":addressBox.value,
-							"gather_area":areaBox.innerText,
-							"gather_text":textareaBox.value,
-							"gather_oil_field":oil_fieldBox.value,
-							"origin_file_name":origin_name,
-							"new_file_name":new_file_name,
-							
-						},
-						async: true,
-						dataType:"text",
-						success: function(data) {
-							
-//							plus.nativeUI.toast("服务器传回来的消息为:" +data);
-							if (data=="ok")
-							{
-								wt.close("新建情报搜集成功");
-								plus.nativeUI.toast("新建情报搜集成功");
-								mui.back();
+								"gather_title":titleBox.value,
+								"gather_address":addressBox.value,
+								"gather_area":areaBox.innerText,
+								"gather_text":textareaBox.value,
+								"gather_oil_field":oil_fieldBox.value,
+								"origin_file_name":origin_name,
+								"new_file_name":new_file_name,
 								
-							}else{
-								plus.nativeUI.toast("新建情报搜集失败");
+							},
+							async: true,
+							dataType:"text",
+							success: function(data) {
+								
+	//							plus.nativeUI.toast("服务器传回来的消息为:" +data);
+								if (data=="ok")
+								{
+									wt.close("新建情报搜集成功");
+									plus.nativeUI.toast("新建情报搜集成功");
+									mui.back();
+									
+								}else{
+									plus.nativeUI.toast("新建情报搜集失败");
+								}
+							},
+							error: function() {
+								plus.nativeUI.toast("请求服务器出现失败!");
 							}
-						},
-						error: function() {
-							plus.nativeUI.toast("请求服务器出现失败!");
-						}
-					});
+						});
 			
 						}
 						});
