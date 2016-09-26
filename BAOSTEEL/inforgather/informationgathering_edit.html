@@ -20,6 +20,9 @@
 			.mui-btn {
 				padding: 10px;
 			}
+			.select{
+				margin-left: 12px;
+			}
 			
 			
 		</style>
@@ -66,8 +69,10 @@
 				<form id="uploadForm" style="margin-top: -15px;">
 				<label>&nbsp;&nbsp;&nbsp;上传文件（可选）【小于5M】</label>
 				<br/>
+				
 				<input type="file" name="file" id="file_up" style="margin-top: 10px; margin-left: 12px; "/>
 				<br/>
+				
 				<button id="cancel_file"  type="button"style="margin-top: 10px; margin-left: 12px; height: 30px; width: 85px; background-color:skyblue">撤销文件</button>
 				</form>
 				<div>
@@ -157,10 +162,18 @@
 					textareaBox.value=gather_text
 					oil_fieldBox.value=gather_oil_field
 					
+//					if(origin_name!=""&&origin_name!="null"){
+//						document.getElementById("file_select_name").style.display= "block"
+//						document.getElementById("select_name").style.display="block"
+//						document.getElementById("select_name").innerHTML = origin_name	
+//					}
+					
+					
 					document.getElementById("cancel_file").addEventListener('tap',function(e){
 		          		var obj= document.getElementById("file_up");
 		          		obj.outerHTML = obj.outerHTML
 					})
+					
 					
 					inforgather_alterButton.addEventListener('tap', function(event) {
 						if(titleBox.value==""){
