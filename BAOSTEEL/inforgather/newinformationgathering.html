@@ -171,7 +171,6 @@
 	//							dataType:"text",
 								success:function(data){
 								   window.new_file_name = data;
-									
 								},
 								error:function(data){
 									plus.nativeUI.toast("上传失败！");
@@ -192,12 +191,10 @@
 								"gather_oil_field":oil_fieldBox.value,
 								"origin_file_name":origin_name,
 								"new_file_name":new_file_name,
-								
 							},
 							async: true,
 							dataType:"text",
 							success: function(data) {
-								
 	//							plus.nativeUI.toast("服务器传回来的消息为:" +data);
 								if (data=="ok")
 								{

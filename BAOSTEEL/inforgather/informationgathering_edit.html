@@ -145,7 +145,7 @@
 					var gather_address = self.gather_address
 					var gather_text = self.gather_text
 					var gather_oil_field = self.gather_oil_field
-					var origin_name = self.origin_name
+					var origin_name = self.origin_file_name
 					var new_file_name = self.new_file_name
 					
 					//填写的用.value,选择的用.innerText
@@ -173,9 +173,9 @@
 							var  file = document.getElementById("file_up").files[0];
 							var formData = new FormData($("#uploadForm")[0]);
 							var wt  = plus.nativeUI.showWaiting("正在提交...");
-							window.new_file_name="";
-							origin_name="";
+							window.new_file_name=new_file_name;
 							if(file !=""&&file !=undefined){
+								window.origin_name="";
 								origin_name=file.name
 								$.ajax({
 								type:"post",
