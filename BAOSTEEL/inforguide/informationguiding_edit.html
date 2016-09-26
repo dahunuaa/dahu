@@ -134,7 +134,7 @@
 					titleBox.value=guide_title
 					categoryBox.innerText=guide_category
 					textareaBox.value=guide_text
-					if(pic_path!=0){
+					if(pic_path!=0&&pic_path!="null"){
 						document.getElementById("pic_1").src="http://121.42.186.54:8081/uploadimage/"+pic_path	
 					}
 					
@@ -246,6 +246,8 @@
 				
 				function deleteImg(path){
 					document.getElementById("pic_1").src="../img/iconfont-tianjia.png"
+					f1=null
+					pic_path='0'
 				}
 				
 		//		生成canvas	
@@ -287,6 +289,9 @@
 						}else if(textareaBox.value==""){
 							plus.nativeUI.toast("请填写正文")
 						}else{
+						if(pic_path!=0&f1==null){
+							f1="1"//编辑的时候如果有图片而且不修改图片放置图片被空值覆盖的处理方法
+						}
 						var wt=plus.nativeUI.showWaiting("正在提交...");
 						$.ajax({
 						type: "post",
@@ -298,6 +303,7 @@
 							"guide_category":categoryBox.innerText,
 							"guide_text":textareaBox.value,
 							"pic":f1, 
+							"pic_path":pic_path,
 							
 						},
 						async: true,
