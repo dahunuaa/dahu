@@ -152,6 +152,9 @@
 					var gather_oil_field = self.gather_oil_field
 					var origin_name = self.origin_file_name
 					var new_file_name = self.new_file_name
+					if(origin_name!=""&&origin_name!="null"){
+						plus.nativeUI.toast("已选择文件："+origin_name)
+					}
 					
 					//填写的用.value,选择的用.innerText
 //					editorBox.value=gather_editor
@@ -172,6 +175,13 @@
 					document.getElementById("cancel_file").addEventListener('tap',function(e){
 		          		var obj= document.getElementById("file_up");
 		          		obj.outerHTML = obj.outerHTML
+		          		if(origin_name ==""||origin_name=="null"){
+		          			plus.nativeUI.toast("未选择文件！")
+		          		}else{
+							plus.nativeUI.toast("已删除文件："+origin_name)		          			
+		          		}
+		          		origin_name = ""
+		          		window.new_file_name=""
 					})
 					
 					
