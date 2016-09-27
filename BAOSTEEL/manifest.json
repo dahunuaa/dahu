@@ -221,15 +221,15 @@
 			"splashscreen": {
 				"ios": {
 					"iphone": {
-						"default": "F:/tips/girlab——001.png", /*iPhone3启动图片选，分辨率：320x480*/
-						"retina35": "F:/tips/girlab——001.png",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
-						"retina40": "F:/app workspace/BAOSTEEL_3/img/bg_3.png",/*4.0 英寸设备(iPhone5/iPhone5s)启动图片，分辨率：640x1136*/
-						"retina47": "F:/app workspace/BAOSTEEL_3/img/bg_3.png",/*4.7 英寸设备(iPhone6)启动图片，分辨率：750x1334*/
-						"retina55": "F:/app workspace/BAOSTEEL_3/img/bg_3.png",/*5.5 英寸设备(iPhone6 Plus)启动图片，分辨率：1242x2208*/
-						"retina55l": "F:/app workspace/BAOSTEEL_3/img/bg_3.png"
+						"default": "img/bg_3.png", /*iPhone3启动图片选，分辨率：320x480*/
+						"retina35": "img/bg_3.png",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+						"retina40": "img/bg_3.png",/*4.0 英寸设备(iPhone5/iPhone5s)启动图片，分辨率：640x1136*/
+						"retina47": "img/bg_3.png",/*4.7 英寸设备(iPhone6)启动图片，分辨率：750x1334*/
+						"retina55": "img/bg_3.png",/*5.5 英寸设备(iPhone6 Plus)启动图片，分辨率：1242x2208*/
+						"retina55l": "img/bg_3.png"
 					},
 					"ipad": {
-						"portrait": "F:/app workspace/BAOSTEEL_3/img/bg_3.png", /*iPad竖屏启动图片，分辨率：768x1004*/
+						"portrait": "img/bg_3.png", /*iPad竖屏启动图片，分辨率：768x1004*/
 						"portrait-retina": "",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
 						"landscape": "", /*iPad横屏启动图片，分辨率：1024x748*/
 						"landscape-retina": "", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
@@ -901,7 +901,8 @@
 					"fonts/mui.ttf",
 					"js/app.js",
 					"js/common.js",
-					"js/defined_downloadfile.js"
+					"js/defined_downloadfile.js",
+					"css/common.css"
 				],
 				"refer": [],
 				"priority": 0
