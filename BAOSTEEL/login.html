@@ -66,18 +66,16 @@
 	<script src="js/app.js"></script>
 	<script>
 		(function ($, doc) {
-//			$.init({
-//				statusBarBackground:'#f7f7f7'
-//			});
+			$.init();
 			$.plusReady(function() {
 					plus.screen.lockOrientation("portrait-primary");
 					var settings = app.getSettings();
 					var state = app.getState();
-					var mainPage = $.preload({
-						"id": 'main',
-						"url": 'main.html',
-						
-					});
+//					var mainPage = $.preload({
+//						"id": 'main',
+//						"url": 'main.html',
+//						
+//					});
 					var toMain = function() {
 						$.fire(mainPage, 'show', null);
 						setTimeout(function() {
@@ -112,19 +110,25 @@
 							"pswd": passwordBox.value
 						},
 						async: true,
-						dataType:"text",
+						dataType:"json",//后台传json的话这儿需要写成json
 						success: function(data) {
-//							plus.nativeUI.toast("服务器传回来的消息为:" +data);
-							if (data=="ok")
-							{
-								mui.openWindow({
-								    url: 'main.html', 
-								    id:'main'
-								  });
-								
-							}else{
-								plus.nativeUI.toast("用户名或密码错误");
-							}
+							mui.each(data,function(key,value){
+								if (value.str=="ok")
+								{
+									mui.openWindow({
+									    url: 'main.html', 
+									    id:'main',
+									extras:{
+										user_name:value.user_name
+									}  
+									})
+								}else{
+									plus.nativeUI.toast("用户名或密码错误");
+								}
+							
+							})
+							
+							
 						},
 						error: function() {
 							plus.nativeUI.toast("请求服务器出现失败!");
@@ -132,6 +136,8 @@
 					});
 						
 						}
+						
+						
 						
 						});
 						

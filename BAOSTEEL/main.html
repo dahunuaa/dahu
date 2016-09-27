@@ -58,11 +58,32 @@
 		<script src="js/mui.min.js"></script>
 		<script src="js/app.js"></script>
 		<script src="js/mui.enterfocus.js"></script>
-		<script type="text/javascript" charset="utf-8">
+		<script>
 		(function ($, doc) {
 			//mui初始化
 			$.init();
-			$.ready(function(){
+			$.plusReady(function(){
+				now = new Date()
+				hour = now.getHours()
+				if(hour<6){
+					gesture ="凌晨好!"
+				}else if(hour<9){
+					gesture = "早上好!"
+				}else if(hour<12){
+					gesture="上午好！"
+				}else if(hour<14){
+					gesture="中午好！"
+				}else if(hour<17){
+					gesture="下午好！"
+				}else if(hour<19){
+					gesture="傍晚好！"
+				}else{
+					gesture="晚上好"
+				}
+			var self = plus.webview.currentWebview()
+			var user_name = self.user_name
+			plus.nativeUI.toast(gesture+user_name)
+			
 			var subpages = ['bussinessinfo/businessInformation.html', 'inforgather/informationGathering.html', 'inforguide/informationGuiding.html','selfInformation.html'];
 			var subpage_style = {
 				top: '45px',
@@ -74,6 +95,7 @@
 			 //创建子页面，首个选项卡页面显示，其它均隐藏；
 			mui.plusReady(function() {
 				var self = plus.webview.currentWebview();
+				
 				for (var i = 0; i < 4; i++) {
 					var temp = {};
 					var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
@@ -85,6 +107,7 @@
 					}
 					self.append(sub);
 				}
+				
 			});
 			 //当前激活选项
 			var activeTab = subpages[0];
