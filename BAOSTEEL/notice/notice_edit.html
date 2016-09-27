@@ -108,6 +108,7 @@
 							{
 								plus.nativeUI.toast("修改公告成功");
 								mui.back();
+								plus.webview.getWebviewById("mynotice").reload();
 								
 							}else{
 								plus.nativeUI.toast("修改公告失败");
@@ -138,6 +139,7 @@
 							{
 								plus.nativeUI.toast("删除公告成功");
 								mui.back();
+								plus.webview.getWebviewById("mynotice").reload();
 								
 							}else{
 								plus.nativeUI.toast("删除公告失败");
