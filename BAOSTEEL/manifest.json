@@ -105,9 +105,6 @@
 		},
 		"NativeObj": {
 			"description": "原生对象"
-		},
-		"OAuth": {
-		 "description": "登录授权"
 		}
 	},
 	"plus": {
@@ -121,21 +118,7 @@
 		"distribute": {
 			"plugins": {
 				"oauth": {
-                    "weixin": {
-                        "appid": "wx**********",
-                        "appsecret": "*****************",
-                        "description": "微信登录"
-                    },
-                    "qq": {
-                        "appid": "*********",
-                        "description": "QQ登录"
-                    },
-                    "sina": {
-                        "appkey": "**********",
-                        "appsecret": "*****************",
-                        "redirect_uri": "http://*****************",
-                        "description": "新浪微博登录"
-                    }
+                    
                 }
 			},
 			"apple": {
