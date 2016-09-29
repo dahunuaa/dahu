@@ -1004,7 +1004,8 @@
 					"js/mui.previewimage.js",
 					"js/feedback-page.js",
 					"img/iconfont-tianjia.png",
-					"js/mui.view.js"
+					"js/mui.view.js",
+					"js/feedback.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -1092,7 +1093,9 @@
 					"css/app.css",
 					"fonts/mui.ttf",
 					"css/mui.min.css",
-					"img/BS_2.png"
+					"img/BS_2.png",
+					"js/app.js",
+					"js/mui.enterfocus.js"
 				],
 				"refer": [
 					"selfsetting/selfsetting.html",

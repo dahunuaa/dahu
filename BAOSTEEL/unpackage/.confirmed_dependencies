@@ -95,7 +95,12 @@
 			"css/mui.picker.css",
 			"js/feedback-page.js",
 			"img/iconfont-tianjia.png",
-			"js/mui.view.js"
+			"js/mui.view.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/feedback.js"
 		]
 	},
 	"selfsetting/selfsetting.html": {
@@ -235,7 +240,9 @@
 			"img/BS_2.png",
 			"js/mui.min.js",
 			"fonts/mui.ttf",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"js/app.js",
+			"js/mui.enterfocus.js"
 		],
 		"refer": [
 			"inforgather/myinformationgathering.html",
@@ -309,7 +316,12 @@
 			"js/mui.previewimage.js",
 			"js/feedback.js",
 			"js/feedback-page.js",
-			"js/mui.view.js"
+			"js/mui.view.js",
+			"css/app.css",
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
 		]
 	},
 	"user_account.html": {
