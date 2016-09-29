@@ -32,6 +32,15 @@
 		
 		<div class="mui-content">
 			<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell mui-media">
+						<a class="mui-navigate-right" id="account">
+							<img class="mui-media-object mui-pull-left head-img" id="head-img" src="img/BS_2.png">
+							<div class="mui-media-body">
+								BAOSTEEL
+								<p class='mui-ellipsis'>admin</p>
+							</div>
+						</a>
+					</li>
 				<li class="mui-table-view-cell">
 					<a id="newtask" class="mui-navigate-right">
 						新建出差任务
@@ -76,6 +85,7 @@
 					</a>
 				</li>
 			</ul>
+		
 		</div>
 		</style>
 	</body>
@@ -87,6 +97,14 @@
 		
 		//新建出差任务
 		mui.ready(function(){
+		document.getElementById("account").addEventListener('tap',function(){
+			mui.openWindow({
+				url:"user_account.html",
+				id:"user_account"
+			})
+		})
+		
+		
 		document.getElementById("newtask").addEventListener('tap',function () {
 			//获得主页面的webview
 			
@@ -191,6 +209,7 @@
 				id:"noice",
 			})
 		});
+		
 	})
 	</script>
 </html>

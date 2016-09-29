@@ -270,7 +270,9 @@
 					"bussinessinfo/businessInformation.html",
 					"inforgather/informationGathering.html",
 					"inforguide/informationGuiding.html",
-					"js/mui.js"
+					"js/mui.js",
+					"css/iconfont.css",
+					"fonts/iconfont.ttf"
 				],
 				"refer": [
 					"setting.html",
@@ -824,7 +826,9 @@
 					"js/app.js",
 					"fonts/mui.ttf",
 					"js/mui.min.js",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"css/iconfont.css",
+					"fonts/iconfont.ttf"
 				],
 				"refer": [
 					"bussinessinfo/buss_search.html"
@@ -1087,7 +1091,8 @@
 					"js/mui.min.js",
 					"css/app.css",
 					"fonts/mui.ttf",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"img/BS_2.png"
 				],
 				"refer": [
 					"selfsetting/selfsetting.html",
@@ -1102,7 +1107,8 @@
 					"login.html",
 					"uploadfile.html",
 					"fileupload.html",
-					"downloadfile.html"
+					"downloadfile.html",
+					"user_account.html"
 				],
 				"priority": 0
 			},
@@ -1253,6 +1259,28 @@
 					"css/common.css",
 					"js/defined_downloadfile.js",
 					"js/immersed.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"user_account.html": {
+				"resources": [
+					"js/app.js",
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/feedback.js",
+					"img/BS_2.png",
+					"js/mui.picker.js",
+					"js/mui.zoom.js",
+					"js/mui.poppicker.js",
+					"js/mui.previewimage.js",
+					"js/feedback-page.js",
+					"js/mui.view.js",
+					"css/defined_uploadimg.css",
+					"css/mui.poppicker.css",
+					"css/mui.picker.css"
 				],
 				"refer": [],
 				"priority": 0
