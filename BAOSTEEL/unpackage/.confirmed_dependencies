@@ -1,1 +1,398 @@
+<<<<<<< HEAD
 null
+=======
+{
+	"inforgather/myinformationgathering.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"inforgather/informationgathering_edit.html"
+		]
+	},
+	"bussinessinfo/createNewTask.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"js/mui.poppicker.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css"
+		]
+	},
+	"bussinessinfo/buss_edit.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/mui.poppicker.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"inforguide/myInformationGuiding.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"inforguide/informationguiding_edit.html"
+		]
+	},
+	"inforgather/informationgathering_edit.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/mui.poppicker.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css"
+		]
+	},
+	"login.html": {
+		"resources": [
+			"js/app.js",
+			"img/bg_2.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/mui.enterfocus.js"
+		],
+		"refer": [
+			"main.html"
+		]
+	},
+	"inforguide/informationGuiding.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"inforguide/detail_inforguide.html",
+			"inforguide/inforguide_search.html"
+		]
+	},
+	"inforguide/newinformationguide.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/mui.zoom.js",
+			"css/app.css",
+			"js/mui.poppicker.js",
+			"css/defined_uploadimg.css",
+			"js/mui.previewimage.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"js/feedback-page.js",
+			"img/iconfont-tianjia.png",
+			"js/mui.view.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/feedback.js"
+		]
+	},
+	"selfsetting/selfsetting.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"selfsetting/feedback.html"
+		]
+	},
+	"notice/notice_detail.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"notice/noticelist.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"notice/notice_detail.html"
+		]
+	},
+	"inforgather/newinformationgathering.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"css/app.css",
+			"js/mui.poppicker.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"notice/new_notice.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"bussinessinfo/myBusinessRecord.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"bussinessinfo/buss_edit.html"
+		]
+	},
+	"selfsetting/feedback.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"main.html": {
+		"resources": [
+			"js/mui.js",
+			"bussinessinfo/businessInformation.html",
+			"css/iconfont.css",
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"fonts/iconfont.ttf",
+			"js/mui.enterfocus.js"
+		],
+		"refer": [
+			"inforguide/informationGuiding.html",
+			"selfInformation.html",
+			"notice/noticelist.html",
+			"inforgather/informationGathering.html",
+			"bussinessinfo/businessInformation.html"
+		]
+	},
+	"inforgather/detail_inforgather.html": {
+		"resources": [
+			"js/app.js",
+			"js/common.js",
+			"js/mui.min.js",
+			"css/common.css",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"notice/notice.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"notice/mynotice.html",
+			"notice/noticelist.html",
+			"notice/new_notice.html"
+		]
+	},
+	"notice/mynotice.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"notice/notice_edit.html"
+		]
+	},
+	"selfInformation.html": {
+		"resources": [
+			"css/app.css",
+			"img/BS_2.png",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/app.js",
+			"js/mui.enterfocus.js"
+		],
+		"refer": [
+			"inforgather/myinformationgathering.html",
+			"bussinessinfo/createNewTask.html",
+			"notice/notice.html",
+			"inforguide/myInformationGuiding.html",
+			"inforguide/newinformationguide.html",
+			"selfsetting/selfsetting.html",
+			"inforgather/newinformationgathering.html",
+			"bussinessinfo/myBusinessRecord.html",
+			"user_account.html"
+		]
+	},
+	"inforgather/inforgather_list.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"inforgather/detail_inforgather.html"
+		]
+	},
+	"inforgather/informationGathering.html": {
+		"resources": [
+			"img/xinan.png",
+			"img/huabei.png",
+			"img/xibei.png",
+			"img/xinjiang.png",
+			"img/donghai.png",
+			"img/huadong.png",
+			"img/huazhong.png",
+			"img/dongbei.png"
+		],
+		"refer": [
+			"inforgather/inforgather_list.html",
+			"inforgather/inforGathering_search.html"
+		]
+	},
+	"inforguide/informationguiding_edit.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/mui.zoom.js",
+			"js/mui.poppicker.js",
+			"css/defined_uploadimg.css",
+			"js/mui.previewimage.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css",
+			"js/feedback-page.js",
+			"img/iconfont-tianjia.png",
+			"js/mui.view.js"
+		]
+	},
+	"bussinessinfo/businessInformation.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/iconfont.css",
+			"fonts/iconfont.ttf"
+		],
+		"refer": [
+			"bussinessinfo/buss_search.html"
+		]
+	},
+	"inforguide/detail_inforguide.html": {
+		"resources": [
+			"js/mui.zoom.js",
+			"js/mui.previewimage.js",
+			"js/feedback.js",
+			"js/feedback-page.js",
+			"js/mui.view.js",
+			"css/app.css",
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"user_account.html": {
+		"resources": [
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/feedback.js",
+			"img/BS_2.png",
+			"js/mui.picker.js",
+			"js/mui.zoom.js",
+			"js/mui.poppicker.js",
+			"js/mui.previewimage.js",
+			"js/feedback-page.js",
+			"js/mui.view.js",
+			"css/defined_uploadimg.css",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css"
+		]
+	},
+	"bussinessinfo/buss_search.html": {
+		"resources": [
+			"bussinessinfo/buss_search_condition.html",
+			"js/app.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"bussinessinfo/buss_search_condition.html"
+		]
+	},
+	"bussinessinfo/buss_search_condition.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"css/app.css",
+			"js/mui.poppicker.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css"
+		]
+	},
+	"inforguide/inforguide_search.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"js/mui.poppicker.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css"
+		]
+	},
+	"inforgather/inforGathering_search.html": {
+		"resources": [
+			"js/mui.picker.js",
+			"js/app.js",
+			"js/mui.min.js",
+			"css/app.css",
+			"js/mui.poppicker.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/mui.poppicker.css",
+			"css/mui.picker.css"
+		]
+	}
+}
+>>>>>>> 5573993147599f6d76aeeeedf642be27124cf31d

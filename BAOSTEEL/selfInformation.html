@@ -21,6 +21,10 @@
 				color: #6d6d72;
 				font-size: 15px;
 			}
+			.mui-media-body{
+				margin-left: 70px;
+			}
+		
 		</style>
 	</head>
 
@@ -29,9 +33,17 @@
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">设置</h1>
 		</header>-->
-		
 		<div class="mui-content">
 			<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell mui-media">
+						<a class="mui-navigate-right" id="account">
+							<img class="mui-media-object mui-pull-left head-img" id="head-img" src="img/BS_2.png">
+							<div class="mui-media-body" >
+								BAOSTEEL
+								<p class='mui-ellipsis' id="user_name">admin</p>
+							</div>
+						</a>
+					</li>
 				<li class="mui-table-view-cell">
 					<a id="newtask" class="mui-navigate-right">
 						新建出差任务
@@ -76,20 +88,21 @@
 					</a>
 				</li>
 			</ul>
+		
 		</div>
 		</style>
 	</body>
 	<script src="js/mui.min.js"></script>
 	<script>
+	(function($,doc){
+
 		mui.init({
 			swipeBack:true //启用右滑关闭功能
 		});
+		mui.plusReady(function(){
+		document.getElementById("user_name").innerHTML=localStorage.getItem("user_name")
 		
-		//新建出差任务
-		mui.ready(function(){
 		document.getElementById("newtask").addEventListener('tap',function () {
-			//获得主页面的webview
-			
 			mui.openWindow({
 		    url:"bussinessinfo/createNewTask.html",//url是字符串啊！！！！！！！！
 		    id:"createNewTask",
@@ -102,8 +115,6 @@
 		
 		//我的出差任务
 		document.getElementById("myBusinessRecord").addEventListener('tap',function () {
-		//获得主页面的webview
-		
 		mui.openWindow({
 	    url:"bussinessinfo/myBusinessRecord.html",//url是字符串啊！！！！大哥！！！！！！
 	    id:"myBusinessRecord",
@@ -116,8 +127,6 @@
 		
 		//新建信息指南
 		document.getElementById("newinformationguide").addEventListener('tap',function () {
-			//获得主页面的webview
-			
 			mui.openWindow({
 		    url:"inforguide/newinformationguide.html",//url是字符串啊！！！！！！！！
 		    id:"newinformationguide",
@@ -130,8 +139,6 @@
 		
 		//我的信息指南
 		document.getElementById("myinformationguide").addEventListener('tap',function () {
-		//获得主页面的webview
-		
 		mui.openWindow({
 	    url:"inforguide/myInformationGuiding.html",//url是字符串啊！！！！大哥！！！！！！
 	    id:"myInformationGuiding",
@@ -144,8 +151,6 @@
 		
 		//新建情报搜集
 		document.getElementById("newinformationgathering").addEventListener('tap',function () {
-			//获得主页面的webview
-			
 			mui.openWindow({
 		    url:"inforgather/newinformationgathering.html",//url是字符串啊！！！！！！！！
 		    id:"newinformationgathering",
@@ -158,8 +163,6 @@
 		
 		//我的情报搜集
 		document.getElementById("myinformationgathering").addEventListener('tap',function () {
-		//获得主页面的webview
-		
 		mui.openWindow({
 	    url:"inforgather/myinformationgathering.html",//url是字符串啊！！！！大哥！！！！！！
 	    id:"myinformationgathering",
@@ -191,6 +194,8 @@
 				id:"noice",
 			})
 		});
-	})
+		
+	 })
+	}(mui, document));
 	</script>
 </html>

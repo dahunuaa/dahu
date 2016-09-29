@@ -105,9 +105,6 @@
 		},
 		"NativeObj": {
 			"description": "原生对象"
-		},
-		"OAuth": {
-		 "description": "登录授权"
 		}
 	},
 	"plus": {
@@ -121,21 +118,7 @@
 		"distribute": {
 			"plugins": {
 				"oauth": {
-                    "weixin": {
-                        "appid": "wx**********",
-                        "appsecret": "*****************",
-                        "description": "微信登录"
-                    },
-                    "qq": {
-                        "appid": "*********",
-                        "description": "QQ登录"
-                    },
-                    "sina": {
-                        "appkey": "**********",
-                        "appsecret": "*****************",
-                        "redirect_uri": "http://*****************",
-                        "description": "新浪微博登录"
-                    }
+                    
                 }
 			},
 			"apple": {
@@ -221,15 +204,15 @@
 			"splashscreen": {
 				"ios": {
 					"iphone": {
-						"default": "F:/tips/girlab——001.png", /*iPhone3启动图片选，分辨率：320x480*/
-						"retina35": "F:/tips/girlab——001.png",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
-						"retina40": "F:/app workspace/BAOSTEEL_3/img/bg_3.png",/*4.0 英寸设备(iPhone5/iPhone5s)启动图片，分辨率：640x1136*/
-						"retina47": "F:/app workspace/BAOSTEEL_3/img/bg_3.png",/*4.7 英寸设备(iPhone6)启动图片，分辨率：750x1334*/
-						"retina55": "F:/app workspace/BAOSTEEL_3/img/bg_3.png",/*5.5 英寸设备(iPhone6 Plus)启动图片，分辨率：1242x2208*/
-						"retina55l": "F:/app workspace/BAOSTEEL_3/img/bg_3.png"
+						"default": "img/bg_3.png", /*iPhone3启动图片选，分辨率：320x480*/
+						"retina35": "img/bg_3.png",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+						"retina40": "img/bg_3.png",/*4.0 英寸设备(iPhone5/iPhone5s)启动图片，分辨率：640x1136*/
+						"retina47": "img/bg_3.png",/*4.7 英寸设备(iPhone6)启动图片，分辨率：750x1334*/
+						"retina55": "img/bg_3.png",/*5.5 英寸设备(iPhone6 Plus)启动图片，分辨率：1242x2208*/
+						"retina55l": "img/bg_3.png"
 					},
 					"ipad": {
-						"portrait": "F:/app workspace/BAOSTEEL_3/img/bg_3.png", /*iPad竖屏启动图片，分辨率：768x1004*/
+						"portrait": "img/bg_3.png", /*iPad竖屏启动图片，分辨率：768x1004*/
 						"portrait-retina": "",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
 						"landscape": "", /*iPad横屏启动图片，分辨率：1024x748*/
 						"landscape-retina": "", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
@@ -287,7 +270,9 @@
 					"bussinessinfo/businessInformation.html",
 					"inforgather/informationGathering.html",
 					"inforguide/informationGuiding.html",
-					"js/mui.js"
+					"js/mui.js",
+					"css/iconfont.css",
+					"fonts/iconfont.ttf"
 				],
 				"refer": [
 					"setting.html",
@@ -841,7 +826,9 @@
 					"js/app.js",
 					"fonts/mui.ttf",
 					"js/mui.min.js",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"css/iconfont.css",
+					"fonts/iconfont.ttf"
 				],
 				"refer": [
 					"bussinessinfo/buss_search.html"
@@ -901,7 +888,8 @@
 					"fonts/mui.ttf",
 					"js/app.js",
 					"js/common.js",
-					"js/defined_downloadfile.js"
+					"js/defined_downloadfile.js",
+					"css/common.css"
 				],
 				"refer": [],
 				"priority": 0
@@ -1016,7 +1004,8 @@
 					"js/mui.previewimage.js",
 					"js/feedback-page.js",
 					"img/iconfont-tianjia.png",
-					"js/mui.view.js"
+					"js/mui.view.js",
+					"js/feedback.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -1103,7 +1092,10 @@
 					"js/mui.min.js",
 					"css/app.css",
 					"fonts/mui.ttf",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"img/BS_2.png",
+					"js/app.js",
+					"js/mui.enterfocus.js"
 				],
 				"refer": [
 					"selfsetting/selfsetting.html",
@@ -1118,7 +1110,8 @@
 					"login.html",
 					"uploadfile.html",
 					"fileupload.html",
-					"downloadfile.html"
+					"downloadfile.html",
+					"user_account.html"
 				],
 				"priority": 0
 			},
@@ -1269,6 +1262,28 @@
 					"css/common.css",
 					"js/defined_downloadfile.js",
 					"js/immersed.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"user_account.html": {
+				"resources": [
+					"js/app.js",
+					"js/mui.min.js",
+					"css/app.css",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/feedback.js",
+					"img/BS_2.png",
+					"js/mui.picker.js",
+					"js/mui.zoom.js",
+					"js/mui.poppicker.js",
+					"js/mui.previewimage.js",
+					"js/feedback-page.js",
+					"js/mui.view.js",
+					"css/defined_uploadimg.css",
+					"css/mui.poppicker.css",
+					"css/mui.picker.css"
 				],
 				"refer": [],
 				"priority": 0
