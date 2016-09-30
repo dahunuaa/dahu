@@ -30,7 +30,7 @@
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 class="mui-title">情报搜集区域图</h1>
+			<h1 class="mui-title">Echart</h1>
 		</header>
 		<div class="mui-content">
 			<div class="mui-content-padded">
@@ -38,6 +38,8 @@
 			</div>
 			<div class="mui-content-padded">
 				<h5>情报搜集区域饼状图</h5>
+				<div class="chart" id="inforgatherChart"></div>
+				<h5>出差人数月份折线图</h5>
 				<div class="chart" id="bussinforChart"></div>
 			</div>
 		</div>
@@ -59,7 +61,7 @@
 		    				window.gather_area = data
 		    			},
 		    		});
-		    		var getOption = function() {
+		    		var getinforgatherChart = function(){
 					var chartOption={
 						calculable: false,
 						series: [{
@@ -72,12 +74,65 @@
 					} 
 					return chartOption;
 				};
+				   var getbussinforChart = function(){
+				   	  var chartOption={
+						calculable: false,
+						grid: {
+							x: 35,
+							x2: 10,
+							y: 30,
+							y2: 25
+						},
+						toolbox: {
+						show: false,
+						feature: {
+							mark: {
+								show: true
+							},
+							dataView: {
+								show: true,
+								readOnly: false
+							},
+							magicType: {
+								show: true,
+								type: ['line', 'bar']
+							},
+							restore: {
+								show: true
+							},
+							saveAsImage: {
+								show: true
+							}
+							}
+						},
+						xAxis: [{
+							type: 'category',
+							data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月']
+						}],
+						yAxis: [{
+							type: 'value',
+							splitArea: {
+								show: true
+							}
+						}],
+						series: [{
+							name: '出差人数月份折线图',
+							type: 'line',//直接将line改成bar就可以实现折线图和柱状图之间的转换
+							data: [8, 10, 20, 15, 8, 15, 18]
+						}]
+					};
+					return chartOption;
+				   };
+				
+				
 				var byId = function(id) {
 					return document.getElementById(id);
 				};
-				var bussinforChart = echarts.init(byId('bussinforChart'));
-				bussinforChart.setOption((getOption()))
-	    		})
+				var inforgatherChart = echarts.init(byId('inforgatherChart'));
+				inforgatherChart.setOption((getinforgatherChart()))
+	    		var bussinforChart = echarts.init(byId('bussinforChart'));
+	    		bussinforChart.setOption((getbussinforChart()))
+		    	})
 		    	
 		    })(mui,document)
 			

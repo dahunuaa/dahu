@@ -108,7 +108,6 @@
 					async:true,
 					dataType:"json",
 					success:function(data){
-						alert(data)
 						mui('#pullrefresh').pullRefresh().endPullupToRefresh((data ==""||null));	
 						mui.each(data,function(key,value){
 						var li = document.createElement("li")
