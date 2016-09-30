@@ -71,6 +71,11 @@
 						个人设置
 					</a>
 				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right" id="echart">
+						echart
+					</a>
+				</li>
 			</ul>
 			<ul class="mui-table-view" style="margin-top: 25px;">
 				<li class="mui-table-view-cell">
@@ -187,6 +192,13 @@
 				id:"noice",
 			})
 		});
+		
+		document.getElementById("echart").addEventListener('tap',function(){
+			mui.openWindow({
+				url:"echart.html",
+				id:"echart"
+			})
+		})
 		
 	 })
 	}(mui, document));
