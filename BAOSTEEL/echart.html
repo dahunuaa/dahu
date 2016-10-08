@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta charset="utf-8">
 		<title>ECahrt 示例</title>
@@ -45,11 +44,15 @@
 		</div>
 		<script src="js/mui.min.js"></script>
 		<script src="libs/echarts-all.js"></script>
+		<!--<script type="text/javascript" src="js/inforgather_pie.js" ></script>-->
+		
 		<script>
 		    (function($,doc){
 		    	$.init()
 		    	$.plusReady(function(){
-		    		window.gather_area="";//定义全局变量
+		    		
+		    	function getPieData(){
+					var gather_area="";//定义全局变量
 		    		$.ajax({
 		    			type:"post",
 		    			url:"http://121.42.186.54:8081/baosteelpipe/Inforgatherpie",
@@ -57,9 +60,11 @@
 		    			async:false,
 						dataType:"json",
 		    			success:function(data){
-		    				window.gather_area = data
+		    			   gather_area = data
 		    			},
 		    		});
+		    		return gather_area;
+		    	}
 		    		var getinforgatherChart = function(){
 					var chartOption={
 						calculable: false,
@@ -68,7 +73,7 @@
 							type: 'pie',
 							radius: '80%',
 							center: ['50%', '50%'],
-							data:gather_area,
+							data:getPieData(),
 						}]
 					} 
 					return chartOption;
