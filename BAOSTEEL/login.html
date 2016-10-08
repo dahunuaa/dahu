@@ -64,15 +64,14 @@
 	<script src="js/mui.min.js"></script>
 	<script src="js/mui.enterfocus.js"></script>
 	<script src="js/app.js"></script>
-	<script type="text/javascript" src="js/gesture.js" ></script>
 	<script>
 		(function ($, doc) {
 			$.init();
 			$.plusReady(function() {
-					$.preload({
-						"id": 'main',
-						"url": 'main.html',
-					});
+//					$.preload({
+//						"id": 'main',
+//						"url": 'main.html',
+//					});
 					
 					//检查 "登录状态/锁屏状态" 结束
 					var loginButton = doc.getElementById('login');
@@ -101,10 +100,10 @@
 									mui.openWindow({
 									    url: 'main.html', 
 									    id:'main',
+								    extras:{
+										user_name:value.user_name
+									} 
 									 })
-									localStorage.setItem("user_name",value.user_name);
-									plus.nativeUI.toast(gesture+localStorage.getItem("user_name"));
-									
 								}else{
 									plus.nativeUI.toast("用户名或密码错误");
 								}
