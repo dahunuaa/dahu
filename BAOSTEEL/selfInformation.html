@@ -35,15 +35,6 @@
 		</header>-->
 		<div class="mui-content">
 			<ul class="mui-table-view mui-table-view-chevron">
-					<li class="mui-table-view-cell mui-media">
-						<a class="mui-navigate-right" id="account">
-							<img class="mui-media-object mui-pull-left head-img" id="head-img" src="img/BS_2.png">
-							<div class="mui-media-body" >
-								BAOSTEEL
-								<p class='mui-ellipsis' id="user_name">admin</p>
-							</div>
-						</a>
-					</li>
 				<li class="mui-table-view-cell">
 					<a id="newtask" class="mui-navigate-right">
 						新建出差任务
@@ -106,7 +97,9 @@
 			swipeBack:true //启用右滑关闭功能
 		});
 		mui.plusReady(function(){
-		document.getElementById("user_name").innerHTML=localStorage.getItem("user_name")
+//		plus.nativeUI.toast(localStorage.getItem("user_name"))
+//		alert(localStorage.getItem("user_name"))
+		
 		
 		document.getElementById("newtask").addEventListener('tap',function () {
 			mui.openWindow({
@@ -207,6 +200,13 @@
 				})
 		})
 
+		
+		document.getElementById("echart").addEventListener('tap',function(){
+			mui.openWindow({
+				url:"echart.html",
+				id:"echart"
+			})
+		})
 		
 	 })
 	}(mui, document));
