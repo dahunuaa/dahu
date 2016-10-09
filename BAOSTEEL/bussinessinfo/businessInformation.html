@@ -116,8 +116,11 @@
                                    +"<br>"+value.accounts+"人"+"&nbsp&nbsp"+value.buss_reason+"&nbsp&nbsp"+value.buss_place;
 						var icon = document.createElement("icon")
 						var date1 = new Date(value.buss_endtime);
-						var date2 = new Date("2016-9-29");
-						if(date1.getTime()<date2.getTime()){
+						
+						var date2 =new Date();
+						var buss_time = date1.getFullYear()+"-"+date1.getMonth()+"-"+date1.getDate()
+						var curr_date = date2.getFullYear()+"-"+date2.getMonth()+"-"+date2.getDate()
+						if(buss_time<curr_date){
 							icon.className="mui-icon mui-icon-checkmarkempty"
 						}else{
 							icon.className="mui-icon iconfont icon-daiwancheng"							
