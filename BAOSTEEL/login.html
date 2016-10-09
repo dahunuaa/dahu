@@ -53,9 +53,8 @@
 		</form>
 			<div class="mui-input-row mui-checkbox mui-left" id="rember_account">
 				<label>记住工号和密码：Yes</label>
-				<input name="checkbox" value="Item 1" type="checkbox" >
+				<input name="checkbox" value="Item 1" type="checkbox" checked="checked">
 			</div>
-			
 		</form>
 		
 		<div class="mui-content-padded">
@@ -76,8 +75,8 @@
 			mui('#rember_account').on('change', 'input', function() {
 			var value = this.checked?"Yes":"No";
 			this.previousElementSibling.innerText = "记住工号和密码："+value;
+			localStorage.setItem("value",value)
 			});
-
 
 			$.plusReady(function() {
 //					mui.preload({
@@ -90,9 +89,13 @@
 					var accountBox = doc.getElementById('account');
 					var passwordBox = doc.getElementById('password');
 					
-					
-					accountBox.value = localStorage.getItem("user_account")
-					passwordBox.value = localStorage.getItem("user_psw")
+					if(localStorage.getItem("value") == "Yes"){
+						accountBox.value = localStorage.getItem("user_account")
+						passwordBox.value = localStorage.getItem("user_psw")	
+					}else{
+						accountBox.value = ""
+						passwordBox.value = ""	
+					}
 					
 					loginButton.addEventListener('tap', function(event) {
 						if (accountBox.value==""||passwordBox.value=="") {
