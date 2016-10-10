@@ -45,7 +45,7 @@
 			<ul class="mui-table-view mui-table-view-chevron">
 				<li class="mui-table-view-cell mui-media">
 					<a class="mui-navigate-right" id="account">
-						<img class="mui-media-object mui-pull-left head-img" id="head-img" src="img/BS_2.png">
+						<img class="mui-media-object mui-pull-left head-img" id="head-img" src="">
 						<div class="mui-media-body" >
 							BAOSTEEL
 							<p id="user_name">admin</p>
@@ -114,6 +114,23 @@
 		mui.init({
 			swipeBack:true //启用右滑关闭功能
 		});
+		
+		
+		//重写selectpic.js中的defaultImg方法
+		function defaultImg() {
+			if(mui.os.plus){
+				plus.io.resolveLocalFileSystemURL("_doc/head.jpg", function(entry) {
+					var s = entry.fullPath + "?version=" + new Date().getTime();;
+					document.getElementById("head-img").src = s;
+				}, function(e) {
+					document.getElementById("head-img").src = 'img/BS_2.png';
+				})
+			}else{
+				document.getElementById("head-img").src = 'img/BS_2.png';
+				}
+				
+			}
+
 		mui.plusReady(function(){
 			mui.preload({
 				"id":"echart",

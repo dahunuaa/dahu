@@ -67,7 +67,6 @@ function selectpic(pic_id){
 						//文件不存在
 						entry.copyTo(root, 'head.jpg', function(e) {
 								var path = e.fullPath + "?version=" + new Date().getTime();
-								appendFile(e)
 								document.getElementById(pic_id).src = path;
 								//变更大图预览的src
 								//目前仅有一张图片，暂时如此处理，后续需要通过标准组件实现
@@ -89,19 +88,19 @@ function selectpic(pic_id){
 	};
 	
 }
-function defaultImg() {
-	if(mui.os.plus){
-		plus.io.resolveLocalFileSystemURL("_doc/head.jpg", function(entry) {
-			var s = entry.fullPath + "?version=" + new Date().getTime();;
-			document.getElementById("head-img").src = s;
-		}, function(e) {
+	function defaultImg() {
+		if(mui.os.plus){
+			plus.io.resolveLocalFileSystemURL("_doc/head.jpg", function(entry) {
+				var s = entry.fullPath + "?version=" + new Date().getTime();;
+				document.getElementById("head-img").src = s;
+			}, function(e) {
+				document.getElementById("head-img").src = '../img/BS_2.png';
+			})
+		}else{
 			document.getElementById("head-img").src = '../img/BS_2.png';
-		})
-	}else{
-		document.getElementById("head-img").src = '../img/BS_2.png';
+			}
+			
 		}
-		
-	}
 	
 	function initImgPreview() {
 	var imgs = document.querySelectorAll("img.mui-action-preview");
